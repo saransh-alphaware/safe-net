@@ -1,4 +1,5 @@
 import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
 import BlogCard from '@/components/ui/BlogCard'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
@@ -110,12 +111,7 @@ export default function BlogPage() {
         </div>
       </section>
       
-      {/* Footer Placeholder (or use actual footer if exists) */}
-      <footer className="py-10 border-t border-gray-100 bg-black text-white">
-        <div className="container mx-auto px-6 text-center text-sm text-gray-400 uppercase tracking-widest">
-          © 2024 Safenet Storefront. All rights reserved.
-        </div>
-      </footer>
+      <Footer />
     </main>
   )
 }

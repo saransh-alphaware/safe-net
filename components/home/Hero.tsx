@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingBag, Info, ArrowRight } from 'lucide-react';
 import Button from '../ui/Button';
@@ -70,10 +71,12 @@ const Hero = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
-                <Button className="rounded-full px-8 py-6 bg-primary text-white flex items-center gap-3 group">
-                  <ShoppingBag size={18} className="group-hover:scale-110 transition-transform" />
-                  <span className="font-bold tracking-wider text-xs">SHOP NOW</span>
-                </Button>
+                <Link href="/shop" className="block">
+                  <Button className="rounded-full px-8 py-6 bg-primary text-white flex items-center gap-3 group">
+                    <ShoppingBag size={18} className="group-hover:scale-110 transition-transform" />
+                    <span className="font-bold tracking-wider text-xs">SHOP NOW</span>
+                  </Button>
+                </Link>
 
                 <div className="flex items-center gap-4 group cursor-pointer">
                   <span className="text-[11px] font-bold uppercase tracking-widest text-primary">More information</span>

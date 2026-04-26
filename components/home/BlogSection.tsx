@@ -7,19 +7,21 @@ import Link from 'next/link';
 const blogs = [
   {
     id: 1,
-    title: "Beautiful decor projects for every home",
+    title: "The best influencers to follow for sartorial inspiration",
     category: "Decor",
     author: "Admin",
-    date: "Aug 24, 2024",
-    image: "/images/products/pottery.png"
+    date: "12 April 2024",
+    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/04/demo-decor-store-blog-01-600x430.jpg.webp",
+    slug: "influencers-inspiration"
   },
   {
     id: 2,
-    title: "Best lighting ideas for your living room",
-    category: "Lighting",
+    title: "Everything you need to know about decor’s big night out",
+    category: "Design",
     author: "Admin",
-    date: "Aug 20, 2024",
-    image: "/images/products/florence_compact.png"
+    date: "12 April 2024",
+    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/04/demo-decor-store-blog-02-600x430.jpg.webp",
+    slug: "decors-big-night-out"
   }
 ];
 
@@ -59,7 +61,7 @@ const BlogSection = () => {
                   <span>{blog.date}</span>
                 </div>
                 <h3 className="text-[26px] lg:text-[32px] font-bold text-primary leading-tight group-hover:text-secondary transition-colors tracking-tighter">
-                  <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
+                  <Link href={`/blog/${blog.slug}`}>{blog.title}</Link>
                 </h3>
               </div>
             </div>
