@@ -8,65 +8,84 @@ const blogs = [
   {
     id: 1,
     title: "The best influencers to follow for sartorial inspiration",
-    category: "Decor",
-    author: "Admin",
-    date: "12 April 2024",
-    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/04/demo-decor-store-blog-01-600x430.jpg.webp",
+    category: "DECOR",
+    date: "22 OCTOBER 2024",
+    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/10/demo-decor-store-blog-07-600x430.jpg",
     slug: "influencers-inspiration"
   },
   {
     id: 2,
     title: "Everything you need to know about decor’s big night out",
-    category: "Design",
-    author: "Admin",
-    date: "12 April 2024",
-    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/04/demo-decor-store-blog-02-600x430.jpg.webp",
+    category: "DESIGN",
+    date: "22 OCTOBER 2024",
+    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/10/demo-decor-store-blog-08-600x430.jpg",
     slug: "decors-big-night-out"
+  },
+  {
+    id: 3,
+    title: "All the best looks & moments from the met gala 2023",
+    category: "DECOR",
+    date: "22 OCTOBER 2024",
+    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/10/demo-decor-store-blog-04-600x430.jpg",
+    slug: "looks-moments-met-gala"
+  },
+  {
+    id: 4,
+    title: "Find a colour palettes that reflects your passion",
+    category: "DECOR",
+    date: "22 OCTOBER 2024",
+    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/10/demo-decor-store-blog-03-600x430.jpg",
+    slug: "color-palettes-passion"
   }
 ];
 
 const BlogSection = () => {
   return (
-    <section className="py-24 lg:py-32 bg-white">
+    <section className="py-20 lg:py-24 bg-white font-sans">
       <div className="container">
-        <div className="flex flex-col lg:flex-row justify-between items-end gap-8 mb-16 px-4 lg:px-0">
-          <div className="max-w-xl">
-            <span className="text-[12px] font-bold uppercase tracking-[4px] text-zinc-400 mb-4 block">Latest news</span>
-            <h2 className="text-[40px] lg:text-[50px] font-bold text-primary leading-tight tracking-tighter">
-              Beautiful blog <span className="font-light italic">posts</span>
-            </h2>
-          </div>
-          <Link 
-            href="/blog" 
-            className="text-[13px] font-bold uppercase tracking-[2px] text-primary border-b border-primary pb-1 hover:text-zinc-500 hover:border-zinc-500 transition-all"
-          >
-            Read all posts
-          </Link>
+        
+        {/* Centered Heading Section */}
+        <div className="text-center mb-16">
+          <span className="text-[12px] font-bold uppercase tracking-[3px] text-[#828282] mb-2 block">
+            DESIGNERS IDEAS
+          </span>
+          <h2 className="text-[34px] lg:text-[40px] font-bold text-[#232323] leading-tight tracking-tight">
+            The decor article
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
+        {/* 4 Columns Grid Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 px-4 lg:px-0">
           {blogs.map((blog) => (
-            <div key={blog.id} className="group flex flex-col gap-8">
-              <div className="relative aspect-[16/10] overflow-hidden">
+            <div key={blog.id} className="group flex flex-col gap-5">
+              
+              {/* Rounded Image Container */}
+              <div className="relative aspect-[16/11.5] rounded-[6px] overflow-hidden">
                 <Image 
                   src={blog.image} 
                   alt={blog.title} 
                   fill 
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110" 
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105" 
                 />
               </div>
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-6 text-[12px] font-bold uppercase tracking-wider text-zinc-400">
-                  <span className="text-secondary">{blog.category}</span>
-                  <span>{blog.date}</span>
+
+              {/* Text Meta & Title */}
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2 text-[12px] uppercase tracking-wider">
+                  <span className="font-bold text-[#232323]">{blog.category}</span>
+                  <span className="text-[#828282]">•</span>
+                  <span className="text-[#828282]">{blog.date}</span>
                 </div>
-                <h3 className="text-[26px] lg:text-[32px] font-bold text-primary leading-tight group-hover:text-secondary transition-colors tracking-tighter">
+                <h3 className="text-[16px] lg:text-[17px] font-semibold text-[#232323] leading-snug group-hover:text-secondary transition-colors tracking-wide">
                   <Link href={`/blog/${blog.slug}`}>{blog.title}</Link>
                 </h3>
               </div>
+
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

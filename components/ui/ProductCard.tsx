@@ -51,25 +51,28 @@ const ProductCard: React.FC<ProductCardProps> = ({
           />
         </Link>
 
-        {/* Hover Actions */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-2 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 z-30">
+        {/* Hover Actions — slide up from bottom with staggered animation */}
+        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-30">
           <button
-            className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-custom-md hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1"
+            className="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-all duration-300 translate-y-6 opacity-0 group-hover/image:translate-y-0 group-hover/image:opacity-100"
+            style={{ transitionDelay: '0ms' }}
             title="Add to cart"
           >
-            <ShoppingBag size={18} strokeWidth={1.5} />
+            <ShoppingBag size={17} strokeWidth={1.5} />
           </button>
           <button
-            className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-custom-md hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1"
+            className="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-all duration-300 translate-y-6 opacity-0 group-hover/image:translate-y-0 group-hover/image:opacity-100"
+            style={{ transitionDelay: '80ms' }}
             title="Quick view"
           >
-            <Eye size={18} strokeWidth={1.5} />
+            <Eye size={17} strokeWidth={1.5} />
           </button>
           <button
-            className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-custom-md hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1"
+            className="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-all duration-300 translate-y-6 opacity-0 group-hover/image:translate-y-0 group-hover/image:opacity-100"
+            style={{ transitionDelay: '160ms' }}
             title="Compare"
           >
-            <Layers size={18} strokeWidth={1.5} />
+            <Layers size={17} strokeWidth={1.5} />
           </button>
         </div>
       </div>

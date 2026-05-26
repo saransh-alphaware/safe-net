@@ -1,42 +1,241 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const products = [
+  {
+    id: 1,
+    name: 'Wooden cabinet',
+    price: 23.00,
+    originalPrice: 50.00,
+    image: 'https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/04/demo-decor-store-product-slider-01.png',
+    slug: '/product/wooden-cabinet',
+  },
+  {
+    id: 2,
+    name: 'Classic stools',
+    price: 38.00,
+    originalPrice: 65.00,
+    image: 'https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/04/demo-decor-store-product-slider-03.png',
+    slug: '/product/classic-stools',
+  },
+  {
+    id: 3,
+    name: 'Modern chair',
+    price: 45.00,
+    originalPrice: 80.00,
+    image: 'https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/04/demo-decor-store-product-slider-02.png',
+    slug: '/product/modern-chair',
+  },
+];
 
 const LoungeBanner = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [fading, setFading] = useState(false);
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // Intersection Observer — triggers slide-in animation once on first scroll into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto-cycle products with a fade transition every 3s
+  const goTo = (index: number) => {
+    setFading(true);
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setFading(false);
+    }, 800);
+  };
+
+  const goPrev = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    const prev = (currentIndex - 1 + products.length) % products.length;
+    goTo(prev);
+    startInterval();
+  };
+
+  const goNext = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    const next = (currentIndex + 1) % products.length;
+    goTo(next);
+    startInterval();
+  };
+
+  const startInterval = () => {
+    intervalRef.current = setInterval(() => {
+      setFading(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % products.length);
+        setFading(false);
+      }, 800);
+    }, 4500);
+  };
+
+  useEffect(() => {
+    startInterval();
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
+
+  const product = products[currentIndex];
+
   return (
-    <section className="relative h-[400px] lg:h-[600px] overflow-hidden group">
-      <div className="absolute inset-0">
-        <Image 
-          src="/images/products/lounge_collection.png" 
-          alt="Lounge collection" 
-          fill 
-          className="object-cover transition-transform duration-1000 group-hover:scale-105" 
+    <section
+      ref={sectionRef}
+      className="w-full flex flex-col lg:flex-row overflow-hidden font-sans"
+      style={{ minHeight: '420px' }}
+    >
+      {/* ─── LEFT: Lounge Banner Image + Text ─────────────────────────────── */}
+      <div
+        className="relative flex-1 min-h-[320px] lg:min-h-[420px] overflow-hidden"
+        style={{
+          transform: inView ? 'translateX(0)' : 'translateX(-120px)',
+          opacity: inView ? 1 : 0,
+          transition: 'transform 0.85s cubic-bezier(0.22,1,0.36,1), opacity 0.85s ease',
+        }}
+      >
+        {/* Background Image */}
+        <Image
+          src="/images/products/lounge_collection.png"
+          alt="Lounge collection"
+          fill
+          className="object-cover"
+          priority
         />
-        <div className="absolute inset-0 bg-black/10" />
-      </div>
-      
-      <div className="container relative z-10 h-full flex items-center">
-        <motion.div 
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-md text-white"
-        >
-          <span className="text-[12px] font-bold uppercase tracking-[4px] mb-6 block text-white/80">Premium quality</span>
-          <h2 className="text-[40px] lg:text-[60px] font-bold leading-[1.1] mb-10 tracking-tighter">
-            Lounge <span className="font-light italic">collection</span>
+
+        {/* Overlay content — centered vertically */}
+        <div className="absolute inset-0 flex flex-col justify-center px-10 lg:px-16 z-10">
+          {/* "SAVE UP TO 50% OFF" underlined label */}
+          <span className="inline-block text-[12px] font-bold tracking-[1px] text-[#1a2340] underline underline-offset-4 mb-4 uppercase">
+            Save up to 50% off
+          </span>
+
+          {/* Main heading */}
+          <h2 className="text-[42px] lg:text-[54px] leading-[1.1] font-light text-[#1a2340] mb-8">
+            Lounge <br />
+            <span className="font-bold">collection</span>
           </h2>
-          <Link 
-            href="/shop" 
-            className="inline-block px-12 py-5 bg-white text-primary text-[11px] font-black uppercase tracking-[2px] transition-all hover:bg-primary hover:text-white"
+
+          {/* CTA button */}
+          <Link
+            href="/shop"
+            className="inline-block self-start px-8 py-4 bg-[#1a2340] text-white text-[13px] font-medium tracking-wide hover:bg-[#0d1420] transition-colors duration-300"
           >
-            Shop collection
+            Explore category
           </Link>
-        </motion.div>
+        </div>
+      </div>
+
+      {/* ─── RIGHT: Product Carousel ──────────────────────────────────────── */}
+      <div
+        className="relative flex items-center justify-center bg-[#dce8f5] lg:w-[380px] xl:w-[420px] min-h-[320px] lg:min-h-[420px] overflow-hidden"
+        style={{
+          transform: inView ? 'translateX(0)' : 'translateX(120px)',
+          opacity: inView ? 1 : 0,
+          transition: 'transform 0.85s cubic-bezier(0.22,1,0.36,1) 0.1s, opacity 0.85s ease 0.1s',
+        }}
+      >
+        {/* Left arrow */}
+        <button
+          onClick={goPrev}
+          aria-label="Previous product"
+          className="absolute left-4 z-20 w-9 h-9 flex items-center justify-center bg-white/80 hover:bg-white rounded-full shadow transition-all duration-200 hover:scale-110"
+        >
+          <ChevronLeft size={18} className="text-[#1a2340]" />
+        </button>
+
+        {/* Right arrow */}
+        <button
+          onClick={goNext}
+          aria-label="Next product"
+          className="absolute right-4 z-20 w-9 h-9 flex items-center justify-center bg-white/80 hover:bg-white rounded-full shadow transition-all duration-200 hover:scale-110"
+        >
+          <ChevronRight size={18} className="text-[#1a2340]" />
+        </button>
+
+        {/* Outer wrapper — column layout, static blob + fading content stacked */}
+        <div className="flex flex-col items-center gap-5 px-10 py-12">
+
+          {/* ── STATIC: circular blob (never fades) ── */}
+          <div className="relative w-52 h-52 xl:w-64 xl:h-64 flex items-center justify-center flex-shrink-0">
+            {/* Static soft circle — always visible */}
+            <div className="absolute inset-0 rounded-full bg-[#bcd5ec]/60" />
+
+            {/* ── FADING: product image only ── */}
+            <div
+              className="relative w-44 h-44 xl:w-56 xl:h-56"
+              style={{
+                opacity: fading ? 0 : 1,
+                transition: 'opacity 0.8s ease',
+              }}
+            >
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                sizes="(max-width: 1280px) 176px, 224px"
+                className="object-contain drop-shadow-xl"
+              />
+            </div>
+          </div>
+
+          {/* ── FADING: product name + price ── */}
+          <div
+            className="text-center"
+            style={{
+              opacity: fading ? 0 : 1,
+              transition: 'opacity 0.8s ease',
+            }}
+          >
+            <Link
+              href={product.slug}
+              className="block text-[17px] font-semibold text-[#1a2340] mb-1.5 hover:underline tracking-tight"
+            >
+              {product.name}
+            </Link>
+            <div className="flex items-center justify-center gap-3">
+              <span className="text-[14px] text-[#828282] line-through">
+                ${product.originalPrice.toFixed(2)}
+              </span>
+              <span className="text-[16px] font-bold text-[#1a2340]">
+                ${product.price.toFixed(2)}
+              </span>
+            </div>
+          </div>
+
+          {/* ── STATIC: dot indicators ── */}
+          <div className="flex gap-2">
+            {products.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => { goTo(i); }}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  i === currentIndex
+                    ? 'bg-[#1a2340] scale-125'
+                    : 'bg-[#1a2340]/30 hover:bg-[#1a2340]/60'
+                }`}
+                aria-label={`Go to product ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
