@@ -20,55 +20,73 @@ import Footer from '@/components/layout/Footer';
 const FAQ_DATA = {
     'General': [
         { 
-            q: "Can i order over the phone?", 
-            a: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took galley of type and scrambled to make type." 
+            q: "How can I request a quote for installation?", 
+            a: "You can request a free quote by visiting our Contact page, sending an email to safenetandco@gmail.com, or calling us directly at +91 8080703321. Our team will guide you on the measurement process and provide a detailed estimate." 
         },
         { 
-            q: "I am having difficulty placing an order?", 
-            a: "If you're having trouble placing an order, please ensure all required fields are filled out correctly and your payment information is up to date. You can also try clearing your browser cache or using a different browser." 
+            q: "What products does SafeNet & Co. offer?", 
+            a: "We offer high-tensile stainless steel Invisible Grills, durable HDPE and Nylon Bird Netting, Pleated Mosquito Nets, Aluminium Security Meshes, and Motorised or Manual Zip Screens." 
         },
         { 
-            q: "What payment methods does accept?", 
-            a: "We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and Apple Pay for your convenience." 
-        },
-        { 
-            q: "Can i amend my order once placed?", 
-            a: "Orders can typically be amended within 1 hour of placement. Please contact our support team immediately if you need to make changes." 
-        },
-        { 
-            q: "How do i know if my order was successful?", 
-            a: "Once your order is placed, you will receive a confirmation email with your order number and summary. You can also check your order status in your account dashboard." 
-        },
-        { 
-            q: "What if my order is incorrect?", 
-            a: "If you receive an incorrect item, please contact our support team within 48 hours of delivery. We will arrange a replacement or refund for you." 
+            q: "Do you provide installation services?", 
+            a: "Yes, we provide end-to-end professional installation services. Our experienced technicians handle the complete setup of grills, nets, and screens at your residential or commercial property." 
         }
     ],
-    'Shopping information': [
-        { q: "How long does shipping take?", a: "Standard shipping typically takes 3-5 business days, while express shipping takes 1-2 business days." },
-        { q: "Do you offer international shipping?", a: "Yes, we ship to over 50 countries worldwide. Shipping costs and delivery times vary by location." }
+    'Invisible Grills': [
+        { 
+            q: "Are invisible grills safe for high-rise buildings?", 
+            a: "Absolutely. Our invisible grills are made of high-tensile stainless steel (Grade SS 316) nylon-coated cables that can withstand loads of over 200+ kg, making them extremely safe for balconies and windows." 
+        },
+        { 
+            q: "Do invisible grills rust?", 
+            a: "No. The SS316 grade stainless steel cable has superior resistance to corrosion and is coated with a premium nanotechnology nylon sleeve, preventing rust even in coastal climates." 
+        }
     ],
-    'Payment information': [
-        { q: "Is my payment information secure?", a: "Absolutely. We use industry-standard SSL encryption to protect your payment details and never store your full credit card information." }
+    'Bird Netting': [
+        { 
+            q: "What is the difference between HDPE and Nylon bird nets?", 
+            a: "HDPE nets are heavy-duty, UV-stabilized, and come in square mesh sizes (19mm to 50mm). Nylon nets are copolymer monofilament nets, offering high strength while being virtually invisible (transparent or black)." 
+        },
+        { 
+            q: "Will bird nets block light and airflow?", 
+            a: "Not at all. Both HDPE and nylon monofilament nets are designed to let in maximum natural light and allow unrestricted ventilation while keeping birds out." 
+        }
     ],
-    'Orders and returns': [
-        { q: "What is your return policy?", a: "We offer a 30-day return policy for most items in their original condition. Returns are easy and can be initiated through your account." }
+    'Mosquito Screens': [
+        { 
+            q: "What are pleated mosquito nets?", 
+            a: "Pleated mosquito screens feature a folded zigzag polyester mesh with tensioned cords. They glide smoothly sideways in an aluminum frame and occupy minimal space when retracted." 
+        }
     ],
-    'Ordering from Safenet': [
-        { q: "Can I track my order?", a: "Yes, once your order is shipped, you will receive a tracking link via email to monitor its progress." }
+    'Security & Zip Screens': [
+        { 
+            q: "What are the fabric options for Zip Screens?", 
+            a: "Our Zip Screens are available in multiple fabric variants including Sunshade Blinds (for sun/UV protection), Rainproof PVC Screens, Mosquito Screen meshes, and complete Blackout fabrics." 
+        },
+        { 
+            q: "How does the dual lock system on Security Mesh work?", 
+            a: "Our Aluminium Security Mesh door and window frames feature a heavy-duty dual locking system (2 keys) with optional magnetic closure for maximum physical security against intruders." 
+        }
     ],
-    'Help and support': [
-        { q: "How can I contact customer support?", a: "You can reach us through our contact form, email at support@safenet.com, or via live chat during business hours." }
+    'Warranty & Service': [
+        { 
+            q: "What warranty do you offer on SafeNet products?", 
+            a: "We offer a 3 to 5-year warranty on our SS316 invisible grills and bird nets. Our screens and zip screens come with a standard 1 to 2-year mechanical warranty." 
+        },
+        { 
+            q: "How long does the installation take?", 
+            a: "Once measurements are confirmed, installation is scheduled and completed within 24 to 48 hours for standard residential projects." 
+        }
     ]
 };
 
 const CATEGORIES = [
     { id: 'General', icon: <LayoutGrid size={18} /> },
-    { id: 'Shopping information', icon: <ShoppingBag size={18} /> },
-    { id: 'Payment information', icon: <CreditCard size={18} /> },
-    { id: 'Orders and returns', icon: <Package size={18} /> },
-    { id: 'Ordering from Safenet', icon: <ShoppingCart size={18} /> },
-    { id: 'Help and support', icon: <HelpCircle size={18} /> }
+    { id: 'Invisible Grills', icon: <ShoppingBag size={18} /> },
+    { id: 'Bird Netting', icon: <CreditCard size={18} /> },
+    { id: 'Mosquito Screens', icon: <Package size={18} /> },
+    { id: 'Security & Zip Screens', icon: <ShoppingCart size={18} /> },
+    { id: 'Warranty & Service', icon: <HelpCircle size={18} /> }
 ];
 
 const FaqAccordionItem = ({ question, answer, isOpen, onToggle }: { question: string; answer: string; isOpen: boolean; onToggle: () => void }) => {

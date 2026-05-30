@@ -88,14 +88,20 @@ const SearchDrawer = () => {
                 <div className="flex flex-col gap-6">
                   <h4 className="text-[12px] font-black uppercase tracking-widest text-[#FF3E30]">Suggested categories</h4>
                   <div className="flex flex-wrap gap-3">
-                    {['Cabinet', 'Chair', 'Lamp', 'Light', 'Sofa', 'Stool'].map((cat) => (
+                    {[
+                      { label: 'Invisible Grill', slug: 'invisible-grill' },
+                      { label: 'Bird Net', slug: 'bird-net' },
+                      { label: 'Mosquito Net', slug: 'mosquito-net' },
+                      { label: 'Security Mesh', slug: 'security-mesh' },
+                      { label: 'Zip Screen', slug: 'zip-screen' },
+                    ].map((cat) => (
                       <Link
-                        key={cat}
-                        href={`/product-category/${cat.toLowerCase()}`}
+                        key={cat.slug}
+                        href={`/product-category/${cat.slug}`}
                         onClick={() => setSearchOpen(false)}
                         className="px-6 py-2.5 bg-[#f8f8f8] hover:bg-primary hover:text-white transition-all duration-300 text-[13px] font-bold uppercase tracking-wider rounded-[2px]"
                       >
-                        {cat}
+                        {cat.label}
                       </Link>
                     ))}
                   </div>
@@ -104,7 +110,7 @@ const SearchDrawer = () => {
                 // No results
                 <div className="py-12 text-center text-text-secondary">
                   <p className="text-[16px] font-medium">No products found matching "{query}"</p>
-                  <p className="text-[13px] opacity-75 mt-2">Try searching for other terms like 'sofa', 'lamp', 'stool' or 'chair'.</p>
+                  <p className="text-[13px] opacity-75 mt-2">Try searching for terms like 'invisible grill', 'bird net', 'mosquito net', 'security mesh' or 'zip screen'.</p>
                 </div>
               ) : (
                 // Results List

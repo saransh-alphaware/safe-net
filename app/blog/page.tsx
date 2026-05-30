@@ -7,67 +7,67 @@ import { ChevronRight } from 'lucide-react'
 const BLOG_POSTS = [
   {
     id: 1,
-    title: "The best influencers to follow for sartorial inspiration",
-    category: "Decor",
-    date: "12 April 2024",
-    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/04/demo-decor-store-blog-01-600x430.jpg.webp",
-    href: "/blog/influencers-inspiration"
+    title: "Why invisible grills are the safest choice for high-rise balconies",
+    category: "Safety",
+    date: "15 March 2025",
+    image: "/images/products/invisible_grill_hero.png",
+    href: "/blog/invisible-grills-high-rise-balconies"
   },
   {
     id: 2,
-    title: "Everything you need to know about decor’s big night out",
-    category: "Design",
-    date: "12 April 2024",
-    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/04/demo-decor-store-blog-02-600x430.jpg.webp",
-    href: "/blog/decors-big-night-out"
+    title: "HDPE vs Nylon bird nets: which one is right for your home?",
+    category: "Guide",
+    date: "20 April 2025",
+    image: "/images/products/bird_net_hero.png",
+    href: "/blog/hdpe-vs-nylon-bird-nets"
   },
   {
     id: 3,
-    title: "All the best looks & moments from the met gala 2023",
-    category: "Decor",
-    date: "12 April 2024",
-    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/10/demo-decor-store-blog-03-600x430.jpg.webp",
-    href: "/blog/met-gala-2023"
+    title: "How pleated mosquito nets keep insects out without blocking airflow",
+    category: "Tips",
+    date: "05 May 2025",
+    image: "/images/products/mosquito_net_hero.png",
+    href: "/blog/pleated-mosquito-nets-airflow"
   },
   {
     id: 4,
-    title: "Find a colour palettes that reflects your passion",
-    category: "Decor",
-    date: "12 April 2024",
-    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/10/demo-decor-store-blog-04-600x430.jpg.webp",
-    href: "/blog/colour-palettes-passion"
+    title: "Motorised zip screens: the smart upgrade for modern patios",
+    category: "Innovation",
+    date: "18 May 2025",
+    image: "/images/products/zip_screen_hero.png",
+    href: "/blog/motorised-zip-screens-patios"
   },
   {
     id: 5,
-    title: "The 7 biggest trends of the oscars red carpet",
-    category: "Decor",
-    date: "12 April 2024",
-    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/04/demo-decor-store-blog-05-600x430.jpg.webp",
-    href: "/blog/oscars-red-carpet-trends"
+    title: "Top 5 reasons to install aluminium security mesh on your windows",
+    category: "Security",
+    date: "02 April 2025",
+    image: "/images/products/aluminium_mesh_hero.png",
+    href: "/blog/aluminium-security-mesh-windows"
   },
   {
     id: 6,
-    title: "Our new beach house tour with before photos!",
-    category: "Design",
-    date: "12 April 2024",
-    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/04/demo-decor-store-blog-06-600x430.jpg.webp",
-    href: "/blog/beach-house-tour"
+    title: "SS316 vs SS304 stainless steel: what grade is best for grills?",
+    category: "Guide",
+    date: "10 March 2025",
+    image: "/images/products/invisible_grill_wire_rope.png",
+    href: "/blog/ss316-vs-ss304-stainless-steel"
   },
   {
     id: 7,
-    title: "Standing desk for working from home in a small space",
-    category: "Decor",
-    date: "12 April 2024",
-    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/10/demo-decor-store-blog-07-600x430.jpg.webp",
-    href: "/blog/standing-desk-small-space"
+    title: "Bird-proofing your balcony: a complete homeowner's checklist",
+    category: "Tips",
+    date: "25 February 2025",
+    image: "/images/products/bird_net_hdpe.png",
+    href: "/blog/bird-proofing-balcony-checklist"
   },
   {
     id: 8,
-    title: "Simple strawberry crisp recipe with easter pie crust cutouts",
-    category: "Decor",
-    date: "12 April 2024",
-    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/10/demo-decor-store-blog-08-600x430.jpg.webp",
-    href: "/blog/strawberry-crisp-recipe"
+    title: "Zip screen fabric guide: sunshade, PVC, mosquito or blackout?",
+    category: "Guide",
+    date: "12 January 2025",
+    image: "/images/products/zip_screen_thumb.png",
+    href: "/blog/zip-screen-fabric-guide"
   },
 ]
 
@@ -80,14 +80,19 @@ export default function BlogPage() {
       <section className="relative py-20 lg:py-32 bg-[#F8F8F8] border-b border-gray-100 mt-[70px]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center text-center">
+            <span className="text-[12px] font-bold uppercase tracking-[3px] text-[#828282] mb-4 block">
+              Expert Insights
+            </span>
             <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-black mb-6">
-              Latest blog
+              The SafeNet Blog
             </h1>
-            
+            <p className="text-[#828282] max-w-xl mb-8 leading-relaxed">
+              Tips, guides, and expert knowledge on safety netting, invisible grills, security meshes, and home protection from the SafeNet & Co. team.
+            </p>
             <nav className="flex items-center gap-2 text-sm font-medium text-gray-500 uppercase tracking-widest">
               <Link href="/" className="hover:text-black transition-colors">Home</Link>
-              < ChevronRight size={14} className="text-gray-300" />
-              <span className="text-gray-400">Latest blog</span>
+              <ChevronRight size={14} className="text-gray-300" />
+              <span className="text-gray-400">Blog</span>
             </nav>
           </div>
         </div>

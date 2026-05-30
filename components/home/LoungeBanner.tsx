@@ -8,27 +8,39 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const products = [
   {
     id: 1,
-    name: 'Wooden cabinet',
-    price: 23.00,
-    originalPrice: 50.00,
-    image: 'https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/04/demo-decor-store-product-slider-01.png',
-    slug: '/product/wooden-cabinet',
+    name: 'Invisible Grill',
+    price: 0,
+    originalPrice: 0,
+    image: '/images/products/invisible_grill_thumb.png',
+    slug: '/product/invisible-grill-ss316',
+    label: 'Get Quote',
   },
   {
     id: 2,
-    name: 'Classic stools',
-    price: 38.00,
-    originalPrice: 65.00,
-    image: 'https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/04/demo-decor-store-product-slider-03.png',
-    slug: '/product/classic-stools',
+    name: 'Mosquito Net',
+    price: 0,
+    originalPrice: 0,
+    image: '/images/products/mosquito_net_thumb.png',
+    slug: '/product/pleated-mosquito-net',
+    label: 'Get Quote',
   },
   {
     id: 3,
-    name: 'Modern chair',
-    price: 45.00,
-    originalPrice: 80.00,
-    image: 'https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/04/demo-decor-store-product-slider-02.png',
-    slug: '/product/modern-chair',
+    name: 'Aluminium Mesh',
+    price: 0,
+    originalPrice: 0,
+    image: '/images/products/aluminium_mesh_thumb.png',
+    slug: '/product/aluminium-security-mesh',
+    label: 'Get Quote',
+  },
+  {
+    id: 4,
+    name: 'Zip Screen',
+    price: 0,
+    originalPrice: 0,
+    image: '/images/products/zip_screen_thumb.png',
+    slug: '/product/motorised-zip-screen',
+    label: 'Get Quote',
   },
 ];
 
@@ -113,8 +125,8 @@ const LoungeBanner = () => {
       >
         {/* Background Image */}
         <Image
-          src="/images/products/lounge_collection.png"
-          alt="Lounge collection"
+          src="/images/catalog/page-08.png"
+          alt="Aluminium Security Mesh Collection"
           fill
           className="object-cover"
           priority
@@ -124,18 +136,18 @@ const LoungeBanner = () => {
         <div className="absolute inset-0 flex flex-col justify-center px-10 lg:px-16 z-10">
           {/* "SAVE UP TO 50% OFF" underlined label */}
           <span className="inline-block text-[12px] font-bold tracking-[1px] text-[#1a2340] underline underline-offset-4 mb-4 uppercase">
-            Save up to 50% off
+            Safety. Strength. Solutions.
           </span>
 
           {/* Main heading */}
           <h2 className="text-[42px] lg:text-[54px] leading-[1.1] font-light text-[#1a2340] mb-8">
-            Lounge <br />
-            <span className="font-bold">collection</span>
+            Security <br />
+            <span className="font-bold">Solutions</span>
           </h2>
 
           {/* CTA button */}
           <Link
-            href="/shop"
+            href="/product-category/security-mesh"
             className="inline-block self-start px-8 py-4 bg-[#1a2340] text-white text-[13px] font-medium tracking-wide hover:bg-[#0d1420] transition-colors duration-300"
           >
             Explore category
@@ -210,14 +222,7 @@ const LoungeBanner = () => {
             >
               {product.name}
             </Link>
-            <div className="flex items-center justify-center gap-3">
-              <span className="text-[14px] text-[#828282] line-through">
-                ${product.originalPrice.toFixed(2)}
-              </span>
-              <span className="text-[16px] font-bold text-[#1a2340]">
-                ${product.price.toFixed(2)}
-              </span>
-            </div>
+            <div className="flex items-center justify-center gap-3"><span className="text-[16px] font-bold text-[#1a2340]">Get Quote</span></div>
           </div>
 
           {/* ── STATIC: dot indicators ── */}

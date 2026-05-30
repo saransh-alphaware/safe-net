@@ -7,35 +7,35 @@ import Link from 'next/link';
 const blogs = [
   {
     id: 1,
-    title: "The best influencers to follow for sartorial inspiration",
-    category: "DECOR",
-    date: "22 OCTOBER 2024",
-    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/10/demo-decor-store-blog-07-600x430.jpg",
-    slug: "influencers-inspiration"
+    title: "Why invisible grills are the safest choice for high-rise balconies",
+    category: "SAFETY",
+    date: "15 MARCH 2025",
+    image: "/images/products/invisible_grill_hero.png",
+    slug: "invisible-grills-high-rise-balconies"
   },
   {
     id: 2,
-    title: "Everything you need to know about decor’s big night out",
-    category: "DESIGN",
-    date: "22 OCTOBER 2024",
-    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/10/demo-decor-store-blog-08-600x430.jpg",
-    slug: "decors-big-night-out"
+    title: "HDPE vs Nylon bird nets: which one is right for your home?",
+    category: "GUIDE",
+    date: "20 APRIL 2025",
+    image: "/images/products/bird_net_hero.png",
+    slug: "hdpe-vs-nylon-bird-nets"
   },
   {
     id: 3,
-    title: "All the best looks & moments from the met gala 2023",
-    category: "DECOR",
-    date: "22 OCTOBER 2024",
-    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/10/demo-decor-store-blog-04-600x430.jpg",
-    slug: "looks-moments-met-gala"
+    title: "How pleated mosquito nets keep insects out without blocking airflow",
+    category: "TIPS",
+    date: "05 MAY 2025",
+    image: "/images/products/mosquito_net_hero.png",
+    slug: "pleated-mosquito-nets-airflow"
   },
   {
     id: 4,
-    title: "Find a colour palettes that reflects your passion",
-    category: "DECOR",
-    date: "22 OCTOBER 2024",
-    image: "https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/10/demo-decor-store-blog-03-600x430.jpg",
-    slug: "color-palettes-passion"
+    title: "Motorised zip screens: the smart upgrade for modern patios",
+    category: "INNOVATION",
+    date: "18 MAY 2025",
+    image: "/images/products/zip_screen_hero.png",
+    slug: "motorised-zip-screens-patios"
   }
 ];
 
@@ -47,10 +47,10 @@ const BlogSection = () => {
         {/* Centered Heading Section */}
         <div className="text-center mb-16">
           <span className="text-[12px] font-bold uppercase tracking-[3px] text-[#828282] mb-2 block">
-            DESIGNERS IDEAS
+            EXPERT INSIGHTS
           </span>
           <h2 className="text-[34px] lg:text-[40px] font-bold text-[#232323] leading-tight tracking-tight">
-            The decor article
+            The SafeNet blog
           </h2>
         </div>
 

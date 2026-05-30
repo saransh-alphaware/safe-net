@@ -13,12 +13,16 @@ export default function ShopPage() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [activeColor, setActiveColor] = useState<string | null>(null);
   const [activeFabric, setActiveFabric] = useState<string | null>(null);
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 150]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 250]);
   
   // View & Sorting States
   const [sortBy, setSortBy] = useState<string>('default');
   const [columns, setColumns] = useState<number>(3); // 2, 3 or 4 columns
   const [sortByOpen, setSortByOpen] = useState<boolean>(false);
+
+  // Pagination
+  const ITEMS_PER_PAGE = 9;
+  const [currentPage, setCurrentPage] = useState(1);
 
   // Compute filtered & sorted products
   const filteredProducts = useMemo(() => {
@@ -54,12 +58,20 @@ export default function ShopPage() {
     return result;
   }, [activeCategory, activeColor, activeFabric, priceRange, sortBy]);
 
+  // Reset to page 1 whenever filters change
+  const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
+  const paginatedProducts = filteredProducts.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
   const handleResetFilters = () => {
     setActiveCategory(null);
     setActiveColor(null);
     setActiveFabric(null);
-    setPriceRange([0, 150]);
+    setPriceRange([0, 250]);
     setSortBy('default');
+    setCurrentPage(1);
   };
 
   const getSortByLabel = () => {
@@ -80,7 +92,7 @@ export default function ShopPage() {
         <div className="container px-6 mx-auto">
           <div className="flex flex-col items-center justify-center text-center">
             <h1 className="text-[36px] lg:text-[44px] font-black text-primary uppercase tracking-tight mb-2">
-              {activeCategory ? activeCategory : 'Decor Store'}
+              {activeCategory ? activeCategory : 'SafeNet & Co.'}
             </h1>
             <div className="flex items-center gap-2 text-[12px] font-bold uppercase tracking-widest text-text-secondary">
               <a href="/" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Home</a>
@@ -213,7 +225,7 @@ export default function ShopPage() {
                 columns === 4 ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4' :
                 'grid-cols-1 sm:grid-cols-2 xl:grid-cols-3'
               }`}>
-                {filteredProducts.map((product) => (
+                {paginatedProducts.map((product) => (
                   <ProductCard 
                     key={product.id}
                     id={product.id}
@@ -229,13 +241,42 @@ export default function ShopPage() {
               </div>
             )}
 
-            {/* Pagination Grid */}
-            {filteredProducts.length > 0 && (
+            {/* Pagination */}
+            {totalPages > 1 && (
               <div className="mt-20 flex justify-center border-t border-border-custom pt-10">
-                <div className="flex gap-2.5">
-                  <span className="h-10 w-10 flex items-center justify-center bg-primary text-white text-[13px] font-bold rounded-[3px] select-none">1</span>
-                  <button className="h-10 w-10 flex items-center justify-center border border-border-custom text-[13px] font-bold text-text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all rounded-[3px] cursor-pointer">2</button>
-                  <button className="h-10 w-10 flex items-center justify-center border border-border-custom text-[13px] font-bold text-text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all rounded-[3px] cursor-pointer">→</button>
+                <div className="flex gap-2.5 flex-wrap justify-center">
+                  {/* Prev */}
+                  <button
+                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                    disabled={currentPage === 1}
+                    className="h-10 px-4 flex items-center justify-center border border-border-custom text-[13px] font-bold text-text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all rounded-[3px] cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+                  >
+                    ←
+                  </button>
+
+                  {/* Page numbers */}
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                    <button
+                      key={page}
+                      onClick={() => setCurrentPage(page)}
+                      className={`h-10 w-10 flex items-center justify-center text-[13px] font-bold rounded-[3px] transition-all cursor-pointer ${
+                        currentPage === page
+                          ? 'bg-primary text-white border border-primary'
+                          : 'border border-border-custom text-text-secondary hover:bg-primary hover:text-white hover:border-primary'
+                      }`}
+                    >
+                      {page}
+                    </button>
+                  ))}
+
+                  {/* Next */}
+                  <button
+                    onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                    disabled={currentPage === totalPages}
+                    className="h-10 px-4 flex items-center justify-center border border-border-custom text-[13px] font-bold text-text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all rounded-[3px] cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+                  >
+                    →
+                  </button>
                 </div>
               </div>
             )}

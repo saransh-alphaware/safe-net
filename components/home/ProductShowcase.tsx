@@ -13,21 +13,21 @@ interface Product {
 }
 
 const bestSellers: Product[] = [
-  { id: 1, name: 'Wifi speaker lamp', price: '$65.00', image: '/images/products/pottery.png', tag: 'New' as any },
-  { id: 2, name: 'Wall clock gray pink', price: '$85.00', image: '/images/products/florence_compact.png' },
-  { id: 3, name: 'Nordrana basket', price: '$65.00', originalPrice: '$85.00', image: '/images/products/pottery.png', tag: 'Sale' },
-  { id: 4, name: 'Sockeraert vase black', price: '$65.00', image: '/images/products/florence_compact.png' },
-  { id: 5, name: 'Palm leaf handmade', price: '$65.00', image: '/images/products/pottery.png' },
-  { id: 6, name: 'Earth globe black', price: '$55.00', originalPrice: '$65.00', image: '/images/products/florence_compact.png', tag: 'Sale' },
-  { id: 7, name: 'Fejka artificial plant', price: '$65.00', image: '/images/products/pottery.png' },
-  { id: 8, name: 'Vardande plant pot', price: '$27.00', image: '/images/products/florence_compact.png', tag: 'New' as any },
+  { id: 1, name: 'Invisible Grill SS316', price: 'Get Quote', image: '/images/products/invisible_grill_thumb.png', tag: 'Hot' as any },
+  { id: 2, name: 'Bird Net (HDPE)', price: 'Get Quote', image: '/images/products/bird_net_hdpe.png' },
+  { id: 3, name: 'Pleated Mosquito Net', price: 'Get Quote', image: '/images/products/mosquito_net_thumb.png', tag: 'New' },
+  { id: 4, name: 'Nylon Net (Diamond)', price: 'Get Quote', image: '/images/products/bird_net_nylon.png' },
+  { id: 5, name: 'Aluminium Security Mesh', price: 'Get Quote', image: '/images/products/aluminium_mesh_thumb.png' },
+  { id: 6, name: 'Motorised Zip Screen', price: 'Get Quote', image: '/images/products/zip_screen_thumb.png', tag: 'New' },
+  { id: 7, name: 'Wire Rope Grill', price: 'Get Quote', image: '/images/products/invisible_grill_wire_rope.png' },
+  { id: 8, name: 'Aluminium Track', price: 'Get Quote', image: '/images/products/invisible_grill_track.png', tag: 'Hot' as any },
 ];
 
 const newArrivals: Product[] = [
-  { id: 9, name: 'Modern Chair', price: '$120.00', image: '/images/products/pottery.png', tag: 'New' },
-  { id: 10, name: 'Designer Sofa', price: '$450.00', image: '/images/products/wooden_table.png', tag: 'Hot' },
-  { id: 11, name: 'Minimalist Vase', price: '$45.00', image: '/images/products/pottery.png' },
-  { id: 12, name: 'Classic Table', price: '$299.00', image: '/images/products/wooden_table.png' },
+  { id: 9, name: 'Invisible Grill (2mm)', price: 'Get Quote', image: '/images/products/invisible_grill_hero.png', tag: 'New' },
+  { id: 10, name: 'Motorised Zip Screen', price: 'Get Quote', image: '/images/products/zip_screen_thumb.png', tag: 'Hot' },
+  { id: 11, name: 'Bird Net (Nylon)', price: 'Get Quote', image: '/images/products/bird_net_nylon.png' },
+  { id: 12, name: 'Security Mesh Window', price: 'Get Quote', image: '/images/products/aluminium_mesh_thumb.png' },
 ];
 
 const ProductShowcase = () => {

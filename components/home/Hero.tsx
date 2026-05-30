@@ -10,19 +10,27 @@ import Button from '../ui/Button';
 const slides = [
   {
     id: 1,
-    title: 'Corby sofas',
-    price: '$199.00',
-    description: 'The three-seater works not just as the primary seating option, but also as an elegant statement piece.',
-    image: '/images/hero_sofa.png', // Fallback to existing
+    title: 'Invisible Grill',
+    price: 'Get a Quote',
+    description: 'High-tensile stainless steel cable system for balcony and window safety — nearly invisible from a distance.',
+    image: '/images/catalog/page-03.png',
     color: 'bg-[#F2F2F2]',
   },
   {
     id: 2,
-    title: 'Verona sofas',
-    price: '$259.00',
-    description: 'Expertly crafted with premium materials for ultimate comfort and modern style.',
-    image: '/images/hero_sofa.png',
+    title: 'Zip Screen',
+    price: 'Get a Quote',
+    description: 'Motorised & manual retractable zip screens for balconies, patios and windows. Protection with elegance.',
+    image: '/images/catalog/page-10.png',
     color: 'bg-[#E8E8E8]',
+  },
+  {
+    id: 3,
+    title: 'Mosquito Net',
+    price: 'Get a Quote',
+    description: 'Pleated polyester mesh nets for doors and windows — keeps insects out while maintaining fresh airflow.',
+    image: '/images/catalog/page-06.png',
+    color: 'bg-[#EAECF0]',
   }
 ];
 
@@ -64,7 +72,6 @@ const Hero = () => {
               </h1>
               
               <p className="text-lg text-text-secondary mb-8 flex items-center gap-2">
-                Price starting from 
                 <span className="text-primary font-bold border-b-2 border-primary pb-0.5">
                   {slide.price}
                 </span>
@@ -74,7 +81,7 @@ const Hero = () => {
                 <Link href="/shop" className="block">
                   <Button className="rounded-full px-8 py-6 bg-primary text-white flex items-center gap-3 group">
                     <ShoppingBag size={18} className="group-hover:scale-110 transition-transform" />
-                    <span className="font-bold tracking-wider text-xs">SHOP NOW</span>
+                    <span className="font-bold tracking-wider text-xs">GET QUOTE</span>
                   </Button>
                 </Link>
 

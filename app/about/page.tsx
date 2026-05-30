@@ -43,22 +43,22 @@ const AboutPage = () => {
                                         <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-2">
                                             <Star className="text-secondary fill-secondary" size={20} />
                                         </div>
-                                        <span className="text-[10px] font-bold uppercase tracking-[3px] text-text-secondary mb-1">Decors Store</span>
-                                        <h4 className="text-xl font-black text-primary leading-tight">2022 BEST <br/>DECOR AWARD</h4>
+                                         <span className="text-[10px] font-bold uppercase tracking-[3px] text-text-secondary mb-1">SafeNet & Co.</span>
+                                         <h4 className="text-xl font-black text-primary leading-tight">INDIA'S BEST <br/>SAFETY SOLUTIONS</h4>
                                     </div>
                                 </div>
                             </div>
                             <div className="w-full lg:w-7/12">
-                                <span className="text-[12px] font-bold uppercase tracking-[4px] text-secondary mb-6 block">Decor store story</span>
+                                <span className="text-[12px] font-bold uppercase tracking-[4px] text-secondary mb-6 block">Our Story</span>
                                 <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tighter leading-tight mb-8">
-                                    Commitment to <br/><span className="text-secondary italic">quality product.</span>
+                                    Commitment to <br/><span className="text-secondary italic">safety & quality.</span>
                                 </h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <p className="text-text-secondary leading-relaxed">
-                                        Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s.
+                                        SafeNet & Co. is a leading provider of high-quality safety net systems and modern invisible grills in India. We specialize in balcony safety, bird proofing, window safety meshes, and motorized zip screens.
                                     </p>
                                     <p className="text-text-secondary leading-relaxed">
-                                        When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+                                        Since our founding, we have focused on engineering robust, rust-free safety installations that blend seamlessly with modern architecture, ensuring unblocked views and maximum peace of mind.
                                     </p>
                                 </div>
                             </div>
@@ -106,10 +106,10 @@ const AboutPage = () => {
                     <div className="container">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                             {[
-                                { year: '2005', title: 'Business founded', desc: 'Lorem ipsum is simply dummy text area.' },
-                                { year: '2012', title: 'Build new office', desc: 'Lorem ipsum is simply dummy text area.' },
-                                { year: '2018', title: 'Winning awards', desc: 'Lorem ipsum is simply dummy text area.' },
-                                { year: '2024', title: 'Global expansion', desc: 'Lorem ipsum is simply dummy text area.' }
+                                { year: '2015', title: 'SafeNet Founded', desc: 'Started high-quality safety net installations in Mumbai.' },
+                                { year: '2018', title: 'Delhi Office Opened', desc: 'Expanded safety solutions to New Delhi & NCR region.' },
+                                { year: '2021', title: 'Invisible Grill Launch', desc: 'Introduced high-tensile SS316 invisible grills.' },
+                                { year: '2024', title: 'Motorised Zip Screens', desc: 'Launched premium weather-proof zip screens.' }
                             ].map((item, idx) => (
                                 <motion.div 
                                     key={idx}
@@ -204,7 +204,7 @@ const AboutPage = () => {
                 <section className="py-24 border-t border-border-custom grayscale opacity-50 overflow-hidden">
                     <div className="container">
                         <div className="flex flex-wrap items-center justify-between gap-12">
-                            {['PEPPERFRY', 'ARTICLE', 'INSTAGRAM', 'FORBES', 'SAMSUNG'].map((brand, i) => (
+                            {['TATA STEEL', 'SAIL', 'AIS GLASS', 'JINDAL STEEL', 'SAMSUNG'].map((brand, i) => (
                                 <span key={i} className="text-2xl font-black text-primary tracking-[5px]">{brand}</span>
                             ))}
                         </div>

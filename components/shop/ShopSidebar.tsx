@@ -23,17 +23,16 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
   onSelectColor,
   activeFabric = null,
   onSelectFabric,
-  priceRange = [0, 150],
+  priceRange = [0, 250],
   onSelectPriceRange,
 }) => {
   // Compute counts dynamically
-  const categories = [
-    { name: "Cabinet" },
-    { name: "Chair" },
-    { name: "Ceramic pots", categoryRef: "Decor" },
-    { name: "Designer sofa", categoryRef: "Sofa" },
-    { name: "Designer stool", categoryRef: "Stool" },
-    { name: "Furniture" }
+  const categories: { name: string; categoryRef?: string }[] = [
+    { name: "Invisible Grill" },
+    { name: "Bird Net" },
+    { name: "Mosquito Net" },
+    { name: "Security Mesh" },
+    { name: "Zip Screen" }
   ];
 
   const colors = [
@@ -48,10 +47,11 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
   ];
 
   const fabrics = [
-    { name: 'Crepe fabric', color: '#1a535c' },
-    { name: 'Jute fabric', color: '#bc8a7e' },
-    { name: 'Polyolefin', color: '#a66e38' },
-    { name: 'Wollen fabric', color: '#334e68' },
+    { name: 'Nylon', color: '#f0f0f0' },
+    { name: 'HDPE', color: '#232323' },
+    { name: 'Polyester', color: '#bc8a7e' },
+    { name: 'Aluminium', color: '#9d9d9d' },
+    { name: 'Stainless Steel', color: '#5c8abd' },
   ];
 
   // Helper to count occurrences
@@ -68,13 +68,13 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
     return products.filter(p => p.fabrics.includes(fabricName)).length;
   };
 
-  const hasAnyFilterActive = activeCategory || activeColor || activeFabric || priceRange[0] > 0 || priceRange[1] < 150;
+  const hasAnyFilterActive = activeCategory || activeColor || activeFabric || priceRange[0] > 0 || priceRange[1] < 250;
 
   const handleReset = () => {
     if (onSelectCategory) onSelectCategory(null);
     if (onSelectColor) onSelectColor(null);
     if (onSelectFabric) onSelectFabric(null);
-    if (onSelectPriceRange) onSelectPriceRange([0, 150]);
+    if (onSelectPriceRange) onSelectPriceRange([0, 250]);
   };
 
   return (
@@ -110,10 +110,10 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
                 <X size={10} className="cursor-pointer" onClick={() => onSelectFabric && onSelectFabric(null)} />
               </span>
             )}
-            {(priceRange[0] > 0 || priceRange[1] < 150) && (
+            {(priceRange[0] > 0 || priceRange[1] < 250) && (
               <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white text-[12px] font-bold border border-border-custom rounded-full">
                 ${priceRange[0]} - ${priceRange[1]}
-                <X size={10} className="cursor-pointer" onClick={() => onSelectPriceRange && onSelectPriceRange([0, 150])} />
+                <X size={10} className="cursor-pointer" onClick={() => onSelectPriceRange && onSelectPriceRange([0, 250])} />
               </span>
             )}
           </div>
@@ -169,7 +169,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
           <input
             type="range"
             min="0"
-            max="150"
+            max="250"
             value={priceRange[1]}
             onChange={(e) => onSelectPriceRange && onSelectPriceRange([priceRange[0], parseInt(e.target.value)])}
             className="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"

@@ -28,7 +28,7 @@ const ContactPage = () => {
       <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center bg-[#f8f8f8] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/images/products/lounge_collection.png" 
+            src="/images/catalog/page-12.png" 
             alt="Contact Hero" 
             fill 
             className="object-cover opacity-10 grayscale"
@@ -53,31 +53,31 @@ const ContactPage = () => {
             {[
               { 
                 icon: <MapPin size={18} />, 
-                title: 'Office location', 
-                detail1: '16122 Collins street,',
-                detail2: 'Melbourne, Australia',
+                title: 'Office locations', 
+                detail1: 'Andheri (E), Mumbai',
+                detail2: 'Najafgarh, New Delhi',
                 link: '#'
               },
               { 
                 icon: <Mail size={18} />, 
                 title: 'Send a message', 
-                detail1: 'info@yourdomain.com',
-                detail2: 'sales@yourdomain.com',
-                link: 'mailto:info@yourdomain.com'
+                detail1: 'safenetandco@gmail.com',
+                detail2: 'info@safenetandco.com',
+                link: 'mailto:safenetandco@gmail.com'
               },
               { 
                 icon: <Phone size={18} />, 
                 title: 'Call us directly', 
-                detail1: '1-800-222-000',
-                detail2: '1-800-222-002',
-                link: 'tel:1800222000'
+                detail1: '+91 8080703321',
+                detail2: '+91 8851606948',
+                link: 'tel:+918080703321'
               },
               { 
                 icon: <Users size={18} />, 
                 title: 'Join our team', 
-                detail1: 'hire@yourdomain.com',
-                detail2: 'hr@yourdomain.com',
-                link: 'mailto:hire@yourdomain.com'
+                detail1: 'hr@safenetandco.com',
+                detail2: 'careers@safenetandco.com',
+                link: 'mailto:safenetandco@gmail.com'
               }
             ].map((card, idx) => (
               <motion.div 
@@ -128,8 +128,8 @@ const ContactPage = () => {
                 className="relative aspect-[4/3] lg:aspect-[1.4/1] w-full shadow-custom-lg"
               >
                 <Image 
-                  src="https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2024/04/demo-decor-store-contact-01.jpg.webp" 
-                  alt="Contact Furniture" 
+                  src="/images/products/invisible_grill_hero.png" 
+                  alt="Contact Safety Solutions" 
                   fill 
                   className="object-cover"
                 />
@@ -218,7 +218,7 @@ const ContactPage = () => {
         {/* Grayscale Map Background */}
         <div className="absolute inset-0 grayscale contrast-125 opacity-40">
           <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093747!2d144.9537353153167!3d-37.81627977975124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce6e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sin!4v1619524964552!5m2!1sen!2sin" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.7891253457193!2d72.85966597587889!3d19.117967950785197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c83c05c6e86f%3A0x334468f760e0a5d5!2sAndheri%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1717170000000!5m2!1sen!2sin" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
@@ -237,10 +237,10 @@ const ContactPage = () => {
             className="bg-white shadow-custom-lg flex flex-col items-center text-center w-[300px] mb-[-1px]"
           >
             <div className="p-8">
-              <h4 className="text-[15px] font-black text-primary uppercase tracking-wider mb-2">Crafto Decor Store</h4>
+              <h4 className="text-[15px] font-black text-primary uppercase tracking-wider mb-2">SafeNet & Co.</h4>
               <p className="text-[13px] text-[#828282] leading-relaxed">
-                16122 Collins street,<br />
-                Melbourne, Australia
+                27, Jija Mata Marg, Pumphouse,<br />
+                Andheri (East), Mumbai - 400093
               </p>
             </div>
             <a 

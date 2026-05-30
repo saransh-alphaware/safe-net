@@ -11,66 +11,37 @@ export interface CollectionItem {
 export const collectionsData: CollectionItem[] = [
   {
     id: 1,
-    title: "Wooden table",
-    image:
-      "https://crafto.themezaa.com/decor-store/images/demo-decor-store-menu-collections-07.jpg",
+    title: "Invisible Grill",
+    image: "/images/products/invisible_grill_hero.png",
     count: "04",
-    href: "/collections/wooden-table",
+    href: "/product-category/invisible-grill",
   },
   {
     id: 2,
-    title: "Table lamp",
-    image:
-      "https://crafto.themezaa.com/decor-store/images/demo-decor-store-menu-collections-06.jpg",
-    count: "04",
-    href: "/collections/table-lamp",
+    title: "Bird Net",
+    image: "/images/products/bird_net_hero.png",
+    count: "03",
+    href: "/product-category/bird-net",
   },
   {
     id: 3,
-    title: "Table clock",
-    image:
-      "https://crafto.themezaa.com/decor-store/images/demo-decor-store-menu-collections-03.jpg",
-    count: "04",
-    href: "/collections/table-clock",
+    title: "Mosquito Net",
+    image: "/images/products/mosquito_net_hero.png",
+    count: "02",
+    href: "/product-category/mosquito-net",
   },
   {
     id: 4,
-    title: "Modern chair",
-    image:
-      "https://crafto.themezaa.com/decor-store/images/demo-decor-store-menu-collections-02.jpg",
-    count: "04",
-    href: "/collections/modern-chair",
+    title: "Security Mesh",
+    image: "/images/products/aluminium_mesh_hero.png",
+    count: "02",
+    href: "/product-category/security-mesh",
   },
   {
     id: 5,
-    title: "Home decor",
-    image:
-      "https://crafto.themezaa.com/decor-store/images/demo-decor-store-menu-collections-04.jpg",
-    count: "04",
-    href: "/collections/home-decor",
-  },
-  {
-    id: 6,
-    title: "Designer stool",
-    image:
-      "https://crafto.themezaa.com/decor-store/images/demo-decor-store-menu-collections-01.jpg",
-    count: "04",
-    href: "/collections/designer-stool",
-  },
-  {
-    id: 7,
-    title: "Designer sofa",
-    image:
-      "https://crafto.themezaa.com/decor-store/images/demo-decor-store-menu-collections-08.jpg",
-    count: "04",
-    href: "/collections/designer-sofa",
-  },
-  {
-    id: 8,
-    title: "Ceramic pots",
-    image:
-      "https://crafto.themezaa.com/decor-store/images/demo-decor-store-menu-collections-05.jpg",
-    count: "04",
-    href: "/collections/ceramic-pots",
+    title: "Zip Screen",
+    image: "/images/products/zip_screen_hero.png",
+    count: "02",
+    href: "/product-category/zip-screen",
   },
 ];
