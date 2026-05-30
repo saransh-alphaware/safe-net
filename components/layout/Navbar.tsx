@@ -1,8 +1,14 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useApp } from '@/lib/context/AppContext';
+import CartDrawer from './CartDrawer';
+import SearchDrawer from './SearchDrawer';
 
 const Navbar = () => {
+  const { cart, setCartOpen, setSearchOpen } = useApp();
   return (
     <header id="masthead" className="site-header w-full">
       {/* Mini Header / Promo Bar */}
@@ -223,19 +229,33 @@ const Navbar = () => {
 
           {/* Action Icons */}
           <div className="flex gap-6 items-center">
-            <button className="hover:text-secondary transition-colors p-1" aria-label="Search">
+            <button 
+              onClick={() => setSearchOpen(true)}
+              className="hover:text-secondary transition-colors p-1 cursor-pointer" 
+              aria-label="Search"
+            >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
             </button>
             <Link href="/account" className="hidden sm:block hover:text-secondary transition-colors text-[14px] font-semibold uppercase tracking-wide">
               My account
             </Link>
-            <button className="relative hover:text-secondary transition-colors p-1" aria-label="Cart">
+            <button 
+              onClick={() => setCartOpen(true)}
+              className="relative hover:text-secondary transition-colors p-1 cursor-pointer" 
+              aria-label="Cart"
+            >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-              <span className="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+              <span className="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
+                {cart.reduce((sum, item) => sum + item.quantity, 0)}
+              </span>
             </button>
           </div>
         </div>
       </div>
+
+      {/* Global Drawers rendering */}
+      <CartDrawer />
+      <SearchDrawer />
     </header>
   );
 };

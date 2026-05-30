@@ -1,7 +1,11 @@
+'use client';
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ShoppingBag, Eye, Layers } from "lucide-react";
+import { ShoppingBag, Eye, Heart } from "lucide-react";
+import { useApp } from "@/lib/context/AppContext";
+import { products } from "@/lib/data/products";
 
 interface ProductCardProps {
   image: string;
@@ -18,9 +22,18 @@ const ProductCard: React.FC<ProductCardProps> = ({
   tag,
   originalPrice,
 }) => {
+  const { addToCart, setQuickViewProduct, toggleWishlist, isInWishlist } = useApp();
+
+  // Find the exact matching product from database by name
+  const product = React.useMemo(() => {
+    return products.find(p => p.name.toLowerCase() === name.toLowerCase()) || products[0];
+  }, [name]);
+
+  const activeInWishlist = isInWishlist(product.id);
+
   return (
     <div className="group flex flex-col gap-5">
-      <div className="relative aspect-[4/5] bg-[#F9F9F9] overflow-hidden group/image">
+      <div className="relative aspect-[4/5] bg-[#F9F9F9] overflow-hidden group/image border border-transparent hover:border-border-custom transition-all duration-300">
         {/* Badges */}
         {tag && (
           <div className="absolute top-5 left-5 z-20">
@@ -40,13 +53,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
         {/* Product Image */}
         <Link
-          href={`/product/${name.toLowerCase().replace(/ /g, "-")}`}
+          href={`/product/${product.slug}`}
           className="block h-full w-full"
         >
           <Image
-            src={image}
+            src={product.imageUrl || image}
             alt={name}
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="object-cover transition-transform duration-700 group-hover/image:scale-110"
           />
         </Link>
@@ -54,39 +68,46 @@ const ProductCard: React.FC<ProductCardProps> = ({
         {/* Hover Actions — slide up from bottom with staggered animation */}
         <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-30">
           <button
-            className="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-all duration-300 translate-y-6 opacity-0 group-hover/image:translate-y-0 group-hover/image:opacity-100"
+            onClick={() => addToCart(product, 1)}
+            className="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-all duration-300 translate-y-6 opacity-0 group-hover/image:translate-y-0 group-hover/image:opacity-100 cursor-pointer"
             style={{ transitionDelay: '0ms' }}
             title="Add to cart"
           >
-            <ShoppingBag size={17} strokeWidth={1.5} />
+            <ShoppingBag size={15} strokeWidth={2} />
           </button>
           <button
-            className="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-all duration-300 translate-y-6 opacity-0 group-hover/image:translate-y-0 group-hover/image:opacity-100"
+            onClick={() => setQuickViewProduct(product)}
+            className="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-all duration-300 translate-y-6 opacity-0 group-hover/image:translate-y-0 group-hover/image:opacity-100 cursor-pointer"
             style={{ transitionDelay: '80ms' }}
             title="Quick view"
           >
-            <Eye size={17} strokeWidth={1.5} />
+            <Eye size={15} strokeWidth={2} />
           </button>
           <button
-            className="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-all duration-300 translate-y-6 opacity-0 group-hover/image:translate-y-0 group-hover/image:opacity-100"
+            onClick={() => toggleWishlist(product)}
+            className={`w-11 h-11 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 translate-y-6 opacity-0 group-hover/image:translate-y-0 group-hover/image:opacity-100 cursor-pointer ${
+              activeInWishlist 
+                ? 'bg-primary text-white' 
+                : 'bg-white text-primary hover:bg-primary hover:text-white'
+            }`}
             style={{ transitionDelay: '160ms' }}
-            title="Compare"
+            title={activeInWishlist ? "In Wishlist" : "Add to wishlist"}
           >
-            <Layers size={17} strokeWidth={1.5} />
+            <Heart size={15} strokeWidth={2} className={activeInWishlist ? "fill-white" : ""} />
           </button>
         </div>
       </div>
 
       <div className="flex flex-col gap-1 items-start">
         <Link
-          href={`/product/${name.toLowerCase().replace(/ /g, "-")}`}
+          href={`/product/${product.slug}`}
           className="text-[15px] font-bold text-primary hover:text-secondary transition-colors leading-tight"
         >
           {name}
         </Link>
         <div className="flex items-center gap-2">
           {originalPrice && (
-            <span className="text-[14px] text-text-secondary line-through opacity-50">
+            <span className="text-[14px] text-text-secondary line-through opacity-50 font-medium">
               {originalPrice}
             </span>
           )}

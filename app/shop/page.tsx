@@ -8,39 +8,39 @@ import ShopSidebar from '@/components/shop/ShopSidebar';
 import { LayoutGrid, List, ChevronDown, RefreshCw } from 'lucide-react';
 import { products } from '@/lib/data/products';
 
-interface PageProps {
-  params: Promise<{ slug: string }>;
-}
-
-export default function CategoryPage({ params }: PageProps) {
-  const { slug } = React.use(params);
+export default function ShopPage() {
+  // Filter States
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeColor, setActiveColor] = useState<string | null>(null);
+  const [activeFabric, setActiveFabric] = useState<string | null>(null);
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 150]);
   
   // View & Sorting States
   const [sortBy, setSortBy] = useState<string>('default');
-  const [columns, setColumns] = useState<number>(3);
+  const [columns, setColumns] = useState<number>(3); // 2, 3 or 4 columns
   const [sortByOpen, setSortByOpen] = useState<boolean>(false);
 
-  // Format category slug to matching name
-  const categoryName = useMemo(() => {
-    const norm = slug.toLowerCase();
-    if (norm === 'designer-stool' || norm === 'stool') return 'Stool';
-    if (norm === 'designer-sofa' || norm === 'sofa') return 'Sofa';
-    if (norm === 'ceramic-pots' || norm === 'decor') return 'Decor';
-    if (norm === 'wooden-table' || norm === 'furniture') return 'Furniture';
-    if (norm === 'cabinet') return 'Cabinet';
-    if (norm === 'chair') return 'Chair';
-    if (norm === 'lamp') return 'Lamp';
-    if (norm === 'light') return 'Light';
-    
-    // Capitalize fallback
-    return slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ');
-  }, [slug]);
+  // Compute filtered & sorted products
+  const filteredProducts = useMemo(() => {
+    let result = [...products];
 
-  // Compute matching products
-  const categoryProducts = useMemo(() => {
-    let result = products.filter(
-      p => p.category.toLowerCase() === categoryName.toLowerCase()
-    );
+    // Category filter
+    if (activeCategory) {
+      result = result.filter(p => p.category.toLowerCase() === activeCategory.toLowerCase());
+    }
+
+    // Color filter
+    if (activeColor) {
+      result = result.filter(p => p.colors.includes(activeColor));
+    }
+
+    // Fabric filter
+    if (activeFabric) {
+      result = result.filter(p => p.fabrics.includes(activeFabric));
+    }
+
+    // Price filter
+    result = result.filter(p => p.price >= priceRange[0] && p.price <= priceRange[1]);
 
     // Sorting
     if (sortBy === 'price-asc') {
@@ -52,7 +52,15 @@ export default function CategoryPage({ params }: PageProps) {
     }
 
     return result;
-  }, [categoryName, sortBy]);
+  }, [activeCategory, activeColor, activeFabric, priceRange, sortBy]);
+
+  const handleResetFilters = () => {
+    setActiveCategory(null);
+    setActiveColor(null);
+    setActiveFabric(null);
+    setPriceRange([0, 150]);
+    setSortBy('default');
+  };
 
   const getSortByLabel = () => {
     switch (sortBy) {
@@ -67,44 +75,58 @@ export default function CategoryPage({ params }: PageProps) {
     <div className="flex min-h-screen flex-col bg-white">
       <Navbar />
 
-      {/* Breadcrumbs Header */}
+      {/* Breadcrumb / Title Bar */}
       <div className="bg-[#f8f9fa] py-14">
         <div className="container px-6 mx-auto">
           <div className="flex flex-col items-center justify-center text-center">
             <h1 className="text-[36px] lg:text-[44px] font-black text-primary uppercase tracking-tight mb-2">
-              {categoryName}
+              {activeCategory ? activeCategory : 'Decor Store'}
             </h1>
             <div className="flex items-center gap-2 text-[12px] font-bold uppercase tracking-widest text-text-secondary">
               <a href="/" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Home</a>
               <span>/</span>
-              <a href="/shop" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Product Category</a>
-              <span>/</span>
-              <span className="text-primary/40">{categoryName}</span>
+              <a href="/shop" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Shop</a>
+              {activeCategory && (
+                <>
+                  <span>/</span>
+                  <span className="text-primary/40">{activeCategory}</span>
+                </>
+              )}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Content Layout */}
+      {/* Main Catalog Area */}
       <main className="container px-6 mx-auto py-16 lg:py-24">
         <div className="flex flex-col lg:flex-row gap-16">
           
-          {/* Sidebar */}
+          {/* Left Column: Sidebar Filters */}
           <div className="w-full lg:w-[280px] shrink-0">
-            <ShopSidebar activeCategory={categoryName} />
+            <ShopSidebar 
+              activeCategory={activeCategory}
+              onSelectCategory={setActiveCategory}
+              activeColor={activeColor}
+              onSelectColor={setActiveColor}
+              activeFabric={activeFabric}
+              onSelectFabric={setActiveFabric}
+              priceRange={priceRange}
+              onSelectPriceRange={setPriceRange}
+            />
           </div>
 
-          {/* Catalog Listing Area */}
+          {/* Right Column: Products Display */}
           <div className="flex-grow">
             
-            {/* Toolbar */}
+            {/* Top Toolbar Controls */}
             <div className="mb-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-6 border-b border-border-custom relative z-40">
               <div className="text-[14px] font-medium text-text-secondary">
-                Showing <span className="font-bold text-primary">{categoryProducts.length} results</span>
+                Showing {filteredProducts.length === products.length ? 'all ' : ''} 
+                <span className="font-bold text-primary">{filteredProducts.length} results</span>
               </div>
               
               <div className="flex items-center gap-8 w-full sm:w-auto justify-between sm:justify-end">
-                {/* Column toggle controls */}
+                {/* Columns layout grid selectors */}
                 <div className="hidden md:flex items-center gap-4">
                   <span className="text-[11px] font-black uppercase tracking-widest text-primary/40">Columns:</span>
                   <div className="flex gap-1.5">
@@ -169,21 +191,21 @@ export default function CategoryPage({ params }: PageProps) {
             </div>
 
             {/* Catalog Grid */}
-            {categoryProducts.length === 0 ? (
+            {filteredProducts.length === 0 ? (
               <div className="py-20 flex flex-col items-center justify-center text-center gap-6">
-                <RefreshCw size={36} className="text-text-secondary opacity-40 animate-spin" />
+                <RefreshCw size={40} className="text-text-secondary opacity-40 animate-spin duration-1000" />
                 <div>
-                  <h3 className="text-[18px] font-bold uppercase tracking-wider mb-2">No products in this category</h3>
+                  <h3 className="text-[18px] font-bold uppercase tracking-wider mb-2">No products match your filters</h3>
                   <p className="text-[14px] text-text-secondary max-w-[340px] leading-relaxed">
-                    Check back later or search other categories in our design catalog.
+                    Try broadening your selection by resetting colorways, fabrics, or price limits.
                   </p>
                 </div>
-                <a 
-                  href="/shop" 
-                  className="px-8 py-3.5 bg-primary text-white text-[11px] font-black uppercase tracking-widest hover:bg-secondary transition-all rounded-[2px]"
+                <button 
+                  onClick={handleResetFilters}
+                  className="px-8 py-3.5 bg-primary text-white text-[11px] font-black uppercase tracking-widest hover:bg-secondary transition-all rounded-[2px] cursor-pointer"
                 >
-                  Return to shop
-                </a>
+                  Reset all filters
+                </button>
               </div>
             ) : (
               <div className={`grid gap-x-8 gap-y-14 transition-all duration-500 ${
@@ -191,7 +213,7 @@ export default function CategoryPage({ params }: PageProps) {
                 columns === 4 ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4' :
                 'grid-cols-1 sm:grid-cols-2 xl:grid-cols-3'
               }`}>
-                {categoryProducts.map((product) => (
+                {filteredProducts.map((product) => (
                   <ProductCard 
                     key={product.id}
                     id={product.id}
@@ -204,6 +226,17 @@ export default function CategoryPage({ params }: PageProps) {
                     slug={product.slug}
                   />
                 ))}
+              </div>
+            )}
+
+            {/* Pagination Grid */}
+            {filteredProducts.length > 0 && (
+              <div className="mt-20 flex justify-center border-t border-border-custom pt-10">
+                <div className="flex gap-2.5">
+                  <span className="h-10 w-10 flex items-center justify-center bg-primary text-white text-[13px] font-bold rounded-[3px] select-none">1</span>
+                  <button className="h-10 w-10 flex items-center justify-center border border-border-custom text-[13px] font-bold text-text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all rounded-[3px] cursor-pointer">2</button>
+                  <button className="h-10 w-10 flex items-center justify-center border border-border-custom text-[13px] font-bold text-text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all rounded-[3px] cursor-pointer">→</button>
+                </div>
               </div>
             )}
 
