@@ -8,6 +8,7 @@ import { Star, Minus, Plus, Heart, Share2, Mail, Check } from 'lucide-react';
 import Image from 'next/image';
 import { useApp } from '@/lib/context/AppContext';
 import { products } from '@/lib/data/products';
+import Link from 'next/link';
 
 
 
@@ -80,11 +81,11 @@ export default function ProductDetailPage({
           
           {/* Breadcrumbs */}
           <nav className="mb-12 flex flex-wrap items-center gap-2 text-[12px] font-bold uppercase tracking-widest text-text-secondary">
-            <a href="/" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Home</a>
+            <Link href="/" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Home</Link>
             <span>{">"}</span>
-            <a href="/shop" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Shop</a>
+            <Link href="/shop" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Shop</Link>
             <span>{">"}</span>
-            <a href={`/shop?category=${product.category}`} className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">{product.category}</a>
+            <Link href={`/shop?category=${product.category}`} className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">{product.category}</Link>
             <span>{">"}</span>
             <span className="text-primary/40">{product.name}</span>
           </nav>

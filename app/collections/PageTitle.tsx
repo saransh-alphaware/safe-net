@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function PageTitle() {
   return (
     <div className="bg-[#f8f9fa] py-14">
@@ -7,12 +9,12 @@ export default function PageTitle() {
             {"Collections"}
           </h1>
           <div className="flex items-center gap-2 text-[16px] tracking-widest text-text-secondary">
-            <a
+            <Link
               href="/"
               className="hover:text-secondary transition-colors decoration-secondary/30 underline-offset-4"
             >
               Home
-            </a>
+            </Link>
             <span>{">"}</span>
             <span className="hover:text-secondary transition-colors decoration-secondary/30 underline-offset-4">
               Collections

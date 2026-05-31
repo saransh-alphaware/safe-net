@@ -13,10 +13,11 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }))
 }
 
-export default function Page({
+export default async function Page({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>;
 }) {
-  return <CategoryClient slug={params.slug} />
+  const { slug } = await params;
+  return <CategoryClient slug={slug} />
 }

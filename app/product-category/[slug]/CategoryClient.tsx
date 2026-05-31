@@ -7,6 +7,7 @@ import ProductCard from '@/components/shop/ProductCard';
 import ShopSidebar from '@/components/shop/ShopSidebar';
 import { ChevronDown, RefreshCw } from 'lucide-react';
 import { products } from '@/lib/data/products';
+import Link from 'next/link';
 
 
 export default function CategoryClient({
@@ -75,9 +76,9 @@ export default function CategoryClient({
               {categoryName}
             </h1>
             <div className="flex items-center gap-2 text-[12px] font-bold uppercase tracking-widest text-text-secondary">
-              <a href="/" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Home</a>
+              <Link href="/" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Home</Link>
               <span>{">"}</span>
-              <a href="/shop" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Product Category</a>
+              <Link href="/shop" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Product Category</Link>
               <span>{">"}</span>
               <span className="text-primary/40">{categoryName}</span>
             </div>

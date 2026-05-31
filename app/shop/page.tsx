@@ -7,6 +7,7 @@ import ProductCard from '@/components/shop/ProductCard';
 import ShopSidebar from '@/components/shop/ShopSidebar';
 import { ChevronDown, RefreshCw } from 'lucide-react';
 import { products } from '@/lib/data/products';
+import Link from 'next/link';
 
 export default function ShopPage() {
   // Filter States
@@ -95,9 +96,9 @@ export default function ShopPage() {
               {activeCategory ? activeCategory : 'SafeNet & Co.'}
             </h1>
             <div className="flex items-center gap-2 text-[16px] tracking-widest text-text-secondary">
-              <a href="/" className="hover:text-secondary transition-colors decoration-secondary/30 underline-offset-4">Home</a>
+              <Link href="/" className="hover:text-secondary transition-colors decoration-secondary/30 underline-offset-4">Home</Link>
               <span>{">"}</span>
-              <a href="/shop" className="hover:text-secondary transition-colors decoration-secondary/30 underline-offset-4">Shop</a>
+              <Link href="/shop" className="hover:text-secondary transition-colors decoration-secondary/30 underline-offset-4">Shop</Link>
               {activeCategory && (
                 <>
                   <span>{">"}</span>
