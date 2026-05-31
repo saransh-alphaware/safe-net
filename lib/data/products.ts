@@ -21,11 +21,11 @@ export const products: Product[] = [
     name: 'Invisible Grill SS316',
     price: 65.00,
     originalPrice: 85.00,
-    imageUrl: '/images/products/invisible_grill_wire_rope.png',
+    imageUrl: '/safe-net/images/products/invisible_grill_wire_rope.png',
     gallery: [
-      '/images/products/invisible_grill_wire_rope.png',
-      '/images/products/invisible_grill_hero.png',
-      '/images/products/invisible_grill_thumb.png'
+      '/safe-net/images/products/invisible_grill_wire_rope.png',
+      '/safe-net/images/products/invisible_grill_hero.png',
+      '/safe-net/images/products/invisible_grill_thumb.png'
     ],
     category: 'Invisible Grill',
     colors: ['Silver'],
@@ -41,10 +41,10 @@ export const products: Product[] = [
     name: 'Bird Net (HDPE)',
     price: 38.00,
     originalPrice: 48.00,
-    imageUrl: '/images/products/bird_net_hdpe.png',
+    imageUrl: '/safe-net/images/products/bird_net_hdpe.png',
     gallery: [
-      '/images/products/bird_net_hdpe.png',
-      '/images/products/bird_net_hero.png'
+      '/safe-net/images/products/bird_net_hdpe.png',
+      '/safe-net/images/products/bird_net_hero.png'
     ],
     category: 'Bird Net',
     colors: ['Black', 'White'],
@@ -59,10 +59,10 @@ export const products: Product[] = [
     name: 'Pleated Mosquito Net',
     price: 75.00,
     originalPrice: 95.00,
-    imageUrl: '/images/products/mosquito_net_thumb.png',
+    imageUrl: '/safe-net/images/products/mosquito_net_thumb.png',
     gallery: [
-      '/images/products/mosquito_net_thumb.png',
-      '/images/products/mosquito_net_hero.png'
+      '/safe-net/images/products/mosquito_net_thumb.png',
+      '/safe-net/images/products/mosquito_net_hero.png'
     ],
     category: 'Mosquito Net',
     colors: ['Black', 'White', 'Silver'],
@@ -77,10 +77,10 @@ export const products: Product[] = [
     id: '4',
     name: 'Nylon Net (Diamond)',
     price: 28.00,
-    imageUrl: '/images/products/bird_net_nylon.png',
+    imageUrl: '/safe-net/images/products/bird_net_nylon.png',
     gallery: [
-      '/images/products/bird_net_nylon.png',
-      '/images/products/bird_net_hero.png'
+      '/safe-net/images/products/bird_net_nylon.png',
+      '/safe-net/images/products/bird_net_hero.png'
     ],
     category: 'Bird Net',
     colors: ['Black', 'Transparent'],
@@ -94,10 +94,10 @@ export const products: Product[] = [
     id: '5',
     name: 'Aluminium Security Mesh',
     price: 110.00,
-    imageUrl: '/images/products/aluminium_mesh_thumb.png',
+    imageUrl: '/safe-net/images/products/aluminium_mesh_thumb.png',
     gallery: [
-      '/images/products/aluminium_mesh_thumb.png',
-      '/images/products/aluminium_mesh_hero.png'
+      '/safe-net/images/products/aluminium_mesh_thumb.png',
+      '/safe-net/images/products/aluminium_mesh_hero.png'
     ],
     category: 'Security Mesh',
     colors: ['Black', 'Silver'],
@@ -112,10 +112,10 @@ export const products: Product[] = [
     name: 'Motorised Zip Screen',
     price: 180.00,
     originalPrice: 220.00,
-    imageUrl: '/images/products/zip_screen_hero.png',
+    imageUrl: '/safe-net/images/products/zip_screen_hero.png',
     gallery: [
-      '/images/products/zip_screen_hero.png',
-      '/images/products/zip_screen_thumb.png'
+      '/safe-net/images/products/zip_screen_hero.png',
+      '/safe-net/images/products/zip_screen_thumb.png'
     ],
     category: 'Zip Screen',
     colors: ['Black', 'White', 'Silver'],
@@ -130,10 +130,10 @@ export const products: Product[] = [
     id: '7',
     name: 'Wire Rope Grill',
     price: 40.00,
-    imageUrl: '/images/products/invisible_grill_wire_rope.png',
+    imageUrl: '/safe-net/images/products/invisible_grill_wire_rope.png',
     gallery: [
-      '/images/products/invisible_grill_wire_rope.png',
-      '/images/products/invisible_grill_hero.png'
+      '/safe-net/images/products/invisible_grill_wire_rope.png',
+      '/safe-net/images/products/invisible_grill_hero.png'
     ],
     category: 'Invisible Grill',
     colors: ['Silver'],
@@ -148,10 +148,10 @@ export const products: Product[] = [
     name: 'Aluminium Track',
     price: 45.00,
     originalPrice: 55.00,
-    imageUrl: '/images/products/invisible_grill_track.png',
+    imageUrl: '/safe-net/images/products/invisible_grill_track.png',
     gallery: [
-      '/images/products/invisible_grill_track.png',
-      '/images/products/invisible_grill_hero.png'
+      '/safe-net/images/products/invisible_grill_track.png',
+      '/safe-net/images/products/invisible_grill_hero.png'
     ],
     category: 'Invisible Grill',
     colors: ['Silver'],
@@ -166,10 +166,10 @@ export const products: Product[] = [
     id: '9',
     name: 'Invisible Grill (2mm)',
     price: 90.00,
-    imageUrl: '/images/products/invisible_grill_hero.png',
+    imageUrl: '/safe-net/images/products/invisible_grill_hero.png',
     gallery: [
-      '/images/products/invisible_grill_hero.png',
-      '/images/products/invisible_grill_thumb.png'
+      '/safe-net/images/products/invisible_grill_hero.png',
+      '/safe-net/images/products/invisible_grill_thumb.png'
     ],
     category: 'Invisible Grill',
     colors: ['Silver'],
@@ -185,10 +185,10 @@ export const products: Product[] = [
     name: 'Security Mesh Window',
     price: 135.00,
     originalPrice: 160.00,
-    imageUrl: '/images/products/aluminium_mesh_hero.png',
+    imageUrl: '/safe-net/images/products/aluminium_mesh_hero.png',
     gallery: [
-      '/images/products/aluminium_mesh_hero.png',
-      '/images/products/aluminium_mesh_thumb.png'
+      '/safe-net/images/products/aluminium_mesh_hero.png',
+      '/safe-net/images/products/aluminium_mesh_thumb.png'
     ],
     category: 'Security Mesh',
     colors: ['Black', 'Silver'],
@@ -202,10 +202,10 @@ export const products: Product[] = [
     id: '11',
     name: 'Bird Net (Nylon)',
     price: 32.00,
-    imageUrl: '/images/products/bird_net_nylon.png',
+    imageUrl: '/safe-net/images/products/bird_net_nylon.png',
     gallery: [
-      '/images/products/bird_net_nylon.png',
-      '/images/products/bird_net_hero.png'
+      '/safe-net/images/products/bird_net_nylon.png',
+      '/safe-net/images/products/bird_net_hero.png'
     ],
     category: 'Bird Net',
     colors: ['Black', 'Transparent'],
@@ -219,10 +219,10 @@ export const products: Product[] = [
     id: '12',
     name: 'Manual Zip Screen',
     price: 115.00,
-    imageUrl: '/images/products/zip_screen_thumb.png',
+    imageUrl: '/safe-net/images/products/zip_screen_thumb.png',
     gallery: [
-      '/images/products/zip_screen_thumb.png',
-      '/images/products/zip_screen_hero.png'
+      '/safe-net/images/products/zip_screen_thumb.png',
+      '/safe-net/images/products/zip_screen_hero.png'
     ],
     category: 'Zip Screen',
     colors: ['Black', 'White', 'Silver'],

@@ -10,7 +10,7 @@ const BLOG_POSTS = [
     title: "Why invisible grills are the safest choice for high-rise balconies",
     category: "Safety",
     date: "15 March 2025",
-    image: "/images/products/invisible_grill_hero.png",
+    image: "/safe-net/images/products/invisible_grill_hero.png",
     href: "/blog/invisible-grills-high-rise-balconies"
   },
   {
@@ -18,7 +18,7 @@ const BLOG_POSTS = [
     title: "HDPE vs Nylon bird nets: which one is right for your home?",
     category: "Guide",
     date: "20 April 2025",
-    image: "/images/products/bird_net_hero.png",
+    image: "/safe-net/images/products/bird_net_hero.png",
     href: "/blog/hdpe-vs-nylon-bird-nets"
   },
   {
@@ -26,7 +26,7 @@ const BLOG_POSTS = [
     title: "How pleated mosquito nets keep insects out without blocking airflow",
     category: "Tips",
     date: "05 May 2025",
-    image: "/images/products/mosquito_net_hero.png",
+    image: "/safe-net/images/products/mosquito_net_hero.png",
     href: "/blog/pleated-mosquito-nets-airflow"
   },
   {
@@ -34,7 +34,7 @@ const BLOG_POSTS = [
     title: "Motorised zip screens: the smart upgrade for modern patios",
     category: "Innovation",
     date: "18 May 2025",
-    image: "/images/products/zip_screen_hero.png",
+    image: "/safe-net/images/products/zip_screen_hero.png",
     href: "/blog/motorised-zip-screens-patios"
   },
   {
@@ -42,7 +42,7 @@ const BLOG_POSTS = [
     title: "Top 5 reasons to install aluminium security mesh on your windows",
     category: "Security",
     date: "02 April 2025",
-    image: "/images/products/aluminium_mesh_hero.png",
+    image: "/safe-net/images/products/aluminium_mesh_hero.png",
     href: "/blog/aluminium-security-mesh-windows"
   },
   {
@@ -50,7 +50,7 @@ const BLOG_POSTS = [
     title: "SS316 vs SS304 stainless steel: what grade is best for grills?",
     category: "Guide",
     date: "10 March 2025",
-    image: "/images/products/invisible_grill_wire_rope.png",
+    image: "/safe-net/images/products/invisible_grill_wire_rope.png",
     href: "/blog/ss316-vs-ss304-stainless-steel"
   },
   {
@@ -58,7 +58,7 @@ const BLOG_POSTS = [
     title: "Bird-proofing your balcony: a complete homeowner's checklist",
     category: "Tips",
     date: "25 February 2025",
-    image: "/images/products/bird_net_hdpe.png",
+    image: "/safe-net/images/products/bird_net_hdpe.png",
     href: "/blog/bird-proofing-balcony-checklist"
   },
   {
@@ -66,7 +66,7 @@ const BLOG_POSTS = [
     title: "Zip screen fabric guide: sunshade, PVC, mosquito or blackout?",
     category: "Guide",
     date: "12 January 2025",
-    image: "/images/products/zip_screen_thumb.png",
+    image: "/safe-net/images/products/zip_screen_thumb.png",
     href: "/blog/zip-screen-fabric-guide"
   },
 ]

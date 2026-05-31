@@ -77,7 +77,7 @@ const AboutPage = () => {
                                 viewport={{ once: true }}
                                 className="absolute left-0 bottom-0 w-1/3 aspect-[3/4] z-10 hidden md:block"
                             >
-                                <Image src="/about_plant.png" alt="Decor" fill className="object-cover rounded-[5px] shadow-custom-lg" />
+                                <Image src="/safe-net/about_plant.png" alt="Decor" fill className="object-cover rounded-[5px] shadow-custom-lg" />
                             </motion.div>
                             {/* Main Center Image */}
                             <motion.div 
@@ -86,7 +86,7 @@ const AboutPage = () => {
                                 viewport={{ once: true }}
                                 className="w-full md:w-1/2 aspect-[4/3] z-0 relative"
                             >
-                                <Image src="/about_sofa.png" alt="Crafto Decor" fill className="object-cover rounded-[5px] shadow-custom-xl" />
+                                <Image src="/safe-net/about_sofa.png" alt="Crafto Decor" fill className="object-cover rounded-[5px] shadow-custom-xl" />
                             </motion.div>
                             {/* Right Image */}
                             <motion.div 
@@ -95,7 +95,7 @@ const AboutPage = () => {
                                 viewport={{ once: true }}
                                 className="absolute right-0 top-0 w-1/3 aspect-[3/4] z-10 hidden md:block"
                             >
-                                <Image src="/about_studio.png" alt="Design" fill className="object-cover rounded-[5px] shadow-custom-lg" />
+                                <Image src="/safe-net/about_studio.png" alt="Design" fill className="object-cover rounded-[5px] shadow-custom-lg" />
                             </motion.div>
                         </div>
                     </div>

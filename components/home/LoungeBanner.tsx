@@ -11,7 +11,7 @@ const products = [
     name: 'Invisible Grill',
     price: 0,
     originalPrice: 0,
-    image: '/images/products/invisible_grill_thumb.png',
+    image: '/safe-net/images/products/invisible_grill_thumb.png',
     slug: '/product/invisible-grill-ss316',
     label: 'Get Quote',
   },
@@ -20,7 +20,7 @@ const products = [
     name: 'Mosquito Net',
     price: 0,
     originalPrice: 0,
-    image: '/images/products/mosquito_net_thumb.png',
+    image: '/safe-net/images/products/mosquito_net_thumb.png',
     slug: '/product/pleated-mosquito-net',
     label: 'Get Quote',
   },
@@ -29,7 +29,7 @@ const products = [
     name: 'Aluminium Mesh',
     price: 0,
     originalPrice: 0,
-    image: '/images/products/aluminium_mesh_thumb.png',
+    image: '/safe-net/images/products/aluminium_mesh_thumb.png',
     slug: '/product/aluminium-security-mesh',
     label: 'Get Quote',
   },
@@ -38,7 +38,7 @@ const products = [
     name: 'Zip Screen',
     price: 0,
     originalPrice: 0,
-    image: '/images/products/zip_screen_thumb.png',
+    image: '/safe-net/images/products/zip_screen_thumb.png',
     slug: '/product/motorised-zip-screen',
     label: 'Get Quote',
   },
@@ -125,7 +125,7 @@ const LoungeBanner = () => {
       >
         {/* Background Image */}
         <Image
-          src="/images/catalog/page-08.png"
+          src="/safe-net/images/catalog/page-08.png"
           alt="Aluminium Security Mesh Collection"
           fill
           className="object-cover"

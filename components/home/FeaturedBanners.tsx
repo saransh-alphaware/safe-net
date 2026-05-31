@@ -12,7 +12,7 @@ const FeaturedBanners = () => {
           <div className="relative group overflow-hidden h-[500px] lg:h-[600px] flex flex-col justify-end p-10 lg:p-16">
             <div className="absolute inset-0 z-0">
               <Image 
-                src="/images/products/invisible_grill_hero.png" 
+                src="/safe-net/images/products/invisible_grill_hero.png" 
                 alt="Invisible Grill" 
                 fill 
                 className="object-cover transition-transform duration-1000 group-hover:scale-110" 
@@ -38,7 +38,7 @@ const FeaturedBanners = () => {
             <div className="relative group overflow-hidden h-[234px] lg:h-[280px] flex flex-col justify-center p-10 lg:p-14">
               <div className="absolute inset-0 z-0">
                 <Image 
-                  src="/images/products/mosquito_net_hero.png" 
+                  src="/safe-net/images/products/mosquito_net_hero.png" 
                   alt="Mosquito Net" 
                   fill 
                   className="object-cover transition-transform duration-1000 group-hover:scale-110" 
@@ -63,7 +63,7 @@ const FeaturedBanners = () => {
             <div className="relative group overflow-hidden h-[234px] lg:h-[280px] flex flex-col justify-center p-10 lg:p-14">
               <div className="absolute inset-0 z-0">
                 <Image 
-                  src="/images/products/aluminium_mesh_hero.png" 
+                  src="/safe-net/images/products/aluminium_mesh_hero.png" 
                   alt="Aluminium Security Mesh" 
                   fill 
                   className="object-cover transition-transform duration-1000 group-hover:scale-110" 

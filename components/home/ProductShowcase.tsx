@@ -13,21 +13,21 @@ interface Product {
 }
 
 const bestSellers: Product[] = [
-  { id: 1, name: 'Invisible Grill SS316', price: 'Get Quote', image: '/images/products/invisible_grill_thumb.png', tag: 'Hot' as any },
-  { id: 2, name: 'Bird Net (HDPE)', price: 'Get Quote', image: '/images/products/bird_net_hdpe.png' },
-  { id: 3, name: 'Pleated Mosquito Net', price: 'Get Quote', image: '/images/products/mosquito_net_thumb.png', tag: 'New' },
-  { id: 4, name: 'Nylon Net (Diamond)', price: 'Get Quote', image: '/images/products/bird_net_nylon.png' },
-  { id: 5, name: 'Aluminium Security Mesh', price: 'Get Quote', image: '/images/products/aluminium_mesh_thumb.png' },
-  { id: 6, name: 'Motorised Zip Screen', price: 'Get Quote', image: '/images/products/zip_screen_thumb.png', tag: 'New' },
-  { id: 7, name: 'Wire Rope Grill', price: 'Get Quote', image: '/images/products/invisible_grill_wire_rope.png' },
-  { id: 8, name: 'Aluminium Track', price: 'Get Quote', image: '/images/products/invisible_grill_track.png', tag: 'Hot' as any },
+  { id: 1, name: 'Invisible Grill SS316', price: 'Get Quote', image: '/safe-net/images/products/invisible_grill_thumb.png', tag: 'Hot' as any },
+  { id: 2, name: 'Bird Net (HDPE)', price: 'Get Quote', image: '/safe-net/images/products/bird_net_hdpe.png' },
+  { id: 3, name: 'Pleated Mosquito Net', price: 'Get Quote', image: '/safe-net/images/products/mosquito_net_thumb.png', tag: 'New' },
+  { id: 4, name: 'Nylon Net (Diamond)', price: 'Get Quote', image: '/safe-net/images/products/bird_net_nylon.png' },
+  { id: 5, name: 'Aluminium Security Mesh', price: 'Get Quote', image: '/safe-net/images/products/aluminium_mesh_thumb.png' },
+  { id: 6, name: 'Motorised Zip Screen', price: 'Get Quote', image: '/safe-net/images/products/zip_screen_thumb.png', tag: 'New' },
+  { id: 7, name: 'Wire Rope Grill', price: 'Get Quote', image: '/safe-net/images/products/invisible_grill_wire_rope.png' },
+  { id: 8, name: 'Aluminium Track', price: 'Get Quote', image: '/safe-net/images/products/invisible_grill_track.png', tag: 'Hot' as any },
 ];
 
 const newArrivals: Product[] = [
-  { id: 9, name: 'Invisible Grill (2mm)', price: 'Get Quote', image: '/images/products/invisible_grill_hero.png', tag: 'New' },
-  { id: 10, name: 'Motorised Zip Screen', price: 'Get Quote', image: '/images/products/zip_screen_thumb.png', tag: 'Hot' },
-  { id: 11, name: 'Bird Net (Nylon)', price: 'Get Quote', image: '/images/products/bird_net_nylon.png' },
-  { id: 12, name: 'Security Mesh Window', price: 'Get Quote', image: '/images/products/aluminium_mesh_thumb.png' },
+  { id: 9, name: 'Invisible Grill (2mm)', price: 'Get Quote', image: '/safe-net/images/products/invisible_grill_hero.png', tag: 'New' },
+  { id: 10, name: 'Motorised Zip Screen', price: 'Get Quote', image: '/safe-net/images/products/zip_screen_thumb.png', tag: 'Hot' },
+  { id: 11, name: 'Bird Net (Nylon)', price: 'Get Quote', image: '/safe-net/images/products/bird_net_nylon.png' },
+  { id: 12, name: 'Security Mesh Window', price: 'Get Quote', image: '/safe-net/images/products/aluminium_mesh_thumb.png' },
 ];
 
 const ProductShowcase = () => {
