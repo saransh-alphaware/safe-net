@@ -13,7 +13,7 @@ const slides = [
     title: 'Invisible Grill',
     price: 'Get a Quote',
     description: 'High-tensile stainless steel cable system for balcony and window safety — nearly invisible from a distance.',
-    image: '/safe-net/images/products/invisible_grill_hero.png',
+    image: '/safe-net/images/products/invisible_grill_hero.webp',
     color: 'bg-[#F2F2F2]',
   },
   {
@@ -21,7 +21,7 @@ const slides = [
     title: 'Zip Screen',
     price: 'Get a Quote',
     description: 'Motorised & manual retractable zip screens for balconies, patios and windows. Protection with elegance.',
-    image: '/safe-net/images/products/zip_screen_hero.png',
+    image: '/safe-net/images/products/zip_screen_hero.webp',
     color: 'bg-[#E8E8E8]',
   },
   {
@@ -29,7 +29,7 @@ const slides = [
     title: 'Mosquito Net',
     price: 'Get a Quote',
     description: 'Pleated polyester mesh nets for doors and windows — keeps insects out while maintaining fresh airflow.',
-    image: '/safe-net/images/products/mosquito_net_hero.png',
+    image: '/safe-net/images/products/mosquito_net_hero.webp',
     color: 'bg-[#EAECF0]',
   }
 ];

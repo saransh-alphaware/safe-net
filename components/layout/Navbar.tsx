@@ -70,7 +70,7 @@ const Navbar = () => {
           <div className="shrink-0">
             <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
               <Image
-                src="/safe-net/images/products/logo_full.png"
+                src="/safe-net/images/products/logo_full.webp"
                 alt="SafeNet & Co."
                 width={40}
                 height={40}
@@ -128,7 +128,7 @@ const Navbar = () => {
                           <Link href="/product-category/invisible-grill" className="bg-white text-primary text-[10px] uppercase font-black tracking-widest px-8 pt-3 pb-3 w-fit hover:bg-primary hover:text-white transition-all">Shop now</Link>
                         </div>
                         <div className="absolute right-0 top-0 h-full w-1/2">
-                          <Image src="/safe-net/images/products/invisible_grill_thumb.png" alt="Invisible Grill" fill className="object-cover opacity-80 group-hover/promo:scale-105 transition-transform duration-700" />
+                          <Image src="/safe-net/images/products/invisible_grill_thumb.webp" alt="Invisible Grill" fill className="object-cover opacity-80 group-hover/promo:scale-105 transition-transform duration-700" />
                         </div>
                       </div>
                       <div className="relative h-48 bg-[#0e2340] overflow-hidden group/promo">
@@ -137,7 +137,7 @@ const Navbar = () => {
                           <Link href="/product-category/mosquito-net" className="bg-white text-primary text-[10px] uppercase font-black tracking-widest px-8 pt-3 pb-3 w-fit hover:bg-primary hover:text-white transition-all">Shop now</Link>
                         </div>
                         <div className="absolute right-0 top-0 h-full w-1/2">
-                          <Image src="/safe-net/images/products/mosquito_net_thumb.png" alt="Mosquito Net" fill className="object-cover opacity-80 group-hover/promo:scale-105 transition-transform duration-700" />
+                          <Image src="/safe-net/images/products/mosquito_net_thumb.webp" alt="Mosquito Net" fill className="object-cover opacity-80 group-hover/promo:scale-105 transition-transform duration-700" />
                         </div>
                       </div>
                     </div>
@@ -157,12 +157,12 @@ const Navbar = () => {
                     {/* 6-column product image grid */}
                     <div className="grid grid-cols-6 gap-6 mb-12">
                       {[
-                        { name: 'Invisible Grill', image: '/safe-net/images/products/invisible_grill_thumb.png', slug: 'invisible-grill' },
-                        { name: 'Bird Net', image: '/safe-net/images/products/bird_net_nylon.png', slug: 'bird-net' },
-                        { name: 'Mosquito Net', image: '/safe-net/images/products/mosquito_net_thumb.png', slug: 'mosquito-net' },
-                        { name: 'Security Mesh', image: '/safe-net/images/products/aluminium_mesh_thumb.png', slug: 'security-mesh' },
-                        { name: 'Zip Screen', image: '/safe-net/images/products/zip_screen_thumb.png', slug: 'zip-screen' },
-                        { name: 'HDPE Nets', image: '/safe-net/images/products/bird_net_hdpe.png', slug: 'bird-net' },
+                        { name: 'Invisible Grill', image: '/safe-net/images/products/invisible_grill_thumb.webp', slug: 'invisible-grill' },
+                        { name: 'Bird Net', image: '/safe-net/images/products/bird_net_nylon.webp', slug: 'bird-net' },
+                        { name: 'Mosquito Net', image: '/safe-net/images/products/mosquito_net_thumb.webp', slug: 'mosquito-net' },
+                        { name: 'Security Mesh', image: '/safe-net/images/products/aluminium_mesh_thumb.webp', slug: 'security-mesh' },
+                        { name: 'Zip Screen', image: '/safe-net/images/products/zip_screen_thumb.webp', slug: 'zip-screen' },
+                        { name: 'HDPE Nets', image: '/safe-net/images/products/bird_net_hdpe.webp', slug: 'bird-net' },
                       ].map((item, idx) => (
                         <Link key={idx} href={`/product-category/${item.slug}`} className="group/item flex flex-col items-center gap-4">
                           <div className="aspect-square w-full bg-[#f8f8f8] p-4 relative overflow-hidden">
@@ -182,7 +182,7 @@ const Navbar = () => {
                     <div className="grid grid-cols-2 gap-8">
                       <div className="bg-[#eef3f8] p-8 flex items-center justify-between group/promo">
                         <div className="relative w-1/2 h-40">
-                          <Image src="/safe-net/images/products/aluminium_mesh_thumb.png" alt="Security Mesh" fill className="object-cover transition-transform duration-700 group-hover/promo:scale-105" />
+                          <Image src="/safe-net/images/products/aluminium_mesh_thumb.webp" alt="Security Mesh" fill className="object-cover transition-transform duration-700 group-hover/promo:scale-105" />
                         </div>
                         <div className="flex flex-col gap-3 w-1/2 pl-4">
                           <span className="text-[20px] font-bold text-[#1b3250] leading-tight">Security Mesh<br /><span className="text-[13px] font-medium tracking-tight text-primary/60">Aluminium premium mesh</span></span>
@@ -191,7 +191,7 @@ const Navbar = () => {
                       </div>
                       <div className="bg-[#eef3f8] p-8 flex items-center justify-between group/promo">
                         <div className="relative w-1/2 h-40">
-                          <Image src="/safe-net/images/products/zip_screen_thumb.png" alt="Zip Screen" fill className="object-cover transition-transform duration-700 group-hover/promo:scale-105" />
+                          <Image src="/safe-net/images/products/zip_screen_thumb.webp" alt="Zip Screen" fill className="object-cover transition-transform duration-700 group-hover/promo:scale-105" />
                         </div>
                         <div className="flex flex-col gap-3 w-1/2 pl-4">
                           <span className="text-[20px] font-bold text-[#1b3250] leading-tight">Zip Screen<br /><span className="text-[13px] font-medium tracking-tight text-primary/60">Motorised &amp; manual</span></span>
@@ -290,7 +290,7 @@ const Navbar = () => {
         {/* Drawer Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-border-custom shrink-0">
           <Link href="/" onClick={closeMobile}>
-            <Image src="/safe-net/images/products/logo_full.png" alt="SafeNet & Co." width={44} height={44} className="object-contain" />
+            <Image src="/safe-net/images/products/logo_full.webp" alt="SafeNet & Co." width={44} height={44} className="object-contain" />
           </Link>
           <button
             onClick={closeMobile}

@@ -10,7 +10,7 @@ const blogs = [
     title: "Why invisible grills are the safest choice for high-rise balconies",
     category: "SAFETY",
     date: "15 MARCH 2025",
-    image: "/safe-net/images/products/invisible_grill_hero.png",
+    image: "/safe-net/images/products/invisible_grill_hero.webp",
     slug: "invisible-grills-high-rise-balconies"
   },
   {
@@ -18,7 +18,7 @@ const blogs = [
     title: "HDPE vs Nylon bird nets: which one is right for your home?",
     category: "GUIDE",
     date: "20 APRIL 2025",
-    image: "/safe-net/images/products/bird_net_hero.png",
+    image: "/safe-net/images/products/bird_net_hero.webp",
     slug: "hdpe-vs-nylon-bird-nets"
   },
   {
@@ -26,7 +26,7 @@ const blogs = [
     title: "How pleated mosquito nets keep insects out without blocking airflow",
     category: "TIPS",
     date: "05 MAY 2025",
-    image: "/safe-net/images/products/mosquito_net_hero.png",
+    image: "/safe-net/images/products/mosquito_net_hero.webp",
     slug: "pleated-mosquito-nets-airflow"
   },
   {
@@ -34,7 +34,7 @@ const blogs = [
     title: "Motorised zip screens: the smart upgrade for modern patios",
     category: "INNOVATION",
     date: "18 MAY 2025",
-    image: "/safe-net/images/products/zip_screen_hero.png",
+    image: "/safe-net/images/products/zip_screen_hero.webp",
     slug: "motorised-zip-screens-patios"
   }
 ];

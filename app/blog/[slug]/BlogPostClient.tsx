@@ -11,7 +11,7 @@ import Footer from '@/components/layout/Footer'
 
 const AUTHOR = {
   name: "SafeNet & Co. Team",
-  avatar: "/safe-net/images/catalog/logo.png",
+  avatar: "/safe-net/images/products/logo_full.webp",
   bio: "We are India's leading safety net installation specialists. Our experts share knowledge on invisible grills, bird nets, mosquito screens, and security mesh solutions to help you make the safest choice for your home."
 }
 
@@ -42,7 +42,7 @@ const BLOG_DATA: Record<string, {
     title: "Why invisible grills are the safest choice for high-rise balconies",
     category: "Safety",
     date: "15 March 2025",
-    image: "/safe-net/images/products/invisible_grill_hero.png",
+    image: "/safe-net/images/products/invisible_grill_hero.webp",
     author: AUTHOR,
     tags: ["Invisible Grill", "Balcony Safety", "SS316", "High-Rise"],
     likes: 38,
@@ -50,21 +50,21 @@ const BLOG_DATA: Record<string, {
     subheading: "What makes SS316 grade the gold standard?",
     body: "Our invisible grills use Grade SS316 stainless steel wire rope, coated with nanotechnology nylon for superior corrosion resistance. Each cable can independently withstand loads in excess of 200kg. The aluminium T-6063 alloy track system anchors the cables to walls and slabs with stainless steel bolts, creating a robust barrier that is virtually invisible from a distance while meeting all safety standards.",
     quote: "\"Safety should never compromise your view — our grills offer both.\" — SafeNet & Co.",
-    inlineImageSrc: "/safe-net/images/products/invisible_grill_wire_rope.png",
+    inlineImageSrc: "/safe-net/images/products/invisible_grill_wire_rope.webp",
     inlineImageAlt: "SS316 wire rope close-up",
     inlineImageCaption: "Grade SS316 nylon-coated wire rope — the core of every invisible grill installation.",
     ctaHeading: "SS316 vs SS304 — does grade really matter for coastal homes?",
     ctaBody: "Yes. Homes within 5km of the coast experience accelerated salt-air corrosion. SS316 contains molybdenum, making it far more resistant than SS304. For Mumbai's coastal apartments, SS316 is the only responsible choice.",
     ctaBtn: "Get a Free Quote",
     ctaBtnLink: "/contact",
-    sideImageSrc: "/safe-net/images/products/invisible_grill_thumb.png",
+    sideImageSrc: "/safe-net/images/products/invisible_grill_thumb.webp",
     sideImageAlt: "Invisible grill installed on balcony"
   },
   'hdpe-vs-nylon-bird-nets': {
     title: "HDPE vs Nylon bird nets: which one is right for your home?",
     category: "Guide",
     date: "20 April 2025",
-    image: "/safe-net/images/products/bird_net_hero.png",
+    image: "/safe-net/images/products/bird_net_hero.webp",
     author: AUTHOR,
     tags: ["Bird Net", "HDPE", "Nylon", "Guide"],
     likes: 27,
@@ -72,21 +72,21 @@ const BLOG_DATA: Record<string, {
     subheading: "HDPE nets: heavy-duty square mesh for large gaps",
     body: "HDPE (High-Density Polyethylene) nets come in square mesh sizes from 19mm to 50mm, with twine thickness up to 1mm. UV-stabilised and available in black or white, they are ideal for large balcony openings, industrial spaces, and open shafts where maximum durability is required. Nylon copolymer monofilament nets, by contrast, are virtually invisible (available in transparent or black) and suit smaller window openings, premium apartments, and spaces where aesthetics matter most.",
     quote: "\"The right net depends on your gap size, aesthetics, and budget — we help you find the perfect match.\"",
-    inlineImageSrc: "/safe-net/images/products/bird_net_hdpe.png",
+    inlineImageSrc: "/safe-net/images/products/bird_net_hdpe.webp",
     inlineImageAlt: "HDPE bird net installed on balcony",
     inlineImageCaption: "HDPE square mesh net — durable UV-stabilised protection for larger openings.",
     ctaHeading: "Which bird net is recommended for Mumbai high-rises?",
     ctaBody: "For open-shaft and large balcony areas, we recommend HDPE 25mm black square mesh. For premium apartments where visibility is important, transparent nylon monofilament in 25mm diamond mesh is the preferred choice.",
     ctaBtn: "View Bird Net Products",
     ctaBtnLink: "/product-category/bird-net",
-    sideImageSrc: "/safe-net/images/products/bird_net_nylon.png",
+    sideImageSrc: "/safe-net/images/products/bird_net_nylon.webp",
     sideImageAlt: "Nylon bird net close-up"
   },
   'pleated-mosquito-nets-airflow': {
     title: "How pleated mosquito nets keep insects out without blocking airflow",
     category: "Tips",
     date: "05 May 2025",
-    image: "/safe-net/images/products/mosquito_net_hero.png",
+    image: "/safe-net/images/products/mosquito_net_hero.webp",
     author: AUTHOR,
     tags: ["Mosquito Net", "Pleated", "Ventilation", "Tips"],
     likes: 19,
@@ -94,21 +94,21 @@ const BLOG_DATA: Record<string, {
     subheading: "How pleated screens work",
     body: "Pleated mosquito nets feature a folded zigzag polyester mesh mounted in an extruded aluminium frame. Tensioned cords allow the screen to retract smoothly to one side (like a concertina) when you want full access. When deployed, the mesh forms a tight, insect-proof barrier. The mesh weave allows unrestricted airflow and natural light, unlike solid alternatives. Installation requires only a minimal frame — there is no bulky box housing to deal with.",
     quote: "\"Fresh air, no mosquitoes — our pleated screens give you both every single day.\"",
-    inlineImageSrc: "/safe-net/images/products/mosquito_net_thumb.png",
+    inlineImageSrc: "/safe-net/images/products/mosquito_net_thumb.webp",
     inlineImageAlt: "Pleated mosquito net installed on window",
     inlineImageCaption: "Pleated polyester mesh — minimal profile, maximum insect protection.",
     ctaHeading: "Can pleated nets be retrofitted to existing windows?",
     ctaBody: "Yes. Our pleated mosquito net systems are designed for retrofit installation on standard casement, sliding, and fixed windows. No drilling into the glass is required — the aluminium frame attaches to the window surround.",
     ctaBtn: "View Mosquito Net Products",
     ctaBtnLink: "/product-category/mosquito-net",
-    sideImageSrc: "/safe-net/images/products/mosquito_net_hero.png",
+    sideImageSrc: "/safe-net/images/products/mosquito_net_hero.webp",
     sideImageAlt: "Mosquito net installed on apartment window"
   },
   'motorised-zip-screens-patios': {
     title: "Motorised zip screens: the smart upgrade for modern patios",
     category: "Innovation",
     date: "18 May 2025",
-    image: "/safe-net/images/products/zip_screen_hero.png",
+    image: "/safe-net/images/products/zip_screen_hero.webp",
     author: AUTHOR,
     tags: ["Zip Screen", "Motorised", "Patio", "Smart Home"],
     likes: 44,
@@ -116,21 +116,21 @@ const BLOG_DATA: Record<string, {
     subheading: "What sets motorised zip screens apart?",
     body: "Unlike standard roller blinds, zip screens feature a zipped side channel system that prevents the fabric from billowing in wind — critical for outdoor use. The motorised drive allows silent, remote-controlled operation, and the screen can be programmed to deploy automatically at sunset or in high-UV conditions. Fabric choices include sunshade blinds for UV filtration, PVC rainproof screens for full weather protection, polyester mosquito mesh, and blackout fabrics for complete privacy.",
     quote: "\"A motorised zip screen doesn't just shade your patio — it extends your living space by months every year.\"",
-    inlineImageSrc: "/safe-net/images/products/zip_screen_thumb.png",
+    inlineImageSrc: "/safe-net/images/products/zip_screen_thumb.webp",
     inlineImageAlt: "Motorised zip screen on a patio",
     inlineImageCaption: "Motorised zip screens with remote control — silent, precise, weather-sealed.",
     ctaHeading: "Can zip screens be added to an apartment balcony?",
     ctaBody: "Yes. Zip screens are available in widths up to 6 metres and can be installed on balconies, terraces, and large windows. We offer both motorised and hand-crank manual variants depending on your preference and budget.",
     ctaBtn: "View Zip Screen Products",
     ctaBtnLink: "/product-category/zip-screen",
-    sideImageSrc: "/safe-net/images/products/zip_screen_hero.png",
+    sideImageSrc: "/safe-net/images/products/zip_screen_hero.webp",
     sideImageAlt: "Zip screen installed on large patio"
   },
   'aluminium-security-mesh-windows': {
     title: "Top 5 reasons to install aluminium security mesh on your windows",
     category: "Security",
     date: "02 April 2025",
-    image: "/safe-net/images/products/aluminium_mesh_hero.png",
+    image: "/safe-net/images/products/aluminium_mesh_hero.webp",
     author: AUTHOR,
     tags: ["Security Mesh", "Aluminium", "Window Security", "Home Safety"],
     likes: 31,
@@ -138,14 +138,14 @@ const BLOG_DATA: Record<string, {
     subheading: "Five reasons our security mesh stands out",
     body: "1. Dual lock system: Each frame includes a heavy-duty dual locking mechanism (2 keys) with optional magnetic closure. 2. High-grade aluminium construction: The extruded aluminium frame and mesh resist corrosion, warping, and forced entry. 3. Full insect protection: The fine mesh weave blocks mosquitoes, flies, and other insects completely. 4. Ventilation preserved: Unlike solid security grilles, the mesh allows full natural airflow. 5. Clean aesthetics: The slim profile and powder-coated finish blend seamlessly with any window style.",
     quote: "\"Security and ventilation are not opposites — our mesh delivers both simultaneously.\"",
-    inlineImageSrc: "/safe-net/images/products/aluminium_mesh_thumb.png",
+    inlineImageSrc: "/safe-net/images/products/aluminium_mesh_thumb.webp",
     inlineImageAlt: "Aluminium security mesh door close-up",
     inlineImageCaption: "Dual-lock aluminium security mesh — premium protection with a clean, modern look.",
     ctaHeading: "Is security mesh suitable for rental apartments?",
     ctaBody: "Yes. Our frames are designed for non-destructive installation where possible, and can be removed when you vacate. They are ideal for renters who want added security without permanent structural modifications.",
     ctaBtn: "View Security Mesh Products",
     ctaBtnLink: "/product-category/security-mesh",
-    sideImageSrc: "/safe-net/images/products/aluminium_mesh_hero.png",
+    sideImageSrc: "/safe-net/images/products/aluminium_mesh_hero.webp",
     sideImageAlt: "Security mesh window installation"
   }
 }
@@ -155,7 +155,7 @@ const DEFAULT_POST = {
   title: "Expert advice on choosing the right safety solution for your home",
   category: "Guide",
   date: "01 January 2025",
-  image: "/safe-net/images/products/invisible_grill_hero.png",
+  image: "/safe-net/images/products/invisible_grill_hero.webp",
   author: AUTHOR,
   tags: ["Safety", "Guide", "Installation"],
   likes: 12,
@@ -163,14 +163,14 @@ const DEFAULT_POST = {
   subheading: "Start with the problem, not the product",
   body: "The most common mistake homeowners make is buying a product before defining the problem. Start by asking: Is this a fall-safety issue (balcony)? A pest problem (birds, mosquitoes)? An intrusion concern (windows, doors)? Or a weather-control need (patio)? Each answer points to a different product category.",
   quote: "\"The right safety product is the one that solves your specific problem reliably and looks good doing it.\"",
-  inlineImageSrc: "/safe-net/images/products/invisible_grill_thumb.png",
+  inlineImageSrc: "/safe-net/images/products/invisible_grill_thumb.webp",
   inlineImageAlt: "Safety installation overview",
   inlineImageCaption: "SafeNet & Co. — India's comprehensive safety solutions provider.",
   ctaHeading: "Not sure which product you need?",
   ctaBody: "Our team will assess your space, understand your requirements, and recommend the most suitable solution. Get a free consultation today.",
   ctaBtn: "Contact Us",
   ctaBtnLink: "/contact",
-  sideImageSrc: "/safe-net/images/products/bird_net_hero.png",
+  sideImageSrc: "/safe-net/images/products/bird_net_hero.webp",
   sideImageAlt: "SafeNet product range"
 }
 
@@ -181,7 +181,7 @@ const RELATED_POSTS = [
     title: "Why invisible grills are the safest choice for high-rise balconies",
     category: "Safety",
     date: "15 March 2025",
-    image: "/safe-net/images/products/invisible_grill_hero.png",
+    image: "/safe-net/images/products/invisible_grill_hero.webp",
     href: "/blog/invisible-grills-high-rise-balconies"
   },
   {
@@ -189,7 +189,7 @@ const RELATED_POSTS = [
     title: "HDPE vs Nylon bird nets: which one is right for your home?",
     category: "Guide",
     date: "20 April 2025",
-    image: "/safe-net/images/products/bird_net_hero.png",
+    image: "/safe-net/images/products/bird_net_hero.webp",
     href: "/blog/hdpe-vs-nylon-bird-nets"
   },
   {
@@ -197,7 +197,7 @@ const RELATED_POSTS = [
     title: "Motorised zip screens: the smart upgrade for modern patios",
     category: "Innovation",
     date: "18 May 2025",
-    image: "/safe-net/images/products/zip_screen_hero.png",
+    image: "/safe-net/images/products/zip_screen_hero.webp",
     href: "/blog/motorised-zip-screens-patios"
   },
 ]

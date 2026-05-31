@@ -122,7 +122,7 @@ const ContactPage = () => {
                 className="relative aspect-[4/3] lg:aspect-[1.4/1] w-full shadow-custom-lg"
               >
                 <Image 
-                  src="/safe-net/images/products/invisible_grill_hero.png" 
+                  src="/safe-net/images/products/invisible_grill_hero.webp" 
                   alt="Contact Safety Solutions" 
                   fill 
                   className="object-cover"

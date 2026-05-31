@@ -27,7 +27,7 @@ const Footer = () => {
                 className="flex items-center gap-2 hover:opacity-90 transition-opacity"
               >
                 <Image
-                  src="/safe-net/images/products/logo_full.png"
+                  src="/safe-net/images/products/logo_full.webp"
                   alt="SafeNet & Co."
                   width={40}
                   height={40}
