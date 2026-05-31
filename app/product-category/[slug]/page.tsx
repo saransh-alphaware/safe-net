@@ -76,9 +76,9 @@ export default function CategoryPage({ params }: PageProps) {
             </h1>
             <div className="flex items-center gap-2 text-[12px] font-bold uppercase tracking-widest text-text-secondary">
               <a href="/" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Home</a>
-              <span>/</span>
+              <span>{">"}</span>
               <a href="/shop" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Product Category</a>
-              <span>/</span>
+              <span>{">"}</span>
               <span className="text-primary/40">{categoryName}</span>
             </div>
           </div>

@@ -80,11 +80,11 @@ export default function ProductDetailPage({ params }: PageProps) {
           {/* Breadcrumbs */}
           <nav className="mb-12 flex flex-wrap items-center gap-2 text-[12px] font-bold uppercase tracking-widest text-text-secondary">
             <a href="/" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Home</a>
-            <span>/</span>
+            <span>{">"}</span>
             <a href="/shop" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Shop</a>
-            <span>/</span>
+            <span>{">"}</span>
             <a href={`/shop?category=${product.category}`} className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">{product.category}</a>
-            <span>/</span>
+            <span>{">"}</span>
             <span className="text-primary/40">{product.name}</span>
           </nav>
 

@@ -27,12 +27,6 @@ const ContactPage = () => {
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center bg-[#f8f8f8] overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="/images/catalog/page-12.png" 
-            alt="Contact Hero" 
-            fill 
-            className="object-cover opacity-10 grayscale"
-          />
         </div>
         <div className="container relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight mb-4">

@@ -224,7 +224,7 @@ export default function BlogPost() {
               transition={{ duration: 1, ease: "easeOut" }}
               className="relative w-full"
             >
-              <div className="relative w-full aspect-[16/10] md:aspect-[16/8] rounded-sm overflow-hidden">
+              <div className="relative w-full aspect-16/10 md:aspect-16/8 rounded-sm overflow-hidden">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -263,7 +263,7 @@ export default function BlogPost() {
             </motion.h1>
             
             <div className="mt-10 mb-2">
-              <div className="w-10 h-[1px] bg-gray-200 mx-auto" />
+              <div className="w-10 h-px bg-gray-200 mx-auto" />
             </div>
           </div>
         </div>

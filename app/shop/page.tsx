@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ProductCard from '@/components/shop/ProductCard';
 import ShopSidebar from '@/components/shop/ShopSidebar';
-import { LayoutGrid, List, ChevronDown, RefreshCw } from 'lucide-react';
+import { ChevronDown, RefreshCw } from 'lucide-react';
 import { products } from '@/lib/data/products';
 
 export default function ShopPage() {
@@ -94,13 +94,13 @@ export default function ShopPage() {
             <h1 className="text-[36px] lg:text-[44px] font-black text-primary uppercase tracking-tight mb-2">
               {activeCategory ? activeCategory : 'SafeNet & Co.'}
             </h1>
-            <div className="flex items-center gap-2 text-[12px] font-bold uppercase tracking-widest text-text-secondary">
-              <a href="/" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Home</a>
-              <span>/</span>
-              <a href="/shop" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Shop</a>
+            <div className="flex items-center gap-2 text-[16px] tracking-widest text-text-secondary">
+              <a href="/" className="hover:text-secondary transition-colors decoration-secondary/30 underline-offset-4">Home</a>
+              <span>{">"}</span>
+              <a href="/shop" className="hover:text-secondary transition-colors decoration-secondary/30 underline-offset-4">Shop</a>
               {activeCategory && (
                 <>
-                  <span>/</span>
+                  <span>{">"}</span>
                   <span className="text-primary/40">{activeCategory}</span>
                 </>
               )}
