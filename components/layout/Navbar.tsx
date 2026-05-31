@@ -63,25 +63,28 @@ const Navbar = () => {
       </div>
 
       {/* Main Navigation Bar */}
-      <div className="h-20 lg:h-24 flex items-center bg-white border-b border-border-custom sticky top-0 z-[1000] backdrop-blur-md">
+      <div className="h-16 lg:h-16 flex items-center bg-white border-b border-border-custom sticky top-0 z-[999] backdrop-blur-md">
         <div className="container flex justify-between items-center">
 
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
               <Image
                 src="/images/products/logo_full.png"
                 alt="SafeNet & Co."
-                width={130}
-                height={52}
+                width={40}
+                height={40}
                 className="object-contain"
                 priority
               />
+              <div className="hidden sm:block text-[28px] text-primary tracking-wide">
+                <b>Safe</b>Net
+              </div>
             </Link>
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:block flex-grow px-12">
+          <nav className="hidden lg:block grow px-12">
             <ul className="flex justify-center gap-8 items-center h-full">
               <li className="font-semibold text-[15px] uppercase tracking-wider hover:text-secondary transition-colors h-full flex items-center">
                 <Link href="/">Home</Link>
@@ -91,7 +94,7 @@ const Navbar = () => {
               <li className="font-semibold text-[15px] uppercase tracking-wider hover:text-secondary transition-colors group h-full flex items-center relative">
                 <div className="flex items-center gap-1 cursor-pointer">
                   <Link href="/shop">Shop</Link>
-                  <span className="bg-[#1b3250] text-white text-[9px] px-2 py-0.5 rounded-[2px] font-bold">HOT</span>
+                  <span className="bg-accent text-white text-[9px] px-2 py-0.5 rounded-xs font-bold">HOT</span>
                 </div>
                 <div className="absolute top-[calc(100%+8px)] left-0 w-full bg-white border-b border-border-custom opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-custom-lg z-[1000] rounded-b-[5px]" style={{width: '900px', left: '-200px'}}>
                   <div className="absolute -top-3 left-0 w-full h-4 bg-transparent" />
@@ -119,7 +122,7 @@ const Navbar = () => {
                       ))}
                     </div>
                     <div className="grid grid-cols-2 gap-8">
-                      <div className="relative h-48 bg-[#1b3250] overflow-hidden group/promo">
+                      <div className="relative h-48 bg-accent overflow-hidden group/promo">
                         <div className="absolute inset-0 p-8 flex flex-col justify-center gap-3 z-10">
                           <h5 className="text-[22px] font-bold text-white leading-tight uppercase">Invisible Grill<br /><span className="text-[11px] font-medium tracking-widest">Safety meets elegance</span></h5>
                           <Link href="/product-category/invisible-grill" className="bg-white text-primary text-[10px] uppercase font-black tracking-widest px-8 pt-3 pb-3 w-fit hover:bg-primary hover:text-white transition-all">Shop now</Link>
@@ -273,21 +276,21 @@ const Navbar = () => {
       {/* Backdrop */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-[1999] lg:hidden"
+          className="fixed inset-0 bg-black/50 z-1999 lg:hidden"
           onClick={closeMobile}
         />
       )}
 
       {/* Slide-in Drawer */}
       <div
-        className={`fixed top-0 left-0 h-full w-[85vw] max-w-[360px] bg-white z-[2000] shadow-2xl flex flex-col overflow-y-auto transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`fixed top-0 left-0 h-full w-[85vw] max-w-90 bg-white z-2000 shadow-2xl flex flex-col overflow-y-auto transition-transform duration-300 ease-in-out lg:hidden ${
           mobileOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         {/* Drawer Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-border-custom shrink-0">
           <Link href="/" onClick={closeMobile}>
-            <Image src="/images/products/logo_full.png" alt="SafeNet & Co." width={110} height={44} className="object-contain" />
+            <Image src="/images/products/logo_full.png" alt="SafeNet & Co." width={44} height={44} className="object-contain" />
           </Link>
           <button
             onClick={closeMobile}
@@ -299,7 +302,7 @@ const Navbar = () => {
         </div>
 
         {/* Drawer Nav */}
-        <nav className="flex flex-col px-6 py-4 gap-1 flex-grow">
+        <nav className="flex flex-col px-6 py-4 gap-1 grow">
 
           <Link href="/" onClick={closeMobile} className="py-3.5 text-[15px] font-bold uppercase tracking-wider border-b border-border-custom hover:text-secondary transition-colors">
             Home
