@@ -1,6 +1,7 @@
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import BlogCard from '@/components/ui/BlogCard'
+import PageTitle from '@/components/ui/PageTitle'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 
@@ -77,26 +78,7 @@ export default function BlogPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-[#F8F8F8] border-b border-gray-100 mt-[70px]">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center text-center">
-            <span className="text-[12px] font-bold uppercase tracking-[3px] text-[#828282] mb-4 block">
-              Expert Insights
-            </span>
-            <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-black mb-6">
-              The SafeNet Blog
-            </h1>
-            <p className="text-[#828282] max-w-xl mb-8 leading-relaxed">
-              Tips, guides, and expert knowledge on safety netting, invisible grills, security meshes, and home protection from the SafeNet & Co. team.
-            </p>
-            <nav className="flex items-center gap-2 text-sm font-medium text-gray-500 uppercase tracking-widest">
-              <Link href="/" className="hover:text-black transition-colors">Home</Link>
-              <ChevronRight size={14} className="text-gray-300" />
-              <span className="text-gray-400">Blog</span>
-            </nav>
-          </div>
-        </div>
-      </section>
+      <PageTitle title="Blogs" />
 
       {/* Blog Grid */}
       <section className="py-20 lg:py-32">

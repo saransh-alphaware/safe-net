@@ -7,7 +7,7 @@ import ProductCard from '@/components/shop/ProductCard';
 import ShopSidebar from '@/components/shop/ShopSidebar';
 import { ChevronDown, RefreshCw } from 'lucide-react';
 import { products } from '@/lib/data/products';
-import Link from 'next/link';
+import PageTitle from '@/components/ui/PageTitle';
 
 export default function ShopPage() {
   // Filter States
@@ -78,26 +78,7 @@ export default function ShopPage() {
       <Navbar />
 
       {/* Breadcrumb / Title Bar */}
-      <div className="bg-[#f8f9fa] py-14">
-        <div className="container px-6 mx-auto">
-          <div className="flex flex-col items-center justify-center text-center">
-            <h1 className="text-[36px] lg:text-[44px] font-black text-primary uppercase tracking-tight mb-2">
-              {activeCategory ? activeCategory : 'SafeNet & Co.'}
-            </h1>
-            <div className="flex items-center gap-2 text-[16px] tracking-widest text-text-secondary">
-              <Link href="/" className="hover:text-secondary transition-colors decoration-secondary/30 underline-offset-4">Home</Link>
-              <span>{">"}</span>
-              <Link href="/shop" className="hover:text-secondary transition-colors decoration-secondary/30 underline-offset-4">Shop</Link>
-              {activeCategory && (
-                <>
-                  <span>{">"}</span>
-                  <span className="text-primary/40">{activeCategory}</span>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
+      <PageTitle title="Shop" />
 
       {/* Main Catalog Area */}
       <main className="container px-6 mx-auto py-16 lg:py-24">

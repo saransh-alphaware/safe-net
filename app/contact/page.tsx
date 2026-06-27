@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Mail, Phone, Users, Send, ChevronRight, MessageSquare } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import PageTitle from '@/components/ui/PageTitle';
 
 const ContactPage = () => {
   const [rotatedText, setRotatedText] = useState('hello!');
@@ -25,20 +26,7 @@ const ContactPage = () => {
       <Navbar />
       <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center bg-[#f8f8f8] overflow-hidden">
-        <div className="absolute inset-0 z-0">
-        </div>
-        <div className="container relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight mb-4">
-            Contact us
-          </h1>
-          <nav className="flex items-center justify-center gap-2 text-[13px] font-bold uppercase tracking-widest text-text-secondary">
-            <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
-            <ChevronRight size={14} className="text-border-custom" />
-            <span className="text-primary/40">Contact us</span>
-          </nav>
-        </div>
-      </section>
+      <PageTitle title="Contact Us" />
 
       {/* Info Cards Section */}
       <section className="py-24 bg-white">

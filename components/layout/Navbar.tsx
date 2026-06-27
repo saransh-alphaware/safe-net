@@ -85,19 +85,31 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:block grow px-12">
-            <ul className="flex justify-center gap-8 items-center h-full">
-              <li className="font-semibold text-[15px] uppercase tracking-wider hover:text-secondary transition-colors h-full flex items-center">
+          <nav className="hidden lg:block grow lg:px-4 xl:px-8 2xl:px-12">
+            <ul className="flex justify-center lg:gap-3 xl:gap-5 2xl:gap-8 items-center h-full">
+              <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center">
                 <Link href="/">Home</Link>
               </li>
 
+              <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center shrink-0">
+                <Link href="/invisible-grills">Invisible Grills</Link>
+              </li>
+
+              <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center shrink-0">
+                <Link href="/bird-netting">Bird Netting</Link>
+              </li>
+
+              <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center shrink-0">
+                <Link href="/mosquito-netting">Mosquito Netting</Link>
+              </li>
+
               {/* Shop mega menu */}
-              <li className="font-semibold text-[15px] uppercase tracking-wider hover:text-secondary transition-colors group h-full flex items-center relative">
+              <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors group h-full flex items-center relative">
                 <div className="flex items-center gap-1 cursor-pointer">
                   <Link href="/shop">Shop</Link>
                   <span className="bg-accent text-white text-[9px] px-2 py-0.5 rounded-xs font-bold">HOT</span>
                 </div>
-                <div className="absolute top-[calc(100%+8px)] left-0 w-full bg-white border-b border-border-custom opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-custom-lg z-[1000] rounded-b-[5px]" style={{width: '900px', left: '-200px'}}>
+                <div className="absolute top-[calc(100%+8px)] left-0 w-full bg-white border-b border-border-custom opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-custom-lg z-[1000] rounded-b-[5px]" style={{ width: '900px', left: '-200px' }}>
                   <div className="absolute -top-3 left-0 w-full h-4 bg-transparent" />
                   <div className="container py-12 mx-auto">
                     <div className="grid grid-cols-5 gap-8 mb-12">
@@ -147,10 +159,10 @@ const Navbar = () => {
               </li>
 
               {/* Collections mega menu */}
-              <li className="font-semibold text-[15px] uppercase tracking-wider hover:text-secondary transition-colors group h-full flex items-center relative">
+              <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors group h-full flex items-center relative">
                 <Link href="/collections">Collections</Link>
 
-                <div className="absolute top-[calc(100%+8px)] left-0 w-full bg-white border-b border-border-custom opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-custom-lg z-[1000] rounded-b-[5px]" style={{width: '860px', left: '-280px'}}>
+                <div className="absolute top-[calc(100%+8px)] left-0 w-full bg-white border-b border-border-custom opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-custom-lg z-[1000] rounded-b-[5px]" style={{ width: '860px', left: '-280px' }}>
                   {/* Invisible hover bridge */}
                   <div className="absolute -top-3 left-0 w-full h-4 bg-transparent" />
                   <div className="container py-12 mx-auto">
@@ -206,15 +218,15 @@ const Navbar = () => {
               </li>
 
               {/* Pages dropdown */}
-              <li className="font-semibold text-[15px] uppercase tracking-wider hover:text-secondary transition-colors h-full flex items-center group relative">
+              <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center group relative">
                 <span className="cursor-pointer select-none">Pages</span>
                 <div className="absolute top-[calc(100%+8px)] left-0 w-52 bg-white shadow-custom-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[1000] border-t-2 border-secondary/20 rounded-[5px] overflow-hidden">
                   <div className="absolute -top-3 left-0 w-full h-4 bg-transparent" />
                   <ul className="flex flex-col py-4">
-                    {['About', 'FAQs', 'Wishlist', 'Cart'].map((page) => {
+                    {['About', 'Blog', 'FAQs', 'Wishlist', 'Cart'].map((page) => {
                       const isWishlist = page === 'Wishlist';
                       const isCart = page === 'Cart';
-                      
+
                       if (isWishlist || isCart) {
                         return (
                           <li key={page}>
@@ -230,7 +242,7 @@ const Navbar = () => {
                           </li>
                         );
                       }
-                      
+
                       return (
                         <li key={page}>
                           <Link href={`/${page.toLowerCase()}`} className="block px-8 py-2.5 text-[14px] font-medium text-text-secondary hover:text-secondary hover:bg-gray-50 transition-all capitalize">
@@ -243,10 +255,7 @@ const Navbar = () => {
                 </div>
               </li>
 
-              <li className="font-semibold text-[15px] uppercase tracking-wider hover:text-secondary transition-colors h-full flex items-center">
-                <Link href="/blog">Blog</Link>
-              </li>
-              <li className="font-semibold text-[15px] uppercase tracking-wider hover:text-secondary transition-colors h-full flex items-center">
+              <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center">
                 <Link href="/contact">Contact</Link>
               </li>
             </ul>
@@ -316,9 +325,8 @@ const Navbar = () => {
 
       {/* Slide-in Drawer */}
       <div
-        className={`fixed top-0 left-0 h-full w-[85vw] max-w-90 bg-white z-2000 shadow-2xl flex flex-col overflow-y-auto transition-transform duration-300 ease-in-out lg:hidden ${
-          mobileOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+        className={`fixed top-0 left-0 h-full w-[85vw] max-w-90 bg-white z-2000 shadow-2xl flex flex-col overflow-y-auto transition-transform duration-300 ease-in-out lg:hidden ${mobileOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
       >
         {/* Drawer Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-border-custom shrink-0">
@@ -339,6 +347,18 @@ const Navbar = () => {
 
           <Link href="/" onClick={closeMobile} className="py-3.5 text-[15px] font-bold uppercase tracking-wider border-b border-border-custom hover:text-secondary transition-colors">
             Home
+          </Link>
+
+          <Link href="/invisible-grills" onClick={closeMobile} className="py-3.5 text-[15px] font-bold uppercase tracking-wider border-b border-border-custom hover:text-secondary transition-colors">
+            Invisible Grills
+          </Link>
+
+          <Link href="/bird-netting" onClick={closeMobile} className="py-3.5 text-[15px] font-bold uppercase tracking-wider border-b border-border-custom hover:text-secondary transition-colors">
+            Bird Netting
+          </Link>
+
+          <Link href="/mosquito-netting" onClick={closeMobile} className="py-3.5 text-[15px] font-bold uppercase tracking-wider border-b border-border-custom hover:text-secondary transition-colors">
+            Mosquito Netting
           </Link>
 
           {/* Shop accordion */}
@@ -384,10 +404,10 @@ const Navbar = () => {
             </button>
             {mobilePagesOpen && (
               <div className="pb-4 flex flex-col gap-1 pl-4">
-                {['About', 'FAQs', 'Wishlist', 'Cart'].map((page) => {
+                {['About', 'Blog', 'FAQs', 'Wishlist', 'Cart'].map((page) => {
                   const isWishlist = page === 'Wishlist';
                   const isCart = page === 'Cart';
-                  
+
                   if (isWishlist || isCart) {
                     return (
                       <button
@@ -403,7 +423,7 @@ const Navbar = () => {
                       </button>
                     );
                   }
-                  
+
                   return (
                     <Link
                       key={page}
@@ -419,9 +439,6 @@ const Navbar = () => {
             )}
           </div>
 
-          <Link href="/blog" onClick={closeMobile} className="py-3.5 text-[15px] font-bold uppercase tracking-wider border-b border-border-custom hover:text-secondary transition-colors">
-            Blog
-          </Link>
 
           <Link href="/contact" onClick={closeMobile} className="py-3.5 text-[15px] font-bold uppercase tracking-wider border-b border-border-custom hover:text-secondary transition-colors">
             Contact

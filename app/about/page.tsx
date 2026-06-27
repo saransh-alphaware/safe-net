@@ -159,57 +159,6 @@ const AboutPage = () => {
                         </motion.div>
                     </div>
                 </section>
-
-                {/* Team Leaders */}
-                <section className="py-24 border-t border-border-custom">
-                    <div className="container text-center mb-16">
-                        <span className="text-[12px] font-bold uppercase tracking-[4px] text-secondary mb-4 block">World class designers</span>
-                        <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tighter">Company leaders</h2>
-                    </div>
-                    <div className="container">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                            {[
-                                { name: 'Jeremy dupont', role: 'Director', img: 'https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2023/02/team-01.jpg' },
-                                { name: 'Jessica dover', role: 'Designer', img: 'https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2023/02/team-02.jpg' },
-                                { name: 'Matthew taylor', role: 'Manager', img: 'https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2023/02/team-03.jpg' },
-                                { name: 'John hammond', role: 'Designer', img: 'https://crafto.themezaa.com/decor-store/wp-content/uploads/sites/44/2023/02/team-04.jpg' }
-                            ].map((person, idx) => (
-                                <motion.div 
-                                    key={idx}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: idx * 0.1 }}
-                                    className="group relative overflow-hidden"
-                                >
-                                    <div className="relative aspect-[4/5] overflow-hidden rounded-[5px]">
-                                        <Image src={person.img} alt={person.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-                                        <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                                            {/* <Link href="#" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary hover:bg-secondary hover:text-white transition-all"><Twitter size={16} /></Link> */}
-                                            {/* <Link href="#" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary hover:bg-secondary hover:text-white transition-all"><Linkedin size={16} /></Link> */}
-                                            {/* <Link href="#" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary hover:bg-secondary hover:text-white transition-all"><Facebook size={16} /></Link> */}
-                                        </div>
-                                    </div>
-                                    <div className="py-6">
-                                        <h4 className="text-[16px] font-black text-primary uppercase tracking-tight group-hover:text-secondary transition-colors">{person.name}</h4>
-                                        <span className="text-[12px] font-medium text-text-secondary uppercase tracking-widest">{person.role}</span>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Client Logos */}
-                <section className="py-24 border-t border-border-custom grayscale opacity-50 overflow-hidden">
-                    <div className="container">
-                        <div className="flex flex-wrap items-center justify-between gap-12">
-                            {['TATA STEEL', 'SAIL', 'AIS GLASS', 'JINDAL STEEL', 'SAMSUNG'].map((brand, i) => (
-                                <span key={i} className="text-2xl font-black text-primary tracking-[5px]">{brand}</span>
-                            ))}
-                        </div>
-                    </div>
-                </section>
             </main>
             <Footer />
         </>

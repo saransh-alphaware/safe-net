@@ -3,7 +3,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import PageTitle from "./PageTitle";
+import PageTitle from "@/components/ui/PageTitle";
 import CollectionsGrid from "./CollectionsGrid";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function CollectionsPage() {
     <>
       <Navbar />
       <main className="overflow-hidden bg-white">
-        <PageTitle />
+        <PageTitle title="Collections" />
         <CollectionsGrid />
       </main>
       <Footer />
