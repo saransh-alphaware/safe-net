@@ -21,7 +21,7 @@ const FeaturedBanners = () => {
             </div>
             
             <div className="relative z-10 max-w-sm">
-              <h3 className="text-[34px] lg:text-[44px] font-bold text-primary mb-8 leading-[1.1] tracking-tighter">
+              <h3 className="text-[34px] lg:text-[44px] font-bold text-white mb-8 leading-[1.1] tracking-tighter">
                 Invisible <span className="font-light italic">Grill</span>
               </h3>
               <Link 
@@ -47,7 +47,7 @@ const FeaturedBanners = () => {
               </div>
               
               <div className="relative z-10 max-w-[200px]">
-                <h4 className="text-[26px] lg:text-[32px] font-bold text-primary mb-6 leading-tight tracking-tighter">
+                <h4 className="text-[26px] lg:text-[32px] font-bold text-white mb-6 leading-tight tracking-tighter">
                   Mosquito <span className="font-light italic">Net</span>
                 </h4>
                 <Link 
@@ -72,7 +72,7 @@ const FeaturedBanners = () => {
               </div>
               
               <div className="relative z-10 max-w-[200px]">
-                <h4 className="text-[26px] lg:text-[32px] font-bold text-primary mb-6 leading-tight tracking-tighter">
+                <h4 className="text-[26px] lg:text-[32px] font-bold text-white mb-6 leading-tight tracking-tighter">
                   Security <span className="font-light italic">Mesh</span>
                 </h4>
                 <Link 

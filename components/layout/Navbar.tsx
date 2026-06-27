@@ -91,18 +91,6 @@ const Navbar = () => {
                 <Link href="/">Home</Link>
               </li>
 
-              <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center shrink-0">
-                <Link href="/invisible-grills">Invisible Grills</Link>
-              </li>
-
-              <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center shrink-0">
-                <Link href="/bird-netting">Bird Netting</Link>
-              </li>
-
-              <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center shrink-0">
-                <Link href="/mosquito-netting">Mosquito Netting</Link>
-              </li>
-
               {/* Shop mega menu */}
               <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors group h-full flex items-center relative">
                 <div className="flex items-center gap-1 cursor-pointer">
@@ -216,7 +204,17 @@ const Navbar = () => {
                   </div>
                 </div>
               </li>
+              <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center shrink-0">
+                <Link href="/invisible-grills">Invisible Grills</Link>
+              </li>
 
+              <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center shrink-0">
+                <Link href="/bird-netting">Bird Netting</Link>
+              </li>
+
+              <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center shrink-0">
+                <Link href="/mosquito-netting">Mosquito Netting</Link>
+              </li>
               {/* Pages dropdown */}
               <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center group relative">
                 <span className="cursor-pointer select-none">Pages</span>

@@ -158,11 +158,16 @@ const Footer = () => {
                     FAQs
                   </Link>
                 </li>
-
+                <li>
+                  <Link
+                    href="/blog"
+                    className="hover:text-white transition-colors"
+                  >
+                    Blogs
+                  </Link>
+                </li>
               </ul>
             </div>
-
-
 
             {/* Column 5: Newsletter & Payment Systems */}
             <div className="lg:col-span-3 flex flex-col gap-6">

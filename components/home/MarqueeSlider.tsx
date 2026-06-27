@@ -5,12 +5,11 @@ import { motion } from 'framer-motion';
 
 const MarqueeSlider = () => {
   const items = [
-    { text: "furniture", isSecondary: true },
-    { text: "Free shipping for orders over $130", isSecondary: false },
-    { text: "Easy Returns", isSecondary: true },
-    { text: "Secure Payment Methods", isSecondary: false },
-    { text: "Interior Design", isSecondary: true },
-    { text: "Autumn Collection 2024", isSecondary: false },
+    { text: "Invisible Grill", isSecondary: true },
+    { text: "Bird Net", isSecondary: false },
+    { text: "Mosquito Net", isSecondary: true },
+    { text: "Security Mesh", isSecondary: false },
+    { text: "Zip Screen", isSecondary: true },
   ];
 
   return (
