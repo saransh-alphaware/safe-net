@@ -44,11 +44,7 @@ export default function CategoryClient({
     );
 
     // Sorting
-    if (sortBy === 'price-asc') {
-      result.sort((a, b) => a.price - b.price);
-    } else if (sortBy === 'price-desc') {
-      result.sort((a, b) => b.price - a.price);
-    } else if (sortBy === 'rating') {
+    if (sortBy === 'rating') {
       result.sort((a, b) => b.rating - a.rating);
     }
 
@@ -57,8 +53,6 @@ export default function CategoryClient({
 
   const getSortByLabel = () => {
     switch (sortBy) {
-      case 'price-asc': return 'Price: Low to High';
-      case 'price-desc': return 'Price: High to Low';
       case 'rating': return 'Customer Rating';
       default: return 'Default sorting';
     }
@@ -142,8 +136,6 @@ export default function CategoryClient({
                         <div className="flex flex-col py-1.5">
                           {[
                             { value: 'default', label: 'Default sorting' },
-                            { value: 'price-asc', label: 'Price: Low to High' },
-                            { value: 'price-desc', label: 'Price: High to Low' },
                             { value: 'rating', label: 'Customer Rating' }
                           ].map((opt) => (
                             <button
@@ -197,8 +189,6 @@ export default function CategoryClient({
                     key={product.id}
                     id={product.id}
                     name={product.name}
-                    price={`$${product.price.toFixed(2)}`}
-                    oldPrice={product.originalPrice ? `$${product.originalPrice.toFixed(2)}` : undefined}
                     imageUrl={product.imageUrl}
                     badge={product.badge}
                     rating={product.rating}

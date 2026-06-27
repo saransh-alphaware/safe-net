@@ -222,7 +222,7 @@ const LoungeBanner = () => {
             >
               {product.name}
             </Link>
-            <div className="flex items-center justify-center gap-3"><span className="text-[16px] font-bold text-[#1a2340]">Get Quote</span></div>
+
           </div>
 
           {/* ── STATIC: dot indicators ── */}

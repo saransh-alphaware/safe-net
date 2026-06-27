@@ -71,11 +71,7 @@ const Hero = () => {
                 <span className="font-light italic">{slide.title.split(' ')[1]}</span>
               </h1>
               
-              <p className="text-lg text-text-secondary mb-8 flex items-center gap-2">
-                <span className="text-primary font-bold border-b-2 border-primary pb-0.5">
-                  {slide.price}
-                </span>
-              </p>
+
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
                 <Link href="/shop" className="block">

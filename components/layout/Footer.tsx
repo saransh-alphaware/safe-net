@@ -80,7 +80,7 @@ const Footer = () => {
             </div>
 
             {/* Column 2: Categories */}
-            <div className="lg:col-span-2 flex flex-col gap-6">
+            <div className="lg:col-span-3 flex flex-col gap-6">
               <h4 className="text-[16px] font-bold text-white tracking-wide">
                 Categories
               </h4>
@@ -129,7 +129,7 @@ const Footer = () => {
             </div>
 
             {/* Column 3: Information */}
-            <div className="lg:col-span-2 flex flex-col gap-6">
+            <div className="lg:col-span-3 flex flex-col gap-6">
               <h4 className="text-[16px] font-bold text-white tracking-wide">
                 Information
               </h4>
@@ -158,58 +158,11 @@ const Footer = () => {
                     FAQs
                   </Link>
                 </li>
-                {/* Active link Payment in white */}
-                <li>
-                  <Link
-                    href="/faqs"
-                    className=" hover:text-white transition-colors"
-                  >
-                    Payment
-                  </Link>
-                </li>
+
               </ul>
             </div>
 
-            {/* Column 4: Account */}
-            <div className="lg:col-span-2 flex flex-col gap-6">
-              <h4 className="text-[16px] font-bold text-white tracking-wide">
-                Account
-              </h4>
-              <ul className="flex flex-col gap-3 text-[15px] text-[#828894]">
-                <li>
-                  <Link
-                    href="/my-account"
-                    className="hover:text-white transition-colors"
-                  >
-                    My account
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/orders"
-                    className="hover:text-white transition-colors"
-                  >
-                    Orders
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/checkout"
-                    className="hover:text-white transition-colors"
-                  >
-                    Checkout
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/wishlist"
-                    className="hover:text-white transition-colors"
-                  >
-                    My wishlists
-                  </Link>
-                </li>
-              </ul>
-            </div>
+
 
             {/* Column 5: Newsletter & Payment Systems */}
             <div className="lg:col-span-3 flex flex-col gap-6">

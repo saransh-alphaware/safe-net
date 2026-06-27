@@ -10,8 +10,6 @@ import { products } from '@/lib/data/products';
 interface ProductCardProps {
   id: string;
   name: string;
-  price: string;
-  oldPrice?: string;
   imageUrl: string;
   badge?: 'new' | 'sale' | 'hot';
   rating: number;
@@ -21,8 +19,6 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({
   id,
   name,
-  price,
-  oldPrice,
   imageUrl,
   badge,
   rating,
@@ -109,12 +105,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <Link href={`/product/${slug}`} className="mb-1 text-[15px] font-bold text-primary hover:text-secondary transition-colors leading-snug">
           {name}
         </Link>
-        <div className="flex items-center gap-2">
-          <span className="text-[16px] font-black text-primary">{price}</span>
-          {oldPrice && (
-            <span className="text-[14px] text-text-secondary line-through font-medium opacity-65">{oldPrice}</span>
-          )}
-        </div>
+
       </div>
     </div>
   );

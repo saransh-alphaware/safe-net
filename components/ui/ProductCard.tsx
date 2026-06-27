@@ -10,17 +10,13 @@ import { products } from "@/lib/data/products";
 interface ProductCardProps {
   image: string;
   name: string;
-  price: string;
   tag?: "Hot" | "New" | "Sale";
-  originalPrice?: string;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
   image,
   name,
-  price,
   tag,
-  originalPrice,
 }) => {
   const { addToCart, setQuickViewProduct, toggleWishlist, isInWishlist } = useApp();
 
@@ -105,14 +101,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         >
           {name}
         </Link>
-        <div className="flex items-center gap-2">
-          {originalPrice && (
-            <span className="text-[14px] text-text-secondary line-through opacity-50 font-medium">
-              {originalPrice}
-            </span>
-          )}
-          <span className="text-[14px] font-bold text-primary">{price}</span>
-        </div>
+
       </div>
     </div>
   );

@@ -16,8 +16,6 @@ const CartDrawer = () => {
     updateCartQuantity 
   } = useApp();
 
-  const subtotal = cart.reduce((acc, item) => acc + (item.product.price * item.quantity), 0);
-
   return (
     <AnimatePresence>
       {cartOpen && (
@@ -43,7 +41,7 @@ const CartDrawer = () => {
             <div className="p-6 border-b border-border-custom flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <ShoppingBag size={20} className="text-primary" />
-                <h3 className="text-[18px] font-bold uppercase tracking-wider">Your Cart ({cart.length})</h3>
+                <h3 className="text-[18px] font-bold uppercase tracking-wider">Inquiry List ({cart.length})</h3>
               </div>
               <button 
                 onClick={() => setCartOpen(false)}
@@ -62,9 +60,9 @@ const CartDrawer = () => {
                     <ShoppingBag size={28} />
                   </div>
                   <div>
-                    <h4 className="text-[16px] font-bold uppercase tracking-wider mb-2">Your cart is empty</h4>
+                    <h4 className="text-[16px] font-bold uppercase tracking-wider mb-2">Your inquiry list is empty</h4>
                     <p className="text-[13px] text-text-secondary leading-relaxed max-w-[240px] mx-auto">
-                      Explore our premium furniture and decors to add items here.
+                      Explore our safety nets and invisible grills to add items for quote request.
                     </p>
                   </div>
                   <Link 
@@ -135,9 +133,6 @@ const CartDrawer = () => {
                             <Plus size={11} />
                           </button>
                         </div>
-
-                        {/* Price */}
-                        <span className="text-[14px] font-black">${(item.product.price * item.quantity).toFixed(2)}</span>
                       </div>
                     </div>
                   </div>
@@ -148,26 +143,22 @@ const CartDrawer = () => {
             {/* Footer Summary (Sticky at bottom) */}
             {cart.length > 0 && (
               <div className="p-6 bg-[#f8f9fa] border-t border-border-custom space-y-4">
-                <div className="flex items-center justify-between text-[15px] font-bold">
-                  <span>Subtotal:</span>
-                  <span className="text-[18px] font-black text-primary">${subtotal.toFixed(2)}</span>
-                </div>
                 <p className="text-[12px] text-text-secondary leading-relaxed">
-                  Shipping, taxes, and discounts calculated at checkout.
+                  Submit this inquiry list to receive a free, customized quotation based on your measurements.
                 </p>
                 <div className="grid grid-cols-1 gap-2 pt-2">
                   <Link 
-                    href="/checkout"
+                    href="/contact"
                     onClick={() => setCartOpen(false)}
                     className="w-full h-12 bg-primary text-white text-[11px] font-black uppercase tracking-widest flex items-center justify-center hover:bg-secondary transition-all rounded-[2px]"
                   >
-                    Proceed to checkout
+                    Request Quote / Contact Us
                   </Link>
                   <button 
                     onClick={() => setCartOpen(false)}
                     className="w-full h-12 border border-border-custom text-primary text-[11px] font-black uppercase tracking-widest flex items-center justify-center hover:bg-white transition-all bg-transparent rounded-[2px] cursor-pointer"
                   >
-                    Continue shopping
+                    Continue browsing
                   </button>
                 </div>
               </div>

@@ -12,8 +12,6 @@ interface ShopSidebarProps {
   onSelectColor?: (color: string | null) => void;
   activeFabric?: string | null;
   onSelectFabric?: (fabric: string | null) => void;
-  priceRange?: [number, number];
-  onSelectPriceRange?: (range: [number, number]) => void;
 }
 
 const ShopSidebar: React.FC<ShopSidebarProps> = ({
@@ -23,8 +21,6 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
   onSelectColor,
   activeFabric = null,
   onSelectFabric,
-  priceRange = [0, 250],
-  onSelectPriceRange,
 }) => {
   // Compute counts dynamically
   const categories: { name: string; categoryRef?: string }[] = [
@@ -68,13 +64,12 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
     return products.filter(p => p.fabrics.includes(fabricName)).length;
   };
 
-  const hasAnyFilterActive = activeCategory || activeColor || activeFabric || priceRange[0] > 0 || priceRange[1] < 250;
+  const hasAnyFilterActive = !!(activeCategory || activeColor || activeFabric);
 
   const handleReset = () => {
     if (onSelectCategory) onSelectCategory(null);
     if (onSelectColor) onSelectColor(null);
     if (onSelectFabric) onSelectFabric(null);
-    if (onSelectPriceRange) onSelectPriceRange([0, 250]);
   };
 
   return (
@@ -110,12 +105,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
                 <X size={10} className="cursor-pointer" onClick={() => onSelectFabric && onSelectFabric(null)} />
               </span>
             )}
-            {(priceRange[0] > 0 || priceRange[1] < 250) && (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white text-[12px] font-bold border border-border-custom rounded-full">
-                ${priceRange[0]} - ${priceRange[1]}
-                <X size={10} className="cursor-pointer" onClick={() => onSelectPriceRange && onSelectPriceRange([0, 250])} />
-              </span>
-            )}
+
           </div>
         </div>
       )}
@@ -160,33 +150,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
         </ul>
       </div>
 
-      {/* Price Section */}
-      <div>
-        <h4 className="mb-6 text-[14px] font-black uppercase tracking-wider">
-          Filter by price
-        </h4>
-        <div className="flex flex-col gap-4">
-          <input
-            type="range"
-            min="0"
-            max="250"
-            value={priceRange[1]}
-            onChange={(e) => onSelectPriceRange && onSelectPriceRange([priceRange[0], parseInt(e.target.value)])}
-            className="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
-          />
-          <div className="flex items-center justify-between">
-            <span className="text-[14px] text-text-secondary font-medium">
-              Max Price: <span className="font-bold text-primary">${priceRange[1]}</span>
-            </span>
-            <button 
-              onClick={() => onSelectPriceRange && onSelectPriceRange([0, priceRange[1]])}
-              className="px-4 py-1.5 border border-border-custom text-[10px] font-bold uppercase tracking-widest text-[#828282] hover:bg-primary hover:text-white transition-all rounded-[3px] cursor-pointer"
-            >
-              Filter
-            </button>
-          </div>
-        </div>
-      </div>
+
 
       {/* Color Section */}
       <div>
@@ -281,7 +245,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
                 <Link href={`/product/${item.slug}`} className="text-[13px] font-bold text-primary hover:text-secondary cursor-pointer transition-colors leading-tight">
                   {item.name}
                 </Link>
-                <span className="text-[13px] font-black text-primary mt-1">${item.price.toFixed(2)}</span>
+
               </div>
             </div>
           ))}

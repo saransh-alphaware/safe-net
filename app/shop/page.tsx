@@ -14,7 +14,6 @@ export default function ShopPage() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [activeColor, setActiveColor] = useState<string | null>(null);
   const [activeFabric, setActiveFabric] = useState<string | null>(null);
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 250]);
   
   // View & Sorting States
   const [sortBy, setSortBy] = useState<string>('default');
@@ -44,20 +43,13 @@ export default function ShopPage() {
       result = result.filter(p => p.fabrics.includes(activeFabric));
     }
 
-    // Price filter
-    result = result.filter(p => p.price >= priceRange[0] && p.price <= priceRange[1]);
-
     // Sorting
-    if (sortBy === 'price-asc') {
-      result.sort((a, b) => a.price - b.price);
-    } else if (sortBy === 'price-desc') {
-      result.sort((a, b) => b.price - a.price);
-    } else if (sortBy === 'rating') {
+    if (sortBy === 'rating') {
       result.sort((a, b) => b.rating - a.rating);
     }
 
     return result;
-  }, [activeCategory, activeColor, activeFabric, priceRange, sortBy]);
+  }, [activeCategory, activeColor, activeFabric, sortBy]);
 
   // Reset to page 1 whenever filters change
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
@@ -70,15 +62,12 @@ export default function ShopPage() {
     setActiveCategory(null);
     setActiveColor(null);
     setActiveFabric(null);
-    setPriceRange([0, 250]);
     setSortBy('default');
     setCurrentPage(1);
   };
 
   const getSortByLabel = () => {
     switch (sortBy) {
-      case 'price-asc': return 'Price: Low to High';
-      case 'price-desc': return 'Price: High to Low';
       case 'rating': return 'Customer Rating';
       default: return 'Default sorting';
     }
@@ -123,8 +112,6 @@ export default function ShopPage() {
               onSelectColor={setActiveColor}
               activeFabric={activeFabric}
               onSelectFabric={setActiveFabric}
-              priceRange={priceRange}
-              onSelectPriceRange={setPriceRange}
             />
           </div>
 
@@ -176,8 +163,6 @@ export default function ShopPage() {
                         <div className="flex flex-col py-1.5">
                           {[
                             { value: 'default', label: 'Default sorting' },
-                            { value: 'price-asc', label: 'Price: Low to High' },
-                            { value: 'price-desc', label: 'Price: High to Low' },
                             { value: 'rating', label: 'Customer Rating' }
                           ].map((opt) => (
                             <button
@@ -210,7 +195,7 @@ export default function ShopPage() {
                 <div>
                   <h3 className="text-[18px] font-bold uppercase tracking-wider mb-2">No products match your filters</h3>
                   <p className="text-[14px] text-text-secondary max-w-[340px] leading-relaxed">
-                    Try broadening your selection by resetting colorways, fabrics, or price limits.
+                    Try broadening your selection by resetting colorways or fabrics.
                   </p>
                 </div>
                 <button 
@@ -231,8 +216,6 @@ export default function ShopPage() {
                     key={product.id}
                     id={product.id}
                     name={product.name}
-                    price={`$${product.price.toFixed(2)}`}
-                    oldPrice={product.originalPrice ? `$${product.originalPrice.toFixed(2)}` : undefined}
                     imageUrl={product.imageUrl}
                     badge={product.badge}
                     rating={product.rating}

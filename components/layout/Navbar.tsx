@@ -7,6 +7,7 @@ import { X, Menu, ChevronDown } from 'lucide-react';
 import { useApp } from '@/lib/context/AppContext';
 import CartDrawer from './CartDrawer';
 import SearchDrawer from './SearchDrawer';
+import WishlistDrawer from './WishlistDrawer';
 
 const NAV_CATEGORIES = [
   { label: 'Invisible Grill', slug: 'invisible-grill' },
@@ -17,7 +18,7 @@ const NAV_CATEGORIES = [
 ];
 
 const Navbar = () => {
-  const { cart, setCartOpen, setSearchOpen } = useApp();
+  const { cart, setCartOpen, setSearchOpen, wishlist, setWishlistOpen } = useApp();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileShopOpen, setMobileShopOpen] = useState(false);
   const [mobilePagesOpen, setMobilePagesOpen] = useState(false);
@@ -206,17 +207,38 @@ const Navbar = () => {
 
               {/* Pages dropdown */}
               <li className="font-semibold text-[15px] uppercase tracking-wider hover:text-secondary transition-colors h-full flex items-center group relative">
-                <Link href="/pages">Pages</Link>
+                <span className="cursor-pointer select-none">Pages</span>
                 <div className="absolute top-[calc(100%+8px)] left-0 w-52 bg-white shadow-custom-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[1000] border-t-2 border-secondary/20 rounded-[5px] overflow-hidden">
                   <div className="absolute -top-3 left-0 w-full h-4 bg-transparent" />
                   <ul className="flex flex-col py-4">
-                    {['About', 'FAQs', 'Wishlist', 'Account', 'Cart', 'Checkout'].map((page) => (
-                      <li key={page}>
-                        <Link href={`/${page.toLowerCase()}`} className="block px-8 py-2.5 text-[14px] font-medium text-text-secondary hover:text-secondary hover:bg-gray-50 transition-all capitalize">
-                          {page}
-                        </Link>
-                      </li>
-                    ))}
+                    {['About', 'FAQs', 'Wishlist', 'Cart'].map((page) => {
+                      const isWishlist = page === 'Wishlist';
+                      const isCart = page === 'Cart';
+                      
+                      if (isWishlist || isCart) {
+                        return (
+                          <li key={page}>
+                            <button
+                              onClick={() => {
+                                if (isWishlist) setWishlistOpen(true);
+                                if (isCart) setCartOpen(true);
+                              }}
+                              className="w-full text-left px-8 py-2.5 text-[14px] font-medium text-text-secondary hover:text-secondary hover:bg-gray-50 transition-all capitalize cursor-pointer"
+                            >
+                              {page}
+                            </button>
+                          </li>
+                        );
+                      }
+                      
+                      return (
+                        <li key={page}>
+                          <Link href={`/${page.toLowerCase()}`} className="block px-8 py-2.5 text-[14px] font-medium text-text-secondary hover:text-secondary hover:bg-gray-50 transition-all capitalize">
+                            {page}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </li>
@@ -241,10 +263,21 @@ const Navbar = () => {
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
             </button>
 
-            {/* My account — desktop only */}
-            <Link href="/account" className="hidden lg:block hover:text-secondary transition-colors text-[14px] font-semibold uppercase tracking-wide">
-              My account
-            </Link>
+            {/* Wishlist */}
+            <button
+              onClick={() => setWishlistOpen(true)}
+              className="relative hover:text-secondary transition-colors p-1 cursor-pointer"
+              aria-label="Wishlist"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+              {wishlist.length > 0 && (
+                <span className="absolute -top-1 -right-1 bg-secondary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
+                  {wishlist.length}
+                </span>
+              )}
+            </button>
+
+
 
             {/* Cart */}
             <button
@@ -351,16 +384,37 @@ const Navbar = () => {
             </button>
             {mobilePagesOpen && (
               <div className="pb-4 flex flex-col gap-1 pl-4">
-                {['About', 'FAQs', 'Wishlist', 'Account', 'Cart', 'Checkout'].map((page) => (
-                  <Link
-                    key={page}
-                    href={`/${page.toLowerCase()}`}
-                    onClick={closeMobile}
-                    className="py-2 text-[14px] font-medium text-text-secondary hover:text-secondary transition-colors capitalize"
-                  >
-                    {page}
-                  </Link>
-                ))}
+                {['About', 'FAQs', 'Wishlist', 'Cart'].map((page) => {
+                  const isWishlist = page === 'Wishlist';
+                  const isCart = page === 'Cart';
+                  
+                  if (isWishlist || isCart) {
+                    return (
+                      <button
+                        key={page}
+                        onClick={() => {
+                          closeMobile();
+                          if (isWishlist) setWishlistOpen(true);
+                          if (isCart) setCartOpen(true);
+                        }}
+                        className="w-full text-left py-2 text-[14px] font-medium text-text-secondary hover:text-secondary transition-colors capitalize cursor-pointer font-semibold"
+                      >
+                        {page}
+                      </button>
+                    );
+                  }
+                  
+                  return (
+                    <Link
+                      key={page}
+                      href={`/${page.toLowerCase()}`}
+                      onClick={closeMobile}
+                      className="py-2 text-[14px] font-medium text-text-secondary hover:text-secondary transition-colors capitalize font-semibold"
+                    >
+                      {page}
+                    </Link>
+                  );
+                })}
               </div>
             )}
           </div>
@@ -394,6 +448,7 @@ const Navbar = () => {
       {/* Global Drawers */}
       <CartDrawer />
       <SearchDrawer />
+      <WishlistDrawer />
     </header>
   );
 };

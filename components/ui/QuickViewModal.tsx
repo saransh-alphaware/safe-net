@@ -91,15 +91,7 @@ const QuickViewModal = () => {
               {product.name}
             </h2>
 
-            {/* Price */}
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-[22px] font-black text-primary">${product.price.toFixed(2)}</span>
-              {product.originalPrice && (
-                <span className="text-[16px] text-text-secondary line-through opacity-60">
-                  ${product.originalPrice.toFixed(2)}
-                </span>
-              )}
-            </div>
+
 
             {/* Description */}
             <p className="text-[14px] text-text-secondary leading-relaxed mb-6">

@@ -135,7 +135,7 @@ const SearchDrawer = () => {
                         <div className="flex flex-col justify-center">
                           <span className="text-[15px] font-bold text-primary group-hover:text-secondary transition-colors line-clamp-1">{product.name}</span>
                           <span className="text-[11px] font-bold uppercase tracking-wider text-text-secondary mt-1">{product.category}</span>
-                          <span className="text-[14px] font-black mt-1">${product.price.toFixed(2)}</span>
+
                         </div>
                       </Link>
                     ))}

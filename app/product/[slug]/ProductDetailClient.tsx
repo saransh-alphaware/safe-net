@@ -157,15 +157,7 @@ export default function ProductDetailPage({
                 {product.name}
               </h1>
               
-              {/* Price */}
-              <div className="flex items-center gap-3 mb-8">
-                <span className="text-[28px] font-black text-primary">${product.price.toFixed(2)}</span>
-                {product.originalPrice && (
-                  <span className="text-[20px] text-text-secondary line-through font-medium opacity-65">
-                    ${product.originalPrice.toFixed(2)}
-                  </span>
-                )}
-              </div>
+
 
               {/* Summary */}
               <p className="text-[15px] text-text-secondary leading-[1.8] mb-8">
@@ -406,8 +398,6 @@ export default function ProductDetailPage({
                       key={p.id}
                       id={p.id}
                       name={p.name}
-                      price={`$${p.price.toFixed(2)}`}
-                      oldPrice={p.originalPrice ? `$${p.originalPrice.toFixed(2)}` : undefined}
                       imageUrl={p.imageUrl}
                       badge={p.badge}
                       rating={p.rating}
