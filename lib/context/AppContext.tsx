@@ -41,8 +41,8 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 
   // Load cart and wishlist from localStorage on mount
   useEffect(() => {
-    const savedCart = localStorage.getItem('safenet_cart');
-    const savedWishlist = localStorage.getItem('safenet_wishlist');
+    const savedCart = localStorage.getItem('safenet_and_co_cart');
+    const savedWishlist = localStorage.getItem('safenet_and_co_wishlist');
     if (savedCart) {
       try {
         setCart(JSON.parse(savedCart));
@@ -62,12 +62,12 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   // Sync to localStorage
   const saveCart = (newCart: CartItem[]) => {
     setCart(newCart);
-    localStorage.setItem('safenet_cart', JSON.stringify(newCart));
+    localStorage.setItem('safenet_and_co_cart', JSON.stringify(newCart));
   };
 
   const saveWishlist = (newWishlist: Product[]) => {
     setWishlist(newWishlist);
-    localStorage.setItem('safenet_wishlist', JSON.stringify(newWishlist));
+    localStorage.setItem('safenet_and_co_wishlist', JSON.stringify(newWishlist));
   };
 
   const addToCart = (product: Product, quantity = 1, color?: string, fabric?: string) => {

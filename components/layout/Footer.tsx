@@ -35,7 +35,7 @@ const Footer = () => {
                   priority
                 />
                 <div className="hidden sm:block text-[28px] text-white tracking-wide">
-                  <b>Safe</b>Net
+                  <b>SafeNet</b> & Co.
                 </div>
               </Link>
 
@@ -195,7 +195,7 @@ const Footer = () => {
                 <div className="flex items-center gap-4 mt-4">
                   <RiVisaLine size={40} className="text-white" />
                   <FaPaypal size={20} className="text-white" />
-                  <TbCoinRupee size={30}  className="text-white" />
+                  <TbCoinRupee size={30} className="text-white" />
                   <BsQrCodeScan size={20} className="text-white" />
                 </div>
               </div>

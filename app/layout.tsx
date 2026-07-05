@@ -12,8 +12,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Safenet | Premium Home Decor & Furniture",
-  description: "Discover a curated collection of premium home decor, furniture, and lifestyle products at Safenet. Modern designs for a stunning home.",
+  title: "SafeNet & Co. | Premium Home Decor & Furniture",
+  description: "Discover a curated collection of premium home decor, furniture, and lifestyle products at SafeNet & Co. Modern designs for a stunning home.",
 };
 
 export default function RootLayout({

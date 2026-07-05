@@ -71,7 +71,7 @@ const FAQ_DATA = {
     ],
     'Warranty & Service': [
         { 
-            q: "What warranty do you offer on SafeNet products?", 
+            q: "What warranty do you offer on SafeNet & Co. products?", 
             a: "We offer a 3 to 5-year warranty on our SS316 invisible grills and bird nets. Our screens and zip screens come with a standard 1 to 2-year mechanical warranty." 
         },
         { 

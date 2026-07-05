@@ -361,7 +361,7 @@ export default function ProductDetailPage({
                     <h3 className="text-[20px] font-black uppercase tracking-wider mb-6 text-center">Customer Testimonials</h3>
                     {[
                       { author: 'Elena Rostova', date: 'April 14, 2026', text: 'Stunning design! It completely transformed my bedroom corner styling. High-quality acoustics and soft comfortable light glow.', stars: 5 },
-                      { author: 'Marc Dubois', date: 'May 02, 2026', text: 'Handcrafted quality is definitely outstanding. Tapered lines and lacquer details look premium. Would recommend Safenet highly.', stars: 4 },
+                      { author: 'Marc Dubois', date: 'May 02, 2026', text: 'Handcrafted quality is definitely outstanding. Tapered lines and lacquer details look premium. Would recommend SafeNet & Co. highly.', stars: 4 },
                       { author: 'Sarah Jenkins', date: 'May 19, 2026', text: 'I am in love with this decor. Exquisite look, feels heavy and solid. Shipping was extremely fast too!', stars: 5 }
                     ].map((rev, idx) => (
                       <div key={idx} className="p-6 bg-[#f8f9fa] border border-border-custom rounded-[3px] space-y-3">

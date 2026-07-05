@@ -7,7 +7,7 @@ import PageTitle from "@/components/ui/PageTitle";
 import CollectionsGrid from "./CollectionsGrid";
 
 export const metadata: Metadata = {
-  title: "Collections | Safenet",
+  title: "Collections | SafeNet & Co.",
   description: "Explore our premium decor collections.",
 };
 

@@ -69,16 +69,31 @@ const Hero = () => {
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
-      className="relative min-h-[95vh] flex flex-col justify-between overflow-hidden bg-bg-secondary pt-20 lg:pt-0"
+      className="relative min-h-[95vh] flex flex-col justify-between overflow-hidden pt-20 lg:pt-0"
     >
-      {/* Circular background decoration */}
-      <motion.div
-        key={`circle-${currentSlide}`}
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-0 lg:translate-x-1/4 w-[90vw] h-[90vw] max-w-[500px] max-h-[500px] lg:w-[600px] lg:h-[600px] rounded-full bg-white/40 z-0"
-      />
+      {/* Dynamic Background Image with Fade & Scale Transition */}
+      <div className="absolute inset-0 z-0 select-none pointer-events-none">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`bg-${currentSlide}`}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              className="object-cover object-center"
+              priority
+            />
+          </motion.div>
+        </AnimatePresence>
+        {/* Soft elegant gradient overlay to ensure text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/40 to-transparent hidden lg:block" />
+      </div>
 
       <div className="container relative z-10 my-auto py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
@@ -110,7 +125,7 @@ const Hero = () => {
                   className="flex lg:hidden items-center gap-4 group cursor-pointer relative mt-2"
                   onClick={() => setShowInfo(!showInfo)}
                 >
-                  <span className="text-[11px] font-bold uppercase tracking-widest text-primary">More information</span>
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-white">More information</span>
                   <div className="w-10 h-10 rounded-full border border-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                     <Info size={18} />
                   </div>
@@ -134,27 +149,8 @@ const Hero = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Image Area */}
-          <div className="relative h-[250px] sm:h-[350px] lg:h-[70vh] flex items-center justify-center w-full z-10">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={`image-${currentSlide}`}
-                initial={{ scale: 0.9, opacity: 0, rotate: 5 }}
-                animate={{ scale: 1, opacity: 1, rotate: 0 }}
-                exit={{ scale: 1.1, opacity: 0, rotate: -5 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="relative w-full h-full"
-              >
-                <Image
-                  src={slide.image}
-                  alt={slide.title}
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </motion.div>
-            </AnimatePresence>
-          </div>
+          {/* Spacer to push/offset layout on the right and keep it visible */}
+          <div className="h-[150px] lg:h-[70vh] w-full pointer-events-none" />
         </div>
       </div>
 
@@ -185,7 +181,7 @@ const Hero = () => {
           onMouseEnter={() => setShowInfo(true)}
           onMouseLeave={() => setShowInfo(false)}
         >
-          <span className="text-[11px] font-bold uppercase tracking-widest text-primary opacity-80 group-hover:opacity-100 transition-opacity">More information</span>
+          <span className="text-[11px] font-bold uppercase tracking-widest text-white opacity-80 group-hover:opacity-100 transition-opacity">More information</span>
           <div className="w-10 h-10 rounded-full border border-primary/10 flex items-center justify-center bg-white group-hover:bg-primary group-hover:text-white transition-all shadow-custom-sm">
             <Info size={18} />
           </div>
@@ -209,7 +205,7 @@ const Hero = () => {
       </div>
 
       {/* Mobile Next Control Bar */}
-      <div className="w-full h-20 flex lg:hidden border-t border-border-custom mt-auto">
+      <div className="w-full h-20 flex lg:hidden border-t border-border-custom mt-auto relative z-10">
         <button
           onClick={nextSlide}
           className="w-1/2 bg-white flex items-center justify-center font-black uppercase tracking-widest text-[13px] text-primary"

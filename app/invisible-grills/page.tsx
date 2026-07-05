@@ -150,7 +150,7 @@ const InvisibleGrillsPage = () => {
               {/* Invisible Safety Grill Card */}
               <div className="bg-[#1b3250] p-10 rounded-[8px] border border-secondary/20 text-white flex flex-col justify-between shadow-custom-xl">
                 <div>
-                  <h3 className="text-2xl font-black uppercase tracking-tight mb-4 text-white">SafeNet Invisible Grills</h3>
+                  <h3 className="text-2xl font-black uppercase tracking-tight mb-4 text-white">SafeNet & Co. Invisible Grills</h3>
                   <p className="text-[15px] text-white/80 leading-relaxed mb-6">
                     Forming a robust, permanent protective barrier with thin, high-tensile steel cables that are highly flexible, rust-proof, and allow 100% natural light and unblocked panoramic views.
                   </p>

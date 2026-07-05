@@ -8,7 +8,7 @@ const brands = [
   { name: "pepperfry", weight: "font-bold" },
   { name: "ARTICLE.", weight: "font-extrabold tracking-[0.2em]" },
   { name: "Instagram", weight: "font-medium" },
-  { name: "Safenet", weight: "font-black" },
+  { name: "SafeNet & Co.", weight: "font-black" },
   { name: "Interior", weight: "font-light italic" },
 ];
 
@@ -20,13 +20,13 @@ const ClientLogos = () => {
       <div className="absolute right-0 top-0 w-32 md:w-60 h-full bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
       <div className="flex whitespace-nowrap">
-        <motion.div 
+        <motion.div
           className="flex items-center"
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ 
-            duration: 30, 
-            repeat: Infinity, 
-            ease: "linear" 
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "linear"
           }}
         >
           {/* Duplicate brands for seamless loop */}

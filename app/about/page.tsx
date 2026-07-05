@@ -17,7 +17,7 @@ const AboutPage = () => {
                 <section className="relative h-[30vh] min-h-[250px] flex items-center justify-center bg-[#F8F9FA] overflow-hidden">
                     <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#232323_1px,transparent_1px)] [background-size:20px_20px]"></div>
                     <div className="container relative z-10 text-center">
-                        <motion.h1 
+                        <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight mb-4"
@@ -43,8 +43,8 @@ const AboutPage = () => {
                                         <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-2">
                                             <Star className="text-secondary fill-secondary" size={20} />
                                         </div>
-                                         <span className="text-[10px] font-bold uppercase tracking-[3px] text-text-secondary mb-1">SafeNet & Co.</span>
-                                         <h4 className="text-xl font-black text-primary leading-tight">INDIA'S BEST <br/>SAFETY SOLUTIONS</h4>
+                                        <span className="text-[10px] font-bold uppercase tracking-[3px] text-text-secondary mb-1">SafeNet & Co.</span>
+                                        <h4 className="text-xl font-black text-primary leading-tight">INDIA'S BEST <br/>SAFETY SOLUTIONS</h4>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@ const AboutPage = () => {
                     <div className="container relative">
                         <div className="flex justify-center items-center relative min-h-[400px] md:min-h-[600px]">
                             {/* Left Image */}
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, x: -50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
@@ -80,7 +80,7 @@ const AboutPage = () => {
                                 <Image src="/safe-net/about_plant.webp" alt="Decor" fill className="object-cover rounded-[5px] shadow-custom-lg" />
                             </motion.div>
                             {/* Main Center Image */}
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
@@ -89,7 +89,7 @@ const AboutPage = () => {
                                 <Image src="/safe-net/about_sofa.webp" alt="Crafto Decor" fill className="object-cover rounded-[5px] shadow-custom-xl" />
                             </motion.div>
                             {/* Right Image */}
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, x: 50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
@@ -106,12 +106,12 @@ const AboutPage = () => {
                     <div className="container">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                             {[
-                                { year: '2015', title: 'SafeNet Founded', desc: 'Started high-quality safety net installations in Mumbai.' },
+                                { year: '2015', title: 'SafeNet & Co. Founded', desc: 'Started high-quality safety net installations in Mumbai.' },
                                 { year: '2018', title: 'Delhi Office Opened', desc: 'Expanded safety solutions to New Delhi & NCR region.' },
                                 { year: '2021', title: 'Invisible Grill Launch', desc: 'Introduced high-tensile SS316 invisible grills.' },
                                 { year: '2024', title: 'Motorised Zip Screens', desc: 'Launched premium weather-proof zip screens.' }
                             ].map((item, idx) => (
-                                <motion.div 
+                                <motion.div
                                     key={idx}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -136,7 +136,7 @@ const AboutPage = () => {
                 {/* Trust Banner */}
                 <section className="py-32">
                     <div className="container text-center">
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}

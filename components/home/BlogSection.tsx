@@ -43,14 +43,14 @@ const BlogSection = () => {
   return (
     <section className="py-20 lg:py-24 bg-white font-sans">
       <div className="container">
-        
+
         {/* Centered Heading Section */}
         <div className="text-center mb-16">
           <span className="text-[12px] font-bold uppercase tracking-[3px] text-[#828282] mb-2 block">
             EXPERT INSIGHTS
           </span>
           <h2 className="text-[34px] lg:text-[40px] font-bold text-[#232323] leading-tight tracking-tight">
-            The SafeNet blog
+            The SafeNet & Co. blog
           </h2>
         </div>
 
@@ -58,15 +58,15 @@ const BlogSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 px-4 lg:px-0">
           {blogs.map((blog) => (
             <div key={blog.id} className="group flex flex-col gap-5">
-              
+
               {/* Rounded Image Container */}
               <div className="relative aspect-[16/11.5] rounded-[6px] overflow-hidden">
-                <Image 
-                  src={blog.image} 
-                  alt={blog.title} 
-                  fill 
+                <Image
+                  src={blog.image}
+                  alt={blog.title}
+                  fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 

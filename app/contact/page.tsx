@@ -44,7 +44,7 @@ const ContactPage = () => {
                 icon: <Mail size={18} />, 
                 title: 'Send a message', 
                 detail1: 'safenetandco@gmail.com',
-                detail2: 'info@safenetandco.com',
+                // detail2: 'info@safenetandco.com',
                 link: 'mailto:safenetandco@gmail.com'
               },
               { 
@@ -54,13 +54,13 @@ const ContactPage = () => {
                 detail2: '+91 8851606948',
                 link: 'tel:+918080703321'
               },
-              { 
-                icon: <Users size={18} />, 
-                title: 'Join our team', 
-                detail1: 'hr@safenetandco.com',
-                detail2: 'careers@safenetandco.com',
-                link: 'mailto:safenetandco@gmail.com'
-              }
+              // { 
+              //   icon: <Users size={18} />, 
+              //   title: 'Join our team', 
+              //   detail1: 'hr@safenetandco.com',
+              //   detail2: 'careers@safenetandco.com',
+              //   link: 'mailto:safenetandco@gmail.com'
+              // }
             ].map((card, idx) => (
               <motion.div 
                 key={idx}

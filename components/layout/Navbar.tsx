@@ -48,13 +48,12 @@ const Navbar = () => {
         <div className="container flex justify-between items-center text-[13px]">
           <div className="flex items-center gap-6">
             <span className="flex items-center leading-none font-semibold gap-1">
-              Free Installation on orders. Safety. Strength. Solutions.
-              <Link href="/shop" className="font-[700] border-b ml-1">Shop now</Link>
+              We Provide. Safety. Strength. Solutions.
             </span>
           </div>
           <div className="flex items-center gap-8">
             <Link href="/contact" className="flex items-center gap-2 hover:text-secondary transition-colors">
-              <span className="font-medium">Customer service</span>
+              <span className="font-medium">Contact</span>
             </Link>
             <Link href="/contact" className="flex items-center gap-2 hover:text-secondary transition-colors">
               <span className="font-medium">Find our store</span>
@@ -79,7 +78,7 @@ const Navbar = () => {
                 priority
               />
               <div className="hidden sm:block text-[28px] text-primary tracking-wide">
-                <b>Safe</b>Net
+                <b>SafeNet</b> & Co.
               </div>
             </Link>
           </div>
