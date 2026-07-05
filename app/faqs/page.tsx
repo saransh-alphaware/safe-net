@@ -26,7 +26,7 @@ const FAQ_DATA = {
         },
         { 
             q: "What products does SafeNet & Co. offer?", 
-            a: "We offer high-tensile stainless steel Invisible Grills, durable HDPE and Nylon Bird Netting, Pleated Mosquito Nets, Aluminium Security Meshes, and Motorised or Manual Zip Screens." 
+            a: "We offer high-tensile stainless steel Invisible Grills, durable HDPE and Nylon Bird Net, Pleated Mosquito Nets, Aluminium Security Meshes, and Motorised or Manual Zip Screens." 
         },
         { 
             q: "Do you provide installation services?", 
@@ -43,7 +43,7 @@ const FAQ_DATA = {
             a: "No. The SS316 grade stainless steel cable has superior resistance to corrosion and is coated with a premium nanotechnology nylon sleeve, preventing rust even in coastal climates." 
         }
     ],
-    'Bird Netting': [
+    'Bird Net': [
         { 
             q: "What is the difference between HDPE and Nylon bird nets?", 
             a: "HDPE nets are heavy-duty, UV-stabilized, and come in square mesh sizes (19mm to 50mm). Nylon nets are copolymer monofilament nets, offering high strength while being virtually invisible (transparent or black)." 
@@ -84,7 +84,7 @@ const FAQ_DATA = {
 const CATEGORIES = [
     { id: 'General', icon: <LayoutGrid size={18} /> },
     { id: 'Invisible Grills', icon: <ShoppingBag size={18} /> },
-    { id: 'Bird Netting', icon: <CreditCard size={18} /> },
+    { id: 'Bird Net', icon: <CreditCard size={18} /> },
     { id: 'Mosquito Screens', icon: <Package size={18} /> },
     { id: 'Security & Zip Screens', icon: <ShoppingCart size={18} /> },
     { id: 'Warranty & Service', icon: <HelpCircle size={18} /> }

@@ -68,7 +68,7 @@ const BLOG_DATA: Record<string, {
     author: AUTHOR,
     tags: ["Bird Net", "HDPE", "Nylon", "Guide"],
     likes: 27,
-    intro: "Bird intrusion in balconies, open shafts, and rooftops is a persistent problem in Indian urban homes. SafeNet & Co. offers two premium bird netting systems — HDPE square mesh and nylon diamond/square mesh. Each has distinct advantages depending on your specific use case.",
+    intro: "Bird intrusion in balconies, open shafts, and rooftops is a persistent problem in Indian urban homes. SafeNet & Co. offers two premium bird net systems — HDPE square mesh and nylon diamond/square mesh. Each has distinct advantages depending on your specific use case.",
     subheading: "HDPE nets: heavy-duty square mesh for large gaps",
     body: "HDPE (High-Density Polyethylene) nets come in square mesh sizes from 19mm to 50mm, with twine thickness up to 1mm. UV-stabilised and available in black or white, they are ideal for large balcony openings, industrial spaces, and open shafts where maximum durability is required. Nylon copolymer monofilament nets, by contrast, are virtually invisible (available in transparent or black) and suit smaller window openings, premium apartments, and spaces where aesthetics matter most.",
     quote: "\"The right net depends on your gap size, aesthetics, and budget — we help you find the perfect match.\"",

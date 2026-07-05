@@ -209,11 +209,11 @@ const Navbar = () => {
               </li>
 
               <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center shrink-0">
-                <Link href="/bird-netting">Bird Netting</Link>
+                <Link href="/bird-net">Bird Net</Link>
               </li>
 
               <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center shrink-0">
-                <Link href="/mosquito-netting">Mosquito Netting</Link>
+                <Link href="/mosquito-net">Mosquito Net</Link>
               </li>
               {/* Pages dropdown */}
               <li className="font-semibold text-[12px] xl:text-[14px] 2xl:text-[15px] uppercase lg:tracking-normal xl:tracking-wider hover:text-secondary transition-colors h-full flex items-center group relative">
@@ -351,12 +351,12 @@ const Navbar = () => {
             Invisible Grills
           </Link>
 
-          <Link href="/bird-netting" onClick={closeMobile} className="py-3.5 text-[15px] font-bold uppercase tracking-wider border-b border-border-custom hover:text-secondary transition-colors">
-            Bird Netting
+          <Link href="/bird-net" onClick={closeMobile} className="py-3.5 text-[15px] font-bold uppercase tracking-wider border-b border-border-custom hover:text-secondary transition-colors">
+            Bird Net
           </Link>
 
-          <Link href="/mosquito-netting" onClick={closeMobile} className="py-3.5 text-[15px] font-bold uppercase tracking-wider border-b border-border-custom hover:text-secondary transition-colors">
-            Mosquito Netting
+          <Link href="/mosquito-net" onClick={closeMobile} className="py-3.5 text-[15px] font-bold uppercase tracking-wider border-b border-border-custom hover:text-secondary transition-colors">
+            Mosquito Net
           </Link>
 
           {/* Shop accordion */}

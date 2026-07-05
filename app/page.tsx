@@ -7,7 +7,7 @@ import MarqueeSlider from "@/components/home/MarqueeSlider";
 import LoungeBanner from "@/components/home/LoungeBanner";
 import ClientLogos from "@/components/home/ClientLogos";
 import BlogSection from "@/components/home/BlogSection";
-import ServiceBar from "@/components/home/ServiceBar";
+// import ServiceBar from "@/components/home/ServiceBar";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
       <LoungeBanner />
       <ClientLogos />
       <BlogSection />
-      <ServiceBar />
+      {/* <ServiceBar /> */}
       <Footer />
     </main>
   );

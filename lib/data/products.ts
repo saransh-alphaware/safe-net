@@ -52,7 +52,7 @@ export const products: Product[] = [
     rating: 4,
     slug: 'bird-net-hdpe',
     sku: 'SG-BN-HDPE',
-    description: 'Heavy-duty HDPE bird netting with 1mm twine thickness. Designed in square mesh patterns (19mm - 50mm) to prevent bird access to balconies, open shafts, and windows.'
+    description: 'Heavy-duty HDPE bird net with 1mm twine thickness. Designed in square mesh patterns (19mm - 50mm) to prevent bird access to balconies, open shafts, and windows.'
   },
   {
     id: '3',

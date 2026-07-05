@@ -21,7 +21,7 @@ export default function FloatingContactButtons() {
 
       {/* Floating WhatsApp Button (Bottom Right) */}
       <a
-        href="https://wa.me/918851606948?text=Hi,%20I'm%20interested%20in%20SafeNet%20services%20(Invisible%20Grills,%20Bird%20Netting,%20Mosquito%20Netting)%20and%20would%20love%20to%20get%20more%20details.%20Please%20connect%20with%20me.%20Thanks!"
+        href="https://wa.me/918851606948?text=Hi,%20I'm%20interested%20in%20SafeNet%20services%20(Invisible%20Grills,%20Bird%20Net,%20Mosquito%20Net)%20and%20would%20love%20to%20get%20more%20details.%20Please%20connect%20with%20me.%20Thanks!"
         target="_blank"
         rel="noopener noreferrer"
         className="pointer-events-auto flex items-center justify-center w-14 h-14 bg-gradient-to-tr from-[#059669] to-[#10B981] text-white rounded-full shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:scale-110 active:scale-95 transition-all duration-300 group relative overflow-hidden"
