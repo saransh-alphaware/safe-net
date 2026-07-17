@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         hostname: 'crafto.themezaa.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'safenetandco.com',
+        pathname: '/**',
+      },
     ],
   },
 };
