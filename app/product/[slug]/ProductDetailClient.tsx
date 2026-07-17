@@ -179,7 +179,7 @@ export default function ProductDetailPage({
                 </div>
 
                 {/* Color selections */}
-                {product.colors && product.colors.length > 0 && (
+                {/* {product.colors && product.colors.length > 0 && (
                   <div className="flex flex-col gap-3">
                     <span className="text-[12px] font-bold uppercase tracking-widest text-text-secondary">
                       Color: <span className="text-primary font-bold">{selectedColor}</span>
@@ -209,7 +209,7 @@ export default function ProductDetailPage({
                       })}
                     </div>
                   </div>
-                )}
+                )} */}
 
                 {/* Quantity + cart actions */}
                 <div className="flex flex-wrap items-center gap-4 mt-2">

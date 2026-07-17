@@ -153,7 +153,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
 
 
       {/* Color Section */}
-      <div>
+      {/* <div>
         <h4 className="mb-6 text-[14px] font-black uppercase tracking-wider">
           Filter by color
         </h4>
@@ -189,10 +189,10 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
             );
           })}
         </div>
-      </div>
+      </div> */}
 
       {/* Fabric Section */}
-      <div>
+      {/* <div>
         <h4 className="mb-6 text-[14px] font-black uppercase tracking-wider">
           Filter by fabric
         </h4>
@@ -228,7 +228,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
             );
           })}
         </div>
-      </div>
+      </div> */}
 
       {/* New Arrivals Widget */}
       <div>

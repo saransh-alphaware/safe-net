@@ -49,15 +49,17 @@ const ContactPage = () => {
 
     try {
       await emailjs.send(
-        'service_bxbuf7y',
-        'template_vwzak4e',
+        'service_1o3shko',
+        'template_c5s728m',
         {
+          title: "Enquiry",
           name: formData.name,
           mobile: formData.mobile,
           email: formData.email,
           message: formData.message,
+          year: new Date().getFullYear(),
         },
-        'e0bs11i3EYBT5dX7G'
+        'EVkU1pCkbpEKh9009'
       );
       setStatus({
         type: 'success',
