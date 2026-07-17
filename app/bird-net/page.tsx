@@ -52,7 +52,7 @@ const BirdNetPage = () => {
               <div className="w-full lg:w-5/12 relative">
                 <div className="relative aspect-[4/3] w-full shadow-custom-xl overflow-hidden rounded-[8px]">
                   <Image
-                    src="/safe-net/images/products/bird_net_hero.webp"
+                    src="/images/products/bird_net_hero.webp"
                     alt="Anti Bird Net balcony protection"
                     fill
                     className="object-cover"
@@ -77,7 +77,7 @@ const BirdNetPage = () => {
               <div className="bg-white p-8 border border-border-custom rounded-[5px] shadow-custom-sm flex flex-col justify-between">
                 <div>
                   <div className="relative h-48 w-full mb-6 rounded-[5px] overflow-hidden">
-                    <Image src="/safe-net/images/products/bird_net_nylon.webp" alt="Residential Bird Net" fill className="object-cover" />
+                    <Image src="/images/products/bird_net_nylon.webp" alt="Residential Bird Net" fill className="object-cover" />
                   </div>
                   <h3 className="text-xl font-bold text-primary uppercase tracking-wider mb-3">Residential Bird Net</h3>
                   <p className="text-[14px] text-text-secondary leading-relaxed mb-6">
@@ -100,7 +100,7 @@ const BirdNetPage = () => {
               <div className="bg-white p-8 border border-border-custom rounded-[5px] shadow-custom-sm flex flex-col justify-between">
                 <div>
                   <div className="relative h-48 w-full mb-6 rounded-[5px] overflow-hidden">
-                    <Image src="/safe-net/images/products/bird_net_hdpe.webp" alt="Industrial Bird Net" fill className="object-cover" />
+                    <Image src="/images/products/bird_net_hdpe.webp" alt="Industrial Bird Net" fill className="object-cover" />
                   </div>
                   <h3 className="text-xl font-bold text-primary uppercase tracking-wider mb-3">Industrial Bird Net</h3>
                   <p className="text-[14px] text-text-secondary leading-relaxed mb-6">
@@ -123,7 +123,7 @@ const BirdNetPage = () => {
               <div className="bg-white p-8 border border-border-custom rounded-[5px] shadow-custom-sm flex flex-col justify-between">
                 <div>
                   <div className="relative h-48 w-full mb-6 rounded-[5px] overflow-hidden">
-                    <Image src="/safe-net/images/products/bird_spikes.webp" alt="Bird Spikes Deterrent" fill className="object-cover" />
+                    <Image src="/images/products/bird_spikes.webp" alt="Bird Spikes Deterrent" fill className="object-cover" />
                   </div>
                   <h3 className="text-xl font-bold text-primary uppercase tracking-wider mb-3">Bird Spikes</h3>
                   <p className="text-[14px] text-text-secondary leading-relaxed mb-6">

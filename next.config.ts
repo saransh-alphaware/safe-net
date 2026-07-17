@@ -3,8 +3,6 @@ const repoName = "safe-net";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: `/${repoName}`,
-  assetPrefix: `/${repoName}`,
   images: {
     unoptimized: true, // Required for GitHub Pages static export
     remotePatterns: [

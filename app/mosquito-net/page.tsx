@@ -25,7 +25,7 @@ const MosquitoNetPage = () => {
               <div className="w-full lg:w-5/12 relative">
                 <div className="relative aspect-[4/3] w-full shadow-custom-xl overflow-hidden rounded-[8px]">
                   <Image
-                    src="/safe-net/images/products/mosquito_net_hero.webp"
+                    src="/images/products/mosquito_net_hero.webp"
                     alt="Retractable Pleated Mosquito Net for Balcony"
                     fill
                     className="object-cover"

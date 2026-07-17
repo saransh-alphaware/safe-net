@@ -25,7 +25,7 @@ const InvisibleGrillsPage = () => {
               <div className="w-full lg:w-1/2 relative">
                 <div className="relative aspect-[4/3] w-full shadow-custom-xl overflow-hidden rounded-[8px]">
                   <Image
-                    src="/safe-net/images/products/invisible_grill_hero.webp"
+                    src="/images/products/invisible_grill_hero.webp"
                     alt="Invisible Safety Grill for Balcony"
                     fill
                     className="object-cover"

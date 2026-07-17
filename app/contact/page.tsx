@@ -8,11 +8,24 @@ import { MapPin, Mail, Phone, Users, Send, ChevronRight, MessageSquare } from 'l
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import PageTitle from '@/components/ui/PageTitle';
+import emailjs from '@emailjs/browser';
 
 const ContactPage = () => {
   const [rotatedText, setRotatedText] = useState('hello!');
   const rotationWords = ['hello!', 'hallå!', 'salve!', 'hola!'];
   const [wordIndex, setWordIndex] = useState(0);
+
+  const [formData, setFormData] = useState({
+    name: '',
+    mobile: '',
+    email: '',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({
+    type: null,
+    message: '',
+  });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,6 +33,52 @@ const ContactPage = () => {
     }, 2500);
     return () => clearInterval(interval);
   }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus({ type: null, message: '' });
+
+    try {
+      await emailjs.send(
+        'service_bxbuf7y',
+        'template_vwzak4e',
+        {
+          name: formData.name,
+          mobile: formData.mobile,
+          email: formData.email,
+          message: formData.message,
+        },
+        'e0bs11i3EYBT5dX7G'
+      );
+      setStatus({
+        type: 'success',
+        message: "✅ Message sent successfully! We'll be in touch soon.",
+      });
+      setFormData({
+        name: '',
+        mobile: '',
+        email: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setStatus({
+        type: 'error',
+        message: '❌ Failed to send. Please try again or call us directly.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -110,7 +169,7 @@ const ContactPage = () => {
                 className="relative aspect-[4/3] lg:aspect-[1.4/1] w-full shadow-custom-lg"
               >
                 <Image 
-                  src="/safe-net/images/products/invisible_grill_hero.webp" 
+                  src="/images/products/invisible_grill_hero.webp" 
                   alt="Contact Safety Solutions" 
                   fill 
                   className="object-cover"
@@ -148,23 +207,39 @@ const ContactPage = () => {
                       </AnimatePresence>
                   </h2>
 
-                  <form className="space-y-10" onSubmit={(e) => {
-                    e.preventDefault();
-                    // ... submission logic remains same
-                  }}>
+                  <form className="space-y-10" onSubmit={handleSubmit}>
                     <div className="relative group">
                       <input 
                         type="text" 
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
                         placeholder="Your name*" 
                         className="w-full bg-transparent border-b border-white/20 py-4 pr-10 text-white placeholder-white/50 focus:border-white outline-none transition-colors font-medium text-[15px]" 
                         required
                       />
                       <Users size={18} className="absolute right-0 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-white" />
                     </div>
+
+                    <div className="relative group">
+                      <input 
+                        type="tel" 
+                        name="mobile"
+                        value={formData.mobile}
+                        onChange={handleChange}
+                        placeholder="Your Mobile No.*" 
+                        className="w-full bg-transparent border-b border-white/20 py-4 pr-10 text-white placeholder-white/50 focus:border-white outline-none transition-colors font-medium text-[15px]" 
+                        required
+                      />
+                      <Phone size={18} className="absolute right-0 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-white" />
+                    </div>
                     
                     <div className="relative group">
                       <input 
                         type="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         placeholder="Your email address*" 
                         className="w-full bg-transparent border-b border-white/20 py-4 pr-10 text-white placeholder-white/50 focus:border-white outline-none transition-colors font-medium text-[15px]" 
                         required
@@ -174,6 +249,9 @@ const ContactPage = () => {
                     
                     <div className="relative group">
                       <textarea 
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
                         placeholder="Your message" 
                         rows={3}
                         className="w-full bg-transparent border-b border-white/20 py-4 pr-10 text-white placeholder-white/50 focus:border-white outline-none transition-colors font-medium text-[15px] resize-none"
@@ -181,9 +259,19 @@ const ContactPage = () => {
                       <MessageSquare size={18} className="absolute right-0 top-6 text-white/30 group-focus-within:text-white" />
                     </div>
 
+                    {status.message && (
+                      <p className={`text-sm ${status.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                        {status.message}
+                      </p>
+                    )}
+
                     <div className="pt-4">
-                      <button type="submit" className="w-full lg:w-fit bg-white hover:bg-secondary text-primary hover:text-white px-12 py-5 uppercase font-black tracking-[2px] text-[12px] transition-all duration-500 shadow-lg">
-                        Send message
+                      <button 
+                        type="submit" 
+                        disabled={isSubmitting}
+                        className="w-full lg:w-fit bg-white hover:bg-secondary text-primary hover:text-white px-12 py-5 uppercase font-black tracking-[2px] text-[12px] transition-all duration-500 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {isSubmitting ? 'Sending...' : 'Send message'}
                       </button>
                     </div>
                   </form>
@@ -194,6 +282,7 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
+
 
       {/* Map Section */}
       <section className="h-[600px] w-full relative overflow-hidden flex items-center justify-center">
