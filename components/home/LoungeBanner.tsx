@@ -219,14 +219,14 @@ const LoungeBanner = () => {
             {/* Static soft circle — always visible */}
             <div className="absolute inset-0 rounded-full bg-[#bcd5ec]/60" />
 
-            {/* Product image (fading removed) */}
-            <div className="relative w-44 h-44 xl:w-56 xl:h-56">
+            {/* Product image (fading removed, rounded-full + overflow-hidden to submerge inside circle) */}
+            <div className="relative w-44 h-44 xl:w-56 xl:h-56 rounded-full overflow-hidden shadow-custom-md">
               <Image
                 src={rightProduct.image}
                 alt={rightProduct.name}
                 fill
                 sizes="(max-width: 1280px) 176px, 224px"
-                className="object-contain drop-shadow-xl"
+                className="object-cover"
               />
             </div>
           </div>
