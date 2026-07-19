@@ -1,44 +1,47 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ProductCard from '@/components/shop/ProductCard';
 import ShopSidebar from '@/components/shop/ShopSidebar';
 import { ChevronDown, RefreshCw } from 'lucide-react';
 import { products } from '@/lib/data/products';
-import Link from 'next/link';
+import PageTitle from '@/components/ui/PageTitle';
 
-
-export default function CategoryClient({
-  slug,
-}: {
-  slug: string
-}) {
+export default function ShopClient() {
+  // Filter States
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeColor, setActiveColor] = useState<string | null>(null);
+  const [activeFabric, setActiveFabric] = useState<string | null>(null);
   
   // View & Sorting States
   const [sortBy, setSortBy] = useState<string>('default');
-  const [columns, setColumns] = useState<number>(3);
+  const [columns, setColumns] = useState<number>(3); // 2, 3 or 4 columns
   const [sortByOpen, setSortByOpen] = useState<boolean>(false);
 
-  // Format category slug to matching name
-  const categoryName = useMemo(() => {
-    const norm = (slug ?? '').toLowerCase();
-    if (norm === 'invisible-grill') return 'Invisible Grill';
-    if (norm === 'bird-net') return 'Bird Net';
-    if (norm === 'mosquito-net') return 'Mosquito Net';
-    if (norm === 'security-mesh') return 'Security Mesh';
-    if (norm === 'zip-screen') return 'Zip Screen';
-    
-    // Capitalize fallback
-    return (slug ?? '').charAt(0).toUpperCase() + (slug ?? '').slice(1).replace(/-/g, ' ');
-  }, [slug]);
+  // Pagination
+  const ITEMS_PER_PAGE = 9;
+  const [currentPage, setCurrentPage] = useState(1);
 
-  // Compute matching products
-  const categoryProducts = useMemo(() => {
-    let result = products.filter(
-      p => p.category.toLowerCase() === categoryName.toLowerCase()
-    );
+  // Compute filtered & sorted products
+  const filteredProducts = useMemo(() => {
+    let result = [...products];
+
+    // Category filter
+    if (activeCategory) {
+      result = result.filter(p => p.category.toLowerCase() === activeCategory.toLowerCase());
+    }
+
+    // Color filter
+    if (activeColor) {
+      result = result.filter(p => p.colors.includes(activeColor));
+    }
+
+    // Fabric filter
+    if (activeFabric) {
+      result = result.filter(p => p.fabrics.includes(activeFabric));
+    }
 
     // Sorting
     if (sortBy === 'rating') {
@@ -46,7 +49,22 @@ export default function CategoryClient({
     }
 
     return result;
-  }, [categoryName, sortBy]);
+  }, [activeCategory, activeColor, activeFabric, sortBy]);
+
+  // Reset to page 1 whenever filters change
+  const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
+  const paginatedProducts = filteredProducts.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
+  const handleResetFilters = () => {
+    setActiveCategory(null);
+    setActiveColor(null);
+    setActiveFabric(null);
+    setSortBy('default');
+    setCurrentPage(1);
+  };
 
   const getSortByLabel = () => {
     switch (sortBy) {
@@ -59,44 +77,37 @@ export default function CategoryClient({
     <div className="flex min-h-screen flex-col bg-white">
       <Navbar />
 
-      {/* Breadcrumbs Header */}
-      <div className="bg-[#f8f9fa] py-14">
-        <div className="container px-6 mx-auto">
-          <div className="flex flex-col items-center justify-center text-center">
-            <h1 className="text-[36px] lg:text-[44px] font-black text-primary uppercase tracking-tight mb-2">
-              {categoryName}
-            </h1>
-            <div className="flex items-center gap-2 text-[12px] font-bold uppercase tracking-widest text-text-secondary">
-              <Link href="/" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Home</Link>
-              <span>{">"}</span>
-              <Link href="/shop" className="hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Product Category</Link>
-              <span>{">"}</span>
-              <span className="text-primary/40">{categoryName}</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Breadcrumb / Title Bar */}
+      <PageTitle title="Shop" />
 
-      {/* Content Layout */}
+      {/* Main Catalog Area */}
       <main className="container px-6 mx-auto py-16 lg:py-24">
         <div className="flex flex-col lg:flex-row gap-16">
           
-          {/* Sidebar */}
+          {/* Left Column: Sidebar Filters */}
           <div className="w-full lg:w-[280px] shrink-0">
-            <ShopSidebar activeCategory={categoryName} />
+            <ShopSidebar 
+              activeCategory={activeCategory}
+              onSelectCategory={setActiveCategory}
+              activeColor={activeColor}
+              onSelectColor={setActiveColor}
+              activeFabric={activeFabric}
+              onSelectFabric={setActiveFabric}
+            />
           </div>
 
-          {/* Catalog Listing Area */}
+          {/* Right Column: Products Display */}
           <div className="flex-grow">
             
-            {/* Toolbar */}
+            {/* Top Toolbar Controls */}
             <div className="mb-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-6 border-b border-border-custom relative z-40">
               <div className="text-[14px] font-medium text-text-secondary">
-                Showing <span className="font-bold text-primary">{categoryProducts.length} results</span>
+                Showing {filteredProducts.length === products.length ? 'all ' : ''} 
+                <span className="font-bold text-primary">{filteredProducts.length} results</span>
               </div>
               
               <div className="flex items-center gap-8 w-full sm:w-auto justify-between sm:justify-end">
-                {/* Column toggle controls */}
+                {/* Columns layout grid selectors */}
                 <div className="hidden md:flex items-center gap-4">
                   <span className="text-[11px] font-black uppercase tracking-widest text-primary/40">Columns:</span>
                   <div className="flex gap-1.5">
@@ -131,7 +142,7 @@ export default function CategoryClient({
                       <div className="fixed inset-0 z-40" onClick={() => setSortByOpen(false)} />
                       <div className="absolute right-0 mt-3 w-56 bg-white border border-border-custom shadow-custom-lg rounded-[2px] overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                         <div className="flex flex-col py-1.5">
-                          {[
+                           {[
                             { value: 'default', label: 'Default sorting' },
                             { value: 'rating', label: 'Customer Rating' }
                           ].map((opt) => (
@@ -159,21 +170,21 @@ export default function CategoryClient({
             </div>
 
             {/* Catalog Grid */}
-            {categoryProducts.length === 0 ? (
+            {filteredProducts.length === 0 ? (
               <div className="py-20 flex flex-col items-center justify-center text-center gap-6">
-                <RefreshCw size={36} className="text-text-secondary opacity-40 animate-spin" />
+                <RefreshCw size={40} className="text-text-secondary opacity-40 animate-spin duration-1000" />
                 <div>
-                  <h3 className="text-[18px] font-bold uppercase tracking-wider mb-2">No products in this category</h3>
+                  <h3 className="text-[18px] font-bold uppercase tracking-wider mb-2">No products match your filters</h3>
                   <p className="text-[14px] text-text-secondary max-w-[340px] leading-relaxed">
-                    Check back later or search other categories in our design catalog.
+                    Try broadening your selection by resetting colorways or fabrics.
                   </p>
                 </div>
-                <a 
-                  href="/shop" 
-                  className="px-8 py-3.5 bg-primary text-white text-[11px] font-black uppercase tracking-widest hover:bg-secondary transition-all rounded-[2px]"
+                <button 
+                  onClick={handleResetFilters}
+                  className="px-8 py-3.5 bg-primary text-white text-[11px] font-black uppercase tracking-widest hover:bg-secondary transition-all rounded-[2px] cursor-pointer"
                 >
-                  Return to shop
-                </a>
+                  Reset all filters
+                </button>
               </div>
             ) : (
               <div className={`grid gap-x-8 gap-y-14 transition-all duration-500 ${
@@ -181,7 +192,7 @@ export default function CategoryClient({
                 columns === 4 ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4' :
                 'grid-cols-1 sm:grid-cols-2 xl:grid-cols-3'
               }`}>
-                {categoryProducts.map((product) => (
+                {paginatedProducts.map((product) => (
                   <ProductCard 
                     key={product.id}
                     id={product.id}
@@ -192,6 +203,46 @@ export default function CategoryClient({
                     slug={product.slug}
                   />
                 ))}
+              </div>
+            )}
+
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="mt-20 flex justify-center border-t border-border-custom pt-10">
+                <div className="flex gap-2.5 flex-wrap justify-center">
+                  {/* Prev */}
+                  <button
+                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                    disabled={currentPage === 1}
+                    className="h-10 px-4 flex items-center justify-center border border-border-custom text-[13px] font-bold text-text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all rounded-[3px] cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+                  >
+                    ←
+                  </button>
+
+                  {/* Page numbers */}
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                    <button
+                      key={page}
+                      onClick={() => setCurrentPage(page)}
+                      className={`h-10 w-10 flex items-center justify-center text-[13px] font-bold rounded-[3px] transition-all cursor-pointer ${
+                        currentPage === page
+                          ? 'bg-primary text-white border border-primary'
+                          : 'border border-border-custom text-text-secondary hover:bg-primary hover:text-white hover:border-primary'
+                      }`}
+                    >
+                      {page}
+                    </button>
+                  ))}
+
+                  {/* Next */}
+                  <button
+                    onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                    disabled={currentPage === totalPages}
+                    className="h-10 px-4 flex items-center justify-center border border-border-custom text-[13px] font-bold text-text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all rounded-[3px] cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+                  >
+                    →
+                  </button>
+                </div>
               </div>
             )}
 

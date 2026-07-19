@@ -6,6 +6,14 @@ import Link from 'next/link';
 
 const blogs = [
   {
+    id: 9,
+    title: "From vision to safety leader: The journey of SafeNet & Co.",
+    category: "HISTORY",
+    date: "05 JULY 2026",
+    image: "/images/products/founder_journey.webp",
+    slug: "founder-journey-safenet-history"
+  },
+  {
     id: 1,
     title: "Why invisible grills are the safest choice for high-rise balconies",
     category: "SAFETY",
@@ -28,14 +36,6 @@ const blogs = [
     date: "05 MAY 2025",
     image: "/images/products/mosquito_net_hero.webp",
     slug: "pleated-mosquito-nets-airflow"
-  },
-  {
-    id: 4,
-    title: "Motorised zip screens: the smart upgrade for modern patios",
-    category: "INNOVATION",
-    date: "18 MAY 2025",
-    image: "/images/products/zip_screen_hero.webp",
-    slug: "motorised-zip-screens-patios"
   }
 ];
 

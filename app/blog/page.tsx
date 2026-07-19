@@ -1,11 +1,25 @@
+import type { Metadata } from 'next'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import BlogCard from '@/components/ui/BlogCard'
 import PageTitle from '@/components/ui/PageTitle'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: "Expert Safety Insights & Blog | SafeNet & Co.",
+  description: "Read the latest guides, comparison articles, and safety tips about invisible grills, bird netting, and mosquito screens from the experts at SafeNet & Co.",
+};
 import { ChevronRight } from 'lucide-react'
 
 const BLOG_POSTS = [
+  {
+    id: 9,
+    title: "From vision to safety leader: The journey of SafeNet & Co.",
+    category: "History",
+    date: "05 July 2026",
+    image: "/images/products/founder_journey.webp",
+    href: "/blog/founder-journey-safenet-history"
+  },
   {
     id: 1,
     title: "Why invisible grills are the safest choice for high-rise balconies",

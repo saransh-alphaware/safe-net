@@ -48,7 +48,7 @@ export default function ProductDetailPage({
         <main className="flex-grow flex flex-col items-center justify-center py-40 text-center gap-6">
           <h2 className="text-[32px] font-black text-primary uppercase">Product Not Found</h2>
           <p className="text-text-secondary max-w-sm">
-            We couldn't locate the furniture item you are looking for. It may have been discontinued.
+            We couldn't locate the safety solution you are looking for. It may have been discontinued.
           </p>
           <a href="/shop" className="px-8 py-3.5 bg-primary text-white text-[11px] font-black uppercase tracking-widest hover:bg-secondary transition-all rounded-[2px]">
             Return to shop
@@ -314,12 +314,12 @@ export default function ProductDetailPage({
                 {activeTab === 'description' && (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center animate-in fade-in duration-300">
                      <div className="flex flex-col gap-6">
-                        <h3 className="text-[24px] lg:text-[28px] font-black leading-tight text-primary">Handcrafted with precision and love for details.</h3>
+                        <h3 className="text-[24px] lg:text-[28px] font-black leading-tight text-primary">Engineered with precision and absolute safety in mind.</h3>
                         <p className="text-text-secondary leading-loose text-[14px]">
-                          We believe that every piece of furniture should tell a unique story. Our local designers work tirelessly to create structures that are not only extremely functional but also organic works of art that capture luxury.
+                          We believe that every safety solution should offer absolute protection without compromising your home's aesthetics. Our engineering specialists work tirelessly to install systems that are not only extremely secure but also blend seamlessly with your architecture.
                         </p>
                         <ul className="flex flex-col gap-3">
-                           {['Eco-friendly sustainable materials', 'Sleek premium textures', 'Intense quality controls', 'Crafted by local rural artisans'].map((item) => (
+                           {['Grade SS316 marine steel', 'UV-resistant nylon coating', 'Rigid quality testing controls', 'Installed by safety professionals'].map((item) => (
                              <li key={item} className="flex items-center gap-3 text-[11px] font-black uppercase tracking-widest text-primary">
                                <div className="w-1.5 h-1.5 bg-secondary rounded-full" />
                                {item}
@@ -342,11 +342,11 @@ export default function ProductDetailPage({
                   <div className="max-w-xl mx-auto space-y-4 animate-in fade-in duration-300">
                     <h3 className="text-[20px] font-black mb-6 uppercase tracking-wider text-center">Technical Specifications</h3>
                     {[
-                      { label: 'Weight', value: '4.5 kg' },
-                      { label: 'Dimensions', value: '45 x 45 x 65 cm' },
-                      { label: 'Material', value: 'Solid Oak, Brushed Steel, Handmade Ceramics' },
-                      { label: 'Finish', value: 'Matte lacquer, raw natural glaze finish' },
-                      { label: 'Eco-Friendly', value: 'Yes (100% FSC certified timber)' }
+                      { label: 'Core Material', value: 'Grade SS316 Stainless Steel / High-Density Polyethylene (HDPE)' },
+                      { label: 'Coating', value: 'UV-Stabilized Nanotechnology Nylon' },
+                      { label: 'Tensile Strength', value: 'Supports loads in excess of 200 kg' },
+                      { label: 'Track Material', value: 'Extruded Aluminium T-6063 Alloy' },
+                      { label: 'Rust Proof', value: 'Yes (100% Weather Resistant)' }
                     ].map((row, idx) => (
                       <div key={idx} className="flex justify-between py-3.5 border-b border-border-custom text-[14px]">
                         <span className="font-bold text-text-secondary uppercase text-[11px] tracking-wider">{row.label}</span>
@@ -360,9 +360,9 @@ export default function ProductDetailPage({
                   <div className="space-y-8 animate-in fade-in duration-300">
                     <h3 className="text-[20px] font-black uppercase tracking-wider mb-6 text-center">Customer Testimonials</h3>
                     {[
-                      { author: 'Elena Rostova', date: 'April 14, 2026', text: 'Stunning design! It completely transformed my bedroom corner styling. High-quality acoustics and soft comfortable light glow.', stars: 5 },
-                      { author: 'Marc Dubois', date: 'May 02, 2026', text: 'Handcrafted quality is definitely outstanding. Tapered lines and lacquer details look premium. Would recommend SafeNet & Co. highly.', stars: 4 },
-                      { author: 'Sarah Jenkins', date: 'May 19, 2026', text: 'I am in love with this decor. Exquisite look, feels heavy and solid. Shipping was extremely fast too!', stars: 5 }
+                      { author: 'Elena Rostova', date: 'April 14, 2026', text: 'Stunning installation! The invisible grill completely secured our balcony without blocking the view at all. Very professional team.', stars: 5 },
+                      { author: 'Marc Dubois', date: 'May 02, 2026', text: 'The HDPE bird netting quality is outstanding. Installed professionally and solved our pigeon issue completely. Would recommend SafeNet & Co. highly.', stars: 5 },
+                      { author: 'Sarah Jenkins', date: 'May 19, 2026', text: 'Absolutely in love with the pleated mosquito screens. Easy to slide, durable, and doesn\'t block any light or fresh breeze!', stars: 5 }
                     ].map((rev, idx) => (
                       <div key={idx} className="p-6 bg-[#f8f9fa] border border-border-custom rounded-[3px] space-y-3">
                         <div className="flex justify-between items-center">

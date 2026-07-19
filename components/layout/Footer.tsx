@@ -6,11 +6,11 @@ import {
   FaDribbble,
   FaInstagram,
 } from "react-icons/fa6";
-import { RiVisaLine } from "react-icons/ri";
-import { FaPaypal } from "react-icons/fa";
-import { BsQrCodeScan } from "react-icons/bs";
+// import { RiVisaLine } from "react-icons/ri";
+// import { FaPaypal } from "react-icons/fa";
+// import { BsQrCodeScan } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
-import { TbCoinRupee } from "react-icons/tb";
+// import { TbCoinRupee } from "react-icons/tb";
 
 
 const Footer = () => {
@@ -45,14 +45,14 @@ const Footer = () => {
               </p>
               <div className="flex items-center gap-5 text-[#828894]">
                 <Link
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/safenetandco/"
                   target="_blank"
                   className="hover:text-white transition-colors"
                   aria-label="Facebook"
                 >
                   <FaFacebookF />
                 </Link>
-                <Link
+                {/* <Link
                   href="https://dribbble.com"
                   target="_blank"
                   className="hover:text-white transition-colors"
@@ -67,9 +67,9 @@ const Footer = () => {
                   aria-label="Twitter"
                 >
                   <FaXTwitter />
-                </Link>
+                </Link> */}
                 <Link
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/safenetandco/"
                   target="_blank"
                   className="hover:text-white transition-colors"
                   aria-label="Instagram"
@@ -192,12 +192,12 @@ const Footer = () => {
                 </div>
 
                 {/* White Payment Icons Row */}
-                <div className="flex items-center gap-4 mt-4">
+                {/* <div className="flex items-center gap-4 mt-4">
                   <RiVisaLine size={40} className="text-white" />
                   <FaPaypal size={20} className="text-white" />
                   <TbCoinRupee size={30} className="text-white" />
                   <BsQrCodeScan size={20} className="text-white" />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -4,12 +4,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const brands = [
-  { name: "Medium", weight: "font-serif" },
-  { name: "pepperfry", weight: "font-bold" },
-  { name: "ARTICLE.", weight: "font-extrabold tracking-[0.2em]" },
-  { name: "Instagram", weight: "font-medium" },
-  { name: "SafeNet & Co.", weight: "font-black" },
-  { name: "Interior", weight: "font-light italic" },
+  { name: "MUMBAI", weight: "font-black tracking-widest" },
+  { name: "NEW DELHI", weight: "font-bold tracking-wider" },
+  { name: "GURUGRAM", weight: "font-extrabold tracking-[0.1em]" },
+  { name: "NOIDA", weight: "font-black tracking-widest" },
+  { name: "SS316 SAFETY", weight: "font-bold italic" },
+  { name: "SAFENET & Co.", weight: "font-black" },
 ];
 
 const ClientLogos = () => {

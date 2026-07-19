@@ -12,8 +12,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "SafeNet & Co. | Premium Home Decor & Furniture",
-  description: "Discover a curated collection of premium home decor, furniture, and lifestyle products at SafeNet & Co. Modern designs for a stunning home.",
+  title: "SafeNet & Co. | Premium Safety Nets & Invisible Grills",
+  description: "India's leading provider of high-quality safety net systems, SS316 invisible grills, bird netting, mosquito screens, and motorized zip screens. Secure your home with elegance.",
 };
 
 export default function RootLayout({

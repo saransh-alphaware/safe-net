@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Heart } from 'lucide-react'
+import { FaFacebookF, FaInstagram } from 'react-icons/fa6'
 import Navbar from '@/components/layout/Navbar'
 import AuthorBox from '@/components/blog/AuthorBox'
 import BlogCard from '@/components/ui/BlogCard'
@@ -16,7 +17,7 @@ const AUTHOR = {
 }
 
 // Full blog content keyed by slug
-const BLOG_DATA: Record<string, {
+export const BLOG_DATA: Record<string, {
   title: string;
   category: string;
   date: string;
@@ -38,6 +39,28 @@ const BLOG_DATA: Record<string, {
   sideImageSrc: string;
   sideImageAlt: string;
 }> = {
+  'founder-journey-safenet-history': {
+    title: "From vision to safety leader: The journey of SafeNet & Co.",
+    category: "History",
+    date: "05 July 2026",
+    image: "/images/products/founder_journey.webp",
+    author: AUTHOR,
+    tags: ["Company History", "Founder Journey", "Aakash Upadhyaya", "Safety Solutions"],
+    likes: 57,
+    intro: "In 2022, SafeNet & Co. was founded by Mr. Aakash Upadhyaya with a singular focus: to modernize and elevate home and commercial safety solutions in India. Back then, the market was dominated by heavy, rusting iron grills that obstructed scenic views and ruined apartment aesthetics. Mr. Aakash envisioned a different future—one where safety and high-end aesthetics could coexist perfectly. Over the last four years, that vision has turned SafeNet & Co. into a premier nationwide brand.",
+    subheading: "Building a Foundation of Strength and Trust",
+    body: "Starting with a small dedicated team in Mumbai, the company introduced the concept of Grade SS316 nylon-coated invisible grills. Under the guidance of Mr. Aakash Upadhyaya, the team focused on meticulous engineering and high-tensile materials. By 2023, the brand expanded into New Delhi & NCR, addressing the soaring demand for balcony protection and bird netting in urban high-rises. Moving forward, 2024 saw the launch of state-of-the-art pleated mosquito screens, while 2025 brought motorized zip screens to shade and secure modern outdoor spaces. Today, in 2026, SafeNet & Co. has successfully completed over 10,000 installations, safeguarding homes with rust-free, aesthetic, and durable protection systems.",
+    quote: "\"SafeNet & Co. was born from a desire to make homes safer without making them feel like cages. Every balcony model we install and every mesh we design is a step toward that goal.\"",
+    inlineImageSrc: "/images/products/founder_journey.webp",
+    inlineImageAlt: "SafeNet & Co. corporate journey and design office",
+    inlineImageCaption: "From a local startup in 2022 to a national safety standard in 2026, driven by premium engineering.",
+    ctaHeading: "Looking Ahead: The Next Phase of Safety Innovation",
+    ctaBody: "As we continue to grow, SafeNet & Co. remains committed to research, development, and customer satisfaction. We are expanding our product line to incorporate smart automation and even more durable materials suited for India's diverse climate.",
+    ctaBtn: "Consult with Our Team",
+    ctaBtnLink: "/contact",
+    sideImageSrc: "/images/products/invisible_grill_hero.webp",
+    sideImageAlt: "Modern balcony with invisible grill safety solution"
+  },
   'invisible-grills-high-rise-balconies': {
     title: "Why invisible grills are the safest choice for high-rise balconies",
     category: "Safety",
@@ -358,11 +381,23 @@ export default function BlogPostClient({
             <AuthorBox {...post.author} />
 
             {/* Social Sharing */}
-            <div className="flex justify-center items-center gap-10 py-8 border-b border-gray-50 mb-16">
-              <Link href="https://facebook.com" target="_blank" className="text-black font-extrabold text-xl hover:text-gray-400 transition-colors">f</Link>
-              <Link href="https://twitter.com" target="_blank" className="text-black font-extrabold text-xl hover:text-gray-400 transition-colors italic">X</Link>
-              <Link href="https://linkedin.com" target="_blank" className="text-black font-extrabold text-xl hover:text-gray-400 transition-colors leading-none">in</Link>
-              <Link href="https://wa.me/918080703321" target="_blank" className="text-black font-extrabold text-xl hover:text-gray-400 transition-colors font-serif">W</Link>
+            <div className="flex justify-center items-center gap-10 py-8 border-b border-gray-50 mb-16 text-gray-400">
+              <Link 
+                href="https://www.facebook.com/safenetandco/" 
+                target="_blank" 
+                className="hover:text-black transition-colors"
+                aria-label="Facebook"
+              >
+                <FaFacebookF size={20} />
+              </Link>
+              <Link 
+                href="https://www.instagram.com/safenetandco/" 
+                target="_blank" 
+                className="hover:text-black transition-colors"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={20} />
+              </Link>
             </div>
 
             {/* Related Posts */}

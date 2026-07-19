@@ -8,7 +8,7 @@ import CollectionsGrid from "./CollectionsGrid";
 
 export const metadata: Metadata = {
   title: "Collections | SafeNet & Co.",
-  description: "Explore our premium decor collections.",
+  description: "Explore our premium safety net and invisible grill collections.",
 };
 
 export default function CollectionsPage() {
