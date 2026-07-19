@@ -12,8 +12,11 @@ const products = [
     price: 0,
     originalPrice: 0,
     image: '/images/products/invisible_grill_thumb.webp',
+    bgImage: '/images/products/invisible_grill_hero.webp',
     slug: '/product/invisible-grill-ss316',
     label: 'Get Quote',
+    categorySlug: 'invisible-grill',
+    badge: 'Safety. Strength. Solutions.',
   },
   {
     id: 2,
@@ -21,8 +24,11 @@ const products = [
     price: 0,
     originalPrice: 0,
     image: '/images/products/mosquito_net_thumb.webp',
+    bgImage: '/images/products/mosquito_net_hero.webp',
     slug: '/product/pleated-mosquito-net',
     label: 'Get Quote',
+    categorySlug: 'mosquito-net',
+    badge: 'Insect & Mosquito Protection',
   },
   {
     id: 3,
@@ -30,8 +36,11 @@ const products = [
     price: 0,
     originalPrice: 0,
     image: '/images/products/aluminium_mesh_thumb.webp',
+    bgImage: '/images/products/aluminium_mesh_hero.webp',
     slug: '/product/aluminium-security-mesh',
     label: 'Get Quote',
+    categorySlug: 'security-mesh',
+    badge: 'High Security Protection',
   },
   {
     id: 4,
@@ -39,8 +48,11 @@ const products = [
     price: 0,
     originalPrice: 0,
     image: '/images/products/zip_screen_thumb.webp',
+    bgImage: '/images/products/zip_screen_hero.webp',
     slug: '/product/motorised-zip-screen',
     label: 'Get Quote',
+    categorySlug: 'zip-screen',
+    badge: 'Sunshade & Wind Protection',
   },
 ];
 
@@ -106,7 +118,8 @@ const LoungeBanner = () => {
     };
   }, []);
 
-  const product = products[currentIndex];
+  const leftProduct = products[currentIndex];
+  const rightProduct = products[(currentIndex + 1) % products.length];
 
   return (
     <section
@@ -123,32 +136,48 @@ const LoungeBanner = () => {
           transition: 'transform 0.85s cubic-bezier(0.22,1,0.36,1), opacity 0.85s ease',
         }}
       >
-        {/* Background Image */}
-        <Image
-          src="/images/products/aluminium_mesh_thumb.webp"
-          alt="Aluminium Security Mesh Collection"
-          fill
-          className="object-cover"
-          priority
-        />
+        {/* Background Image with Overlay */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            opacity: fading ? 0 : 1,
+            transition: 'opacity 0.8s ease',
+          }}
+        >
+          <Image
+            src={leftProduct.bgImage}
+            alt={leftProduct.name}
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Subtle dark overlay for readability of white text */}
+          <div className="absolute inset-0 bg-[#1a2340]/40 z-10" />
+        </div>
 
         {/* Overlay content — centered vertically */}
-        <div className="absolute inset-0 flex flex-col justify-center px-10 lg:px-16 z-10">
-          {/* "SAVE UP TO 50% OFF" underlined label */}
-          <span className="inline-block text-[12px] font-bold tracking-[1px] text-[#1a2340] underline underline-offset-4 mb-4 uppercase">
-            Safety. Strength. Solutions.
+        <div
+          className="absolute inset-0 flex flex-col justify-center px-10 lg:px-16 z-10"
+          style={{
+            opacity: fading ? 0 : 1,
+            transition: 'opacity 0.8s ease',
+          }}
+        >
+          {/* Underlined label */}
+          <span className="inline-block text-[12px] font-bold tracking-[1px] text-white/80 underline underline-offset-4 mb-4 uppercase">
+            {leftProduct.badge}
           </span>
 
           {/* Main heading */}
-          <h2 className="text-[42px] lg:text-[54px] leading-[1.1] font-light text-[#1a2340] mb-8">
-            Security <br />
-            <span className="font-bold">Solutions</span>
+          <h2 className="text-[42px] lg:text-[54px] leading-[1.1] font-light text-white mb-8">
+            {leftProduct.name.split(' ')[0]} <br />
+            <span className="font-bold">{leftProduct.name.split(' ').slice(1).join(' ')}</span>
           </h2>
 
           {/* CTA button */}
           <Link
-            href="/product-category/security-mesh"
-            className="inline-block self-start px-8 py-4 bg-[#1a2340] text-white text-[13px] font-medium tracking-wide hover:bg-[#0d1420] transition-colors duration-300"
+            href={`/product-category/${leftProduct.categorySlug}`}
+            className="inline-block self-start px-8 py-4 bg-white text-[#1a2340] hover:bg-secondary hover:text-white text-[13px] font-bold uppercase tracking-wider transition-colors duration-300"
           >
             Explore category
           </Link>
@@ -182,25 +211,19 @@ const LoungeBanner = () => {
           <ChevronRight size={18} className="text-[#1a2340]" />
         </button>
 
-        {/* Outer wrapper — column layout, static blob + fading content stacked */}
+        {/* Outer wrapper — column layout, static blob + content stacked (fading removed from right section) */}
         <div className="flex flex-col items-center gap-5 px-10 py-12">
 
-          {/* ── STATIC: circular blob (never fades) ── */}
+          {/* ── STATIC: circular blob ── */}
           <div className="relative w-52 h-52 xl:w-64 xl:h-64 flex items-center justify-center flex-shrink-0">
             {/* Static soft circle — always visible */}
             <div className="absolute inset-0 rounded-full bg-[#bcd5ec]/60" />
 
-            {/* ── FADING: product image only ── */}
-            <div
-              className="relative w-44 h-44 xl:w-56 xl:h-56"
-              style={{
-                opacity: fading ? 0 : 1,
-                transition: 'opacity 0.8s ease',
-              }}
-            >
+            {/* Product image (fading removed) */}
+            <div className="relative w-44 h-44 xl:w-56 xl:h-56">
               <Image
-                src={product.image}
-                alt={product.name}
+                src={rightProduct.image}
+                alt={rightProduct.name}
                 fill
                 sizes="(max-width: 1280px) 176px, 224px"
                 className="object-contain drop-shadow-xl"
@@ -208,21 +231,14 @@ const LoungeBanner = () => {
             </div>
           </div>
 
-          {/* ── FADING: product name + price ── */}
-          <div
-            className="text-center"
-            style={{
-              opacity: fading ? 0 : 1,
-              transition: 'opacity 0.8s ease',
-            }}
-          >
+          {/* Product name (fading removed) */}
+          <div className="text-center">
             <Link
-              href={product.slug}
+              href={rightProduct.slug}
               className="block text-[17px] font-semibold text-[#1a2340] mb-1.5 hover:underline tracking-tight"
             >
-              {product.name}
+              {rightProduct.name}
             </Link>
-
           </div>
 
           {/* ── STATIC: dot indicators ── */}

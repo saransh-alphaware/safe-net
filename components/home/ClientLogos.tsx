@@ -42,12 +42,12 @@ const ClientLogos = () => {
       </div>
 
       {/* Decorative Scroll Indicator */}
-      <div className="absolute right-0 top-1/2 -rotate-90 origin-right translate-x-[-10px] lg:translate-x-[-20px] translate-y-[-50%] hidden md:block z-20">
+      {/* <div className="absolute right-0 top-1/2 -rotate-90 origin-right translate-x-[-10px] lg:translate-x-[-20px] translate-y-[-50%] hidden md:block z-20">
         <div className="flex items-center gap-4">
           <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-primary/30">Scroll</span>
           <div className="w-12 h-[1px] bg-primary/10" />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
