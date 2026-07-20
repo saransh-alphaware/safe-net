@@ -30,6 +30,8 @@ export default function ProductDetailPage({
   const [selectedColor, setSelectedColor] = useState('');
   const [activeTab, setActiveTab] = useState<'description' | 'info' | 'reviews'>('description');
   const [addedMessage, setAddedMessage] = useState(false);
+  const [shareUrl, setShareUrl] = useState('');
+  const [copied, setCopied] = useState(false);
 
   // Initialize values when product loads
   useEffect(() => {
@@ -40,6 +42,37 @@ export default function ProductDetailPage({
       setAddedMessage(false);
     }
   }, [product]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setShareUrl(window.location.href);
+    }
+  }, []);
+
+  const handleShareClick = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!product) return;
+    const url = window.location.href;
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: product.name,
+          text: product.description,
+          url: url,
+        });
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(url);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (err) {
+        console.error('Failed to copy link:', err);
+      }
+    }
+  };
 
   if (!product) {
     return (
@@ -265,15 +298,44 @@ export default function ProductDetailPage({
               {/* Share icons */}
               <div className="flex items-center gap-4 border-t border-border-custom pt-6">
                  <span className="text-[11px] font-bold uppercase tracking-widest text-text-secondary">Share this:</span>
-                 <div className="flex gap-2.5">
-                    <a href="#" className="w-8 h-8 rounded-full border border-border-custom flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-text-secondary">
+                 <div className="flex items-center gap-2.5">
+                    <a
+                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 rounded-full border border-border-custom flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-text-secondary"
+                      title="Share on Facebook"
+                    >
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.248h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                     </a>
-                    <a href="#" className="w-8 h-8 rounded-full border border-border-custom flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-text-secondary">
+                    <a
+                      href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(`Check out ${product.name} at SafeNet & Co.!`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 rounded-full border border-border-custom flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-text-secondary"
+                      title="Share on Twitter / X"
+                    >
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
                     </a>
-                    <a href="#" className="w-8 h-8 rounded-full border border-border-custom flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-text-secondary"><Share2 size={13} /></a>
-                    <a href="#" className="w-8 h-8 rounded-full border border-border-custom flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-text-secondary"><Mail size={13} /></a>
+                    <button
+                      onClick={handleShareClick}
+                      className="w-8 h-8 rounded-full border border-border-custom flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-text-secondary cursor-pointer"
+                      title="Share or Copy Link"
+                    >
+                      <Share2 size={13} />
+                    </button>
+                    <a
+                      href={`mailto:?subject=${encodeURIComponent(`Check out ${product.name} | SafeNet & Co.`)}&body=${encodeURIComponent(`Hey,\n\nI thought you might be interested in this safety solution from SafeNet & Co.:\n\n${product.name}\n${shareUrl}`)}`}
+                      className="w-8 h-8 rounded-full border border-border-custom flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-text-secondary"
+                      title="Share via Email"
+                    >
+                      <Mail size={13} />
+                    </a>
+                    {copied && (
+                      <span className="text-[11px] text-green-600 font-bold uppercase tracking-wider animate-pulse ml-2">
+                        Link copied!
+                      </span>
+                    )}
                  </div>
               </div>
 

@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ProductCard from '@/components/shop/ProductCard';
@@ -10,11 +11,19 @@ import { products } from '@/lib/data/products';
 import PageTitle from '@/components/ui/PageTitle';
 
 export default function ShopClient() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get('category');
+
   // Filter States
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>(categoryParam);
   const [activeColor, setActiveColor] = useState<string | null>(null);
   const [activeFabric, setActiveFabric] = useState<string | null>(null);
   
+  // Sync filter when query params change
+  useEffect(() => {
+    setActiveCategory(categoryParam);
+  }, [categoryParam]);
+
   // View & Sorting States
   const [sortBy, setSortBy] = useState<string>('default');
   const [columns, setColumns] = useState<number>(3); // 2, 3 or 4 columns
@@ -52,6 +61,10 @@ export default function ShopClient() {
   }, [activeCategory, activeColor, activeFabric, sortBy]);
 
   // Reset to page 1 whenever filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeCategory, activeColor, activeFabric]);
+
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
   const paginatedProducts = filteredProducts.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,

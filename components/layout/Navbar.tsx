@@ -136,11 +136,48 @@ const Navbar = () => {
                   <div className="container py-12 mx-auto">
                     <div className="grid grid-cols-5 gap-8 mb-12">
                       {[
-                        { title: 'Invisible Grill', items: ['Wire rope SS316', 'Aluminium track', '2mm diameter', '2.5mm diameter', '3mm diameter', 'Custom gaps'], slug: 'invisible-grill' },
-                        { title: 'Bird Net', items: ['HDPE nets', 'Nylon nets', 'Diamond mesh', 'Square mesh', 'Black nets', 'Transparent nets'], slug: 'bird-net' },
-                        { title: 'Mosquito Net', items: ['Pleated net', 'Sliding frame', 'Door net', 'Window net', 'Anti-rust', 'Custom sizes'], slug: 'mosquito-net' },
-                        { title: 'Security Mesh', items: ['Aluminium mesh', 'Dual lock system', 'Insect proof', 'Weather resistant', 'All window types', 'Easy maintain'], slug: 'security-mesh' },
-                        { title: 'Zip Screen', items: ['Motorised zip', 'Manual zip', 'Sunshade blinds', 'Mosquito screen', 'PVC screens', 'Blackout fabric'], slug: 'zip-screen' },
+                        {
+                          title: 'Invisible Grill',
+                          slug: 'invisible-grill',
+                          items: [
+                            { name: 'Invisible Grill SS316', slug: 'invisible-grill-ss316' },
+                            { name: 'Aluminium Track', slug: 'aluminium-track' },
+                            { name: 'Wire Rope Grill', slug: 'wire-rope-grill' },
+                            { name: 'Invisible Grill (2mm)', slug: 'invisible-grill-2mm' }
+                          ]
+                        },
+                        {
+                          title: 'Bird Net',
+                          slug: 'bird-net',
+                          items: [
+                            { name: 'Bird Net (HDPE)', slug: 'bird-net-hdpe' },
+                            { name: 'Bird Net (Nylon)', slug: 'bird-net-nylon' },
+                            { name: 'Nylon Net (Diamond)', slug: 'nylon-net-diamond' }
+                          ]
+                        },
+                        {
+                          title: 'Mosquito Net',
+                          slug: 'mosquito-net',
+                          items: [
+                            { name: 'Pleated Mosquito Net', slug: 'pleated-mosquito-net' }
+                          ]
+                        },
+                        {
+                          title: 'Security Mesh',
+                          slug: 'security-mesh',
+                          items: [
+                            { name: 'Aluminium Security Mesh', slug: 'aluminium-security-mesh' },
+                            { name: 'Security Mesh Window', slug: 'security-mesh-window' }
+                          ]
+                        },
+                        {
+                          title: 'Zip Screen',
+                          slug: 'zip-screen',
+                          items: [
+                            { name: 'Motorised Zip Screen', slug: 'motorised-zip-screen' },
+                            { name: 'Manual Zip Screen', slug: 'manual-zip-screen' }
+                          ]
+                        },
                       ].map((col) => (
                         <div key={col.title} className="flex flex-col gap-6">
                           <h4 className="text-[14px] font-black text-primary uppercase tracking-widest">
@@ -148,8 +185,8 @@ const Navbar = () => {
                           </h4>
                           <ul className="flex flex-col gap-3">
                             {col.items.map((item) => (
-                              <li key={item} className="text-[14px] text-text-secondary hover:text-secondary transition-colors lowercase first-letter:uppercase font-medium">
-                                <Link href={`/product-category/${col.slug}`}>{item}</Link>
+                              <li key={item.slug} className="text-[14px] text-text-secondary hover:text-secondary transition-colors lowercase first-letter:uppercase font-medium">
+                                <Link href={`/product/${item.slug}`}>{item.name}</Link>
                               </li>
                             ))}
                           </ul>

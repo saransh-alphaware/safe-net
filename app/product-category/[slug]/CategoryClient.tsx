@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import { useRouter } from 'next/navigation';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ProductCard from '@/components/shop/ProductCard';
@@ -15,6 +16,7 @@ export default function CategoryClient({
 }: {
   slug: string
 }) {
+  const router = useRouter();
   
   // View & Sorting States
   const [sortBy, setSortBy] = useState<string>('default');
@@ -55,6 +57,15 @@ export default function CategoryClient({
     }
   };
 
+  const handleSelectCategory = (category: string | null) => {
+    if (!category) {
+      router.push('/shop');
+    } else {
+      const categorySlug = category.toLowerCase().replace(/ /g, '-');
+      router.push(`/product-category/${categorySlug}`);
+    }
+  };
+
   return (
     <div className="flex min-h-screen flex-col bg-white">
       <Navbar />
@@ -83,7 +94,10 @@ export default function CategoryClient({
           
           {/* Sidebar */}
           <div className="w-full lg:w-[280px] shrink-0">
-            <ShopSidebar activeCategory={categoryName} />
+            <ShopSidebar 
+              activeCategory={categoryName} 
+              onSelectCategory={handleSelectCategory}
+            />
           </div>
 
           {/* Catalog Listing Area */}

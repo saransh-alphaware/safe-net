@@ -14,6 +14,11 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "SafeNet & Co. | Premium Safety Nets & Invisible Grills",
   description: "India's leading provider of high-quality safety net systems, SS316 invisible grills, bird netting, mosquito screens, and motorized zip screens. Secure your home with elegance.",
+  icons: {
+    icon: "/images/products/logo_icon.webp",
+    shortcut: "/images/products/logo_icon.webp",
+    apple: "/images/products/logo_icon.webp",
+  },
 };
 
 export default function RootLayout({
